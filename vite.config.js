@@ -7,7 +7,7 @@ export default defineConfig({
     build: {
         lib: {
             entry: path.resolve(__dirname, "src/index.js"),
-            name: "shbc-vue-components",
+            name: "@shbc/vue-components",
             fileName: (format) => `shbc-vue-components.${format}.js`,
         },
         rollupOptions: {

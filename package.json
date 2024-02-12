@@ -1,8 +1,15 @@
 {
-    "name": "shbc-vue-components",
+    "name": "@shbc/vue-components",
     "version": "1.0.0",
     "description": "",
-    "main": "index.js",
+    "main": "dist/shbc-vue-components.umd.js",
+    "module": "dist/shbc-vue-components.es.js",
+    "exports": {
+        ".": {
+            "import": "./dist/shbc-vue-components.es.js",
+            "require": "./dist/shbc-vue-components.umd.js"
+        }
+    },
     "scripts": {
         "start": "vite dev",
         "build": "vite build"
