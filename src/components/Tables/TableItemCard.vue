@@ -1,6 +1,6 @@
 <script setup>
 import { Link } from "@inertiajs/vue3";
-import { moneyFormat } from "../Helpers";
+import { moneyFormat } from "../../Helpers";
 import { stringify } from "postcss";
 
 const props = defineProps({
