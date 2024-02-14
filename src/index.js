@@ -10,3 +10,4 @@ const ComponentsSHBC = {
 
 export default ComponentsSHBC;
 export * from "./components";
+export * from "./Helpers.js";

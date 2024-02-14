@@ -1,0 +1,22 @@
+<script setup>
+defineProps({
+    header: String,
+    overflow: {
+        default: true,
+        type: Boolean,
+    },
+});
+</script>
+<template>
+    <div class="rounded-lg border-2 border-gray-200 dark:border-gray-700" :class="{ 'px-4 py-2': !header, 'overflow-hidden': overflow }">
+        <div class="bg-white sm:rounded-lg" :class="{ 'p-1': !header }">
+            <div v-if="header" class="relative mb-2 rounded-b-lg border-b-2 border-gray-200 bg-neutral-50 px-6 py-1 text-center">
+                <span>{{ header }}</span>
+                <slot name="headerButton" />
+            </div>
+            <div :class="{ 'px-4 pb-2': header }">
+                <slot />
+            </div>
+        </div>
+    </div>
+</template>
