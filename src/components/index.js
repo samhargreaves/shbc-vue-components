@@ -34,6 +34,7 @@ export { default as Modal } from "./Modal.vue";
 export { default as NavLink } from "./NavLink.vue";
 export { default as Pagination } from "./Pagination.vue";
 export { default as PrimaryButton } from "./PrimaryButton.vue";
+export { default as DangerButton } from "./DangerButton.vue";
 export { default as ResponsiveNavLink } from "./ResponsiveNavLink.vue";
 export { default as SecondaryButton } from "./SecondaryButton.vue";
 export { default as Section } from "./Section.vue";
