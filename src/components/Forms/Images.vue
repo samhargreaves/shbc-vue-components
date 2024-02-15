@@ -1,7 +1,6 @@
 <script setup>
 import { router, useForm, Link } from "@inertiajs/vue3";
-import PrimaryButton from "@/Components/PrimaryButton.vue";
-import { InputError } from "../index";
+import { InputError, PrimaryButton } from "../index";
 import { useDropzone } from "vue3-dropzone";
 import { ref, reactive } from "vue";
 
