@@ -159,10 +159,10 @@ const props = defineProps({
                 <template v-for="(pill, index) in pills" :key="index">
                     <span
                         v-if="pill.text"
-                        class="whitespace-nowrap rounded-md border p-1 px-2 text-white"
-                        :class="
-                            pill.color ? `bg-[${pill.color}]` : 'bg-primary'
-                        "
+                        class="whitespace-nowrap rounded-md border p-1 px-2 text-white bg-primary"
+                        :css="{
+                            backgroundColor: pill.color ? pill.color : null,
+                        }"
                     >
                         {{ pill.text }}
                     </span>
