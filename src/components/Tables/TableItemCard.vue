@@ -160,11 +160,9 @@ const props = defineProps({
                     <span
                         v-if="pill.text"
                         class="whitespace-nowrap rounded-md border p-1 px-2 text-white"
-                        :style="{
-                            backgroundColor: pill.color
-                                ? pill.color
-                                : '#ec008c',
-                        }"
+                        :class="
+                            pill.color ? `bg-[${pill.color}]` : 'bg-primary'
+                        "
                     >
                         {{ pill.text }}
                     </span>
