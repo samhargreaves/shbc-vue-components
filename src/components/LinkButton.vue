@@ -30,7 +30,7 @@ const getClass = () => {
         :href="href"
         :method="method"
         :data="data"
-        class="font-medium cursor-pointer select-none rounded px-2 leading-normal"
+        class="focusable font-medium cursor-pointer select-none rounded px-2 leading-normal"
         :class="getClass()"
         as="button"
     >
@@ -41,7 +41,7 @@ const getClass = () => {
         v-else
         :href="href"
         :target="target"
-        class="font-medium cursor-pointer select-none rounded px-2 leading-normal"
+        class="focusable font-medium cursor-pointer select-none rounded px-2 leading-normal"
         :class="getClass()"
     >
         <slot />

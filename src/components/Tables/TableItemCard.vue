@@ -192,7 +192,7 @@ const props = defineProps({
         <!-- Engineer Note -->
         <div class="mb-1">
             <p
-                class="w-full whitespace-normal font-semibold text-pink"
+                class="w-full whitespace-normal font-semibold text-primary"
                 v-if="props.extraText"
             >
                 Engineer Note:

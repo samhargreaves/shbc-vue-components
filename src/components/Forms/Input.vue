@@ -58,7 +58,7 @@ function ucwords(text) {
                     :required="props.required"
                 />
                 <div
-                    class="toggle-switch !ml-0"
+                    class="toggle-switch focusable !ml-0"
                     :class="{
                         checked: props.form[field],
                         disabled: props.disabled,
@@ -76,7 +76,7 @@ function ucwords(text) {
                 <TextInput
                     :id="field"
                     :type="type"
-                    class="relative m-0 block w-full flex-auto disabled:border-slate-200 disabled:bg-slate-50 disabled:text-slate-500 disabled:shadow-none"
+                    class="focusable relative m-0 block w-full flex-auto disabled:border-slate-200 disabled:bg-slate-50 disabled:text-slate-500 disabled:shadow-none"
                     :class="{
                         '!rounded-l-none': addon,
                         '!rounded-r-none': !!submitBtn,

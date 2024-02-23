@@ -3094,7 +3094,7 @@ const Fm = { class: "relative mb-4 flex w-full max-w-full items-stretch" }, Mm =
             [Qc, e.form[t.field]]
           ]),
           P("div", {
-            class: Z(["toggle-switch !ml-0", {
+            class: Z(["toggle-switch focusable !ml-0", {
               checked: e.form[t.field],
               disabled: e.disabled
             }])
@@ -3105,7 +3105,7 @@ const Fm = { class: "relative mb-4 flex w-full max-w-full items-stretch" }, Mm =
           Ae(j($f), {
             id: t.field,
             type: t.type,
-            class: Z(["relative m-0 block w-full flex-auto disabled:border-slate-200 disabled:bg-slate-50 disabled:text-slate-500 disabled:shadow-none", {
+            class: Z(["focusable relative m-0 block w-full flex-auto disabled:border-slate-200 disabled:bg-slate-50 disabled:text-slate-500 disabled:shadow-none", {
               "!rounded-l-none": t.addon,
               "!rounded-r-none": !!t.submitBtn,
               "!rounded-r-none": t.whatsApp
@@ -12125,7 +12125,7 @@ const bS = { class: "mb-2 flex w-full flex-wrap justify-between text-sm text-gra
   class: "font-semibold"
 }, AS = { class: "mb-1" }, ES = {
   key: 0,
-  class: "w-full whitespace-normal font-semibold text-pink"
+  class: "w-full whitespace-normal font-semibold text-primary"
 }, CS = { class: "w-full break-words" }, kS = { class: "mb-1 flex flex-col" }, TS = { key: 1 }, PS = {
   __name: "TableItemCard",
   props: {
@@ -14022,7 +14022,8 @@ const cl = new k2(), kn = {
       }, [
         P("div", {
           onClick: a,
-          class: "!block rounded-b-lg border-b-2 border-gray-200 bg-neutral-50 px-6 py-1 text-center",
+          class: "focusable !block rounded-b-lg border-b-2 border-gray-200 bg-neutral-50 px-6 py-1 text-center",
+          tabindex: "0",
           "aria-controls": t.header ? t.header.replaceAll(" ", "_") : "collapsable"
         }, [
           me(z(t.header) + " ", 1),
@@ -14106,7 +14107,7 @@ const cl = new k2(), kn = {
 }, V2 = {
   __name: "DropdownLink",
   setup(t) {
-    return (e, r) => (x(), se(j(ct), { class: "block w-full px-4 py-2 text-left text-sm leading-5 text-gray-700 transition duration-150 ease-in-out hover:bg-gray-100 focus:bg-gray-100 focus:outline-none" }, {
+    return (e, r) => (x(), se(j(ct), { class: "focusable block w-full px-4 py-2 text-left text-sm leading-5 text-gray-700 transition duration-150 ease-in-out hover:bg-gray-100 focus:bg-gray-100 focus:outline-none" }, {
       default: Pe(() => [
         W(e.$slots, "default")
       ]),
@@ -14137,7 +14138,7 @@ const cl = new k2(), kn = {
       href: t.href,
       method: t.method,
       data: t.data,
-      class: Z(["font-medium cursor-pointer select-none rounded px-2 leading-normal", r()]),
+      class: Z(["focusable font-medium cursor-pointer select-none rounded px-2 leading-normal", r()]),
       as: "button"
     }, {
       default: Pe(() => [
@@ -14148,7 +14149,7 @@ const cl = new k2(), kn = {
       key: 1,
       href: t.href,
       target: t.target,
-      class: Z(["font-medium cursor-pointer select-none rounded px-2 leading-normal", r()])
+      class: Z(["focusable font-medium cursor-pointer select-none rounded px-2 leading-normal", r()])
     }, [
       W(n.$slots, "default")
     ], 10, H2));
@@ -14260,13 +14261,13 @@ const iO = {
   class: "text-center"
 }, sO = {
   key: 1,
-  class: "ml-3 border-l-2 border-pink"
-}, lO = { class: "flex-start w-full md:flex" }, uO = { class: "-ml-[13px] flex h-[25px] w-[25px] items-center justify-center rounded-full bg-pink text-xs text-white" }, cO = { class: "mb-3 ml-2 block w-full rounded-lg bg-neutral-50 px-3 py-2 shadow-md shadow-black/5" }, fO = { class: "mb-1 flex justify-between" }, dO = { class: "text-sm text-neutral-500" }, pO = {
+  class: "ml-3 border-l-2 border-primary"
+}, lO = { class: "flex-start w-full md:flex" }, uO = { class: "-ml-[13px] flex h-[25px] w-[25px] items-center justify-center rounded-full bg-primary text-xs text-white" }, cO = { class: "mb-3 ml-2 block w-full rounded-lg bg-neutral-50 px-3 py-2 shadow-md shadow-black/5" }, fO = { class: "mb-1 flex justify-between" }, dO = { class: "text-sm text-neutral-500" }, pO = {
   key: 0,
-  class: "text-bold mr-0.5 text-sm text-pink-500"
+  class: "text-bold mr-0.5 text-sm text-primary-500"
 }, hO = {
   key: 1,
-  class: "text-sm text-pink-500"
+  class: "text-sm text-primary-500"
 }, mO = { class: "text-sm text-neutral-500" }, gO = { class: "font-medium" }, yO = {
   key: 0,
   class: "line-through"
@@ -14539,7 +14540,7 @@ const iO = {
   setup(t) {
     return (e, r) => (x(), C("button", {
       type: t.type,
-      class: "inline-flex items-center rounded-md border border-transparent bg-pink px-4 py-2 text-xs font-semibold uppercase tracking-widest text-white transition duration-150 ease-in-out hover:bg-pink-700 focus:bg-pink-700 focus:outline-none focus:ring-2 focus:ring-pink-500 focus:ring-offset-2 active:bg-pink-700"
+      class: "focusable inline-flex items-center rounded-md border border-transparent bg-primary px-4 py-2 text-xs font-semibold uppercase tracking-widest text-white transition duration-150 ease-in-out hover:bg-primary-700 focus:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 active:bg-primary-700"
     }, [
       W(e.$slots, "default")
     ], 8, PO));
@@ -14555,7 +14556,7 @@ const iO = {
   setup(t) {
     return (e, r) => (x(), C("button", {
       type: t.type,
-      class: "inline-flex items-center rounded border border-transparent bg-red-600 px-4 py-2 text-xs font-semibold uppercase tracking-widest text-white transition duration-150 ease-in-out hover:bg-red-500 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 active:bg-red-700"
+      class: "focusable inline-flex items-center rounded border border-transparent bg-red-600 px-4 py-2 text-xs font-semibold uppercase tracking-widest text-white transition duration-150 ease-in-out hover:bg-red-500 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 active:bg-red-700"
     }, [
       W(e.$slots, "default")
     ], 8, $O));
@@ -14588,7 +14589,7 @@ const iO = {
   setup(t) {
     return (e, r) => (x(), C("button", {
       type: t.type,
-      class: "inline-flex items-center rounded border border-gray-300 bg-white px-4 py-2 text-xs font-semibold uppercase tracking-widest text-gray-700 shadow transition duration-150 ease-in-out hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-accent-500 focus:ring-offset-2 disabled:opacity-25"
+      class: "focusable inline-flex items-center rounded border border-gray-300 bg-white px-4 py-2 text-xs font-semibold uppercase tracking-widest text-gray-700 shadow transition duration-150 ease-in-out hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-accent-500 focus:ring-offset-2 disabled:opacity-25"
     }, [
       W(e.$slots, "default")
     ], 8, RO));

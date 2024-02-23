@@ -26,11 +26,11 @@ const props = defineProps({
     </div>
     <div v-else class="mt-1" id="logs">
         <p v-if="!logs.total" class="text-center">No Data</p>
-        <ol v-else class="ml-3 border-l-2 border-pink">
+        <ol v-else class="ml-3 border-l-2 border-primary">
             <li v-for="item in logs.data" :key="item.id">
                 <div class="flex-start w-full md:flex">
                     <div
-                        class="-ml-[13px] flex h-[25px] w-[25px] items-center justify-center rounded-full bg-pink text-xs text-white"
+                        class="-ml-[13px] flex h-[25px] w-[25px] items-center justify-center rounded-full bg-primary text-xs text-white"
                     >
                         <FontAwesomeIcon v-bind:icon="item.icon" />
                     </div>
@@ -42,12 +42,12 @@ const props = defineProps({
                                 {{ item.event_formatted }}
                                 <span
                                     v-if="item.reference"
-                                    class="text-bold mr-0.5 text-sm text-pink-500"
+                                    class="text-bold mr-0.5 text-sm text-primary-500"
                                     >{{ item.reference }}</span
                                 >
                                 <span
                                     v-if="item.causer"
-                                    class="text-sm text-pink-500"
+                                    class="text-sm text-primary-500"
                                     >({{ item.causer?.first_name }})</span
                                 >
                             </span>
