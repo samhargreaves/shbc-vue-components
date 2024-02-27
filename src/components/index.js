@@ -10,6 +10,7 @@ export { default as SearchSelect } from "./Forms/SearchSelect.vue";
 export { default as FileDropZoneInput } from "./Forms/FileDropZoneInput.vue";
 export { default as Images } from "./Forms/Images.vue";
 export { default as RadioButton } from "./Forms/RadioButton.vue";
+export { default as SubmitButton } from "./Forms/SubmitButton.vue";
 
 // TABLES
 export { default as Table } from "./Tables/Table.vue";
