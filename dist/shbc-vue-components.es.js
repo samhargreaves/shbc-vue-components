@@ -3040,7 +3040,7 @@ var If = {
 const Lm = { class: "relative mb-4 flex w-full max-w-full items-stretch" }, Fm = {
   key: 0,
   class: "flex items-center"
-}, Mm = ["id", "disabled", "required"], jm = {
+}, Mm = ["id", "disabled", "required", "name"], jm = {
   key: 0,
   class: "border-gray flex items-center whitespace-nowrap rounded rounded-r-none border border-r-0 border-gray-300 bg-slate-50 px-2 text-center text-gray-500"
 }, Bm = ["disabled"], zm = ["href"], Um = {
@@ -3049,6 +3049,7 @@ const Lm = { class: "relative mb-4 flex w-full max-w-full items-stretch" }, Fm =
     type: String,
     field: String,
     label: String,
+    name: String,
     required: Boolean,
     disabled: Boolean,
     min: Number | String,
@@ -3089,7 +3090,8 @@ const Lm = { class: "relative mb-4 flex w-full max-w-full items-stretch" }, Fm =
             class: "hidden",
             "onUpdate:modelValue": i[0] || (i[0] = (a) => e.form[t.field] = a),
             disabled: e.disabled,
-            required: e.required
+            required: e.required,
+            name: t.name ?? t.field
           }, null, 8, Mm), [
             [Zc, e.form[t.field]]
           ]),
@@ -3120,8 +3122,9 @@ const Lm = { class: "relative mb-4 flex w-full max-w-full items-stretch" }, Fm =
             step: e.step,
             placeholder: e.placeholder,
             autofocus: e.autofocus,
-            pattern: e.pattern
-          }, null, 8, ["id", "type", "class", "modelValue", "required", "disabled", "autocomplete", "min", "max", "step", "placeholder", "autofocus", "pattern"]),
+            pattern: e.pattern,
+            name: t.name ?? t.field
+          }, null, 8, ["id", "type", "class", "modelValue", "required", "disabled", "autocomplete", "min", "max", "step", "placeholder", "autofocus", "pattern", "name"]),
           t.submitBtn ? (x(), A("button", {
             key: 1,
             disabled: e.form.processing,
