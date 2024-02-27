@@ -47,6 +47,7 @@ function ucwords(text) {
             :for="field"
             :value="label ? label : ucwords(field)"
             :sublabel="sublabel"
+            :required="required"
         />
         <div class="relative mb-4 flex w-full max-w-full items-stretch">
             <label v-if="type === 'checkbox'" class="flex items-center">
