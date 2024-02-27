@@ -11,6 +11,7 @@ const props = defineProps({
     type: String,
     field: String,
     label: String,
+    name: String,
     required: Boolean,
     disabled: Boolean,
     min: Number | String,
@@ -56,6 +57,7 @@ function ucwords(text) {
                     v-model="props.form[field]"
                     :disabled="props.disabled"
                     :required="props.required"
+                    :name="name ?? field"
                 />
                 <div
                     class="toggle-switch focusable !ml-0"
@@ -92,6 +94,7 @@ function ucwords(text) {
                     :placeholder="props.placeholder"
                     :autofocus="props.autofocus"
                     :pattern="props.pattern"
+                    :name="name ?? field"
                 />
                 <button
                     v-if="submitBtn"
