@@ -9,8 +9,6 @@ import { defineComponent, h } from "vue";
 //SHBC EDIT
 import { getInertiaRouter } from "@/Helpers";
 
-const router = getInertiaRouter();
-
 const Link = defineComponent({
     name: "Link",
     props: {
@@ -57,6 +55,7 @@ const Link = defineComponent({
     },
     setup(props, { slots, attrs }) {
         return () => {
+            const router = getInertiaRouter();
             const as = props.as.toLowerCase();
             const method = props.method.toLowerCase();
             const [href, data] = mergeDataIntoQueryString(
