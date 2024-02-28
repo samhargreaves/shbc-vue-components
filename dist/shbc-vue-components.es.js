@@ -9946,7 +9946,7 @@ const Pw = {
       if (!e.orderBy)
         return;
       const u = r.value === "asc" ? "desc" : "asc", c = route().params;
-      c.order_by = e.orderBy, c.order_dir = u, console.log(route().current()), ct.get(route(route().current()), c, {
+      c.order_by = e.orderBy, c.order_dir = u, console.log(route().current(), route(route().current()), c), ct.get(route(route().current()), c, {
         preserveState: !0
       }), r.value = u, n.value = !0;
     }, s = (u) => r.value === u && n.value ? "active text-primary" : "text-gray-400";
