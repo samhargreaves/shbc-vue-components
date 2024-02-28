@@ -26,6 +26,16 @@ function setInertiaRouter(router) {
 }
 
 function getInertiaRouter() {
+    if (inertiaRouter === null) {
+        console.error(
+            "Inertia router is not set. Please set it first:" +
+                "\n\n// app.js" +
+                "\nimport { setInertiaRouter } from '@shbc/vue-components';" +
+                "\nimport { router } from '@inertiajs/vue3';" +
+                "\n// createInertiaApp(...);" +
+                "\nsetInertiaRouter(router);\n\n"
+        );
+    }
     return inertiaRouter;
 }
 
