@@ -19,7 +19,6 @@ const router = getInertiaRouter();
 
 onMounted(() => {
     if (!props.orderBy) return;
-    console.log(getInertiaRouter());
     navigateEvent = router.on("navigate", updateOrderDirection);
 });
 
@@ -45,8 +44,6 @@ const toggleOrder = () => {
     const params = route().params;
     params.order_by = props.orderBy;
     params.order_dir = newOrderDirection;
-
-    console.log(router);
 
     router.get(route(route().current()), params, {
         preserveState: true,
