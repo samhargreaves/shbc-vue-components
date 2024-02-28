@@ -20,4 +20,19 @@ function hasPermission(permission) {
     return userPermissions.includes(permission);
 }
 
-export { numberFormat, moneyFormat, hasPermission };
+let inertiaRouter = null;
+function setInertiaRouter(router) {
+    inertiaRouter = router;
+}
+
+function getInertiaRouter() {
+    return inertiaRouter;
+}
+
+export {
+    numberFormat,
+    moneyFormat,
+    hasPermission,
+    setInertiaRouter,
+    getInertiaRouter,
+};

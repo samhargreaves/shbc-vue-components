@@ -1,11 +1,11 @@
 <script setup>
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
-// import { router } from "@inertiajs/vue3";
 import { ref } from "vue";
 import { faSortUp, faSortDown } from "@fortawesome/free-solid-svg-icons";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { onMounted } from "vue";
 import { onUnmounted } from "vue";
+import { getInertiaRouter } from "../../Helpers";
 
 library.add(faSortUp, faSortDown);
 
@@ -15,9 +15,11 @@ const props = defineProps({
 const orderDirection = ref("asc");
 const isOrdering = ref(false);
 let navigateEvent = null;
+const router = getInertiaRouter();
 
 onMounted(() => {
     if (!props.orderBy) return;
+    console.log(getInertiaRouter());
     navigateEvent = router.on("navigate", updateOrderDirection);
 });
 
