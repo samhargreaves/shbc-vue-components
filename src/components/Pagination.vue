@@ -43,7 +43,7 @@
 </template>
 
 <script setup>
-import { Link } from "@inertiajs/vue3";
+import Link from "../overrides/InertiaLink";
 import { computed } from "vue";
 
 const emit = defineEmits(["change"]);

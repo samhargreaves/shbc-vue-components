@@ -1,5 +1,6 @@
 <script setup>
-import { Head, Link } from "@inertiajs/vue3";
+import { Head } from "@inertiajs/vue3";
+import Link from "../overrides/InertiaLink";
 
 const props = defineProps({
     href: String,
