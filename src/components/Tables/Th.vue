@@ -1,6 +1,6 @@
 <script setup>
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
-import { router } from "@inertiajs/vue3";
+// import { router } from "@inertiajs/vue3";
 import { ref } from "vue";
 import { faSortUp, faSortDown } from "@fortawesome/free-solid-svg-icons";
 import { library } from "@fortawesome/fontawesome-svg-core";
