@@ -44,7 +44,7 @@ const toggleOrder = () => {
     params.order_by = props.orderBy;
     params.order_dir = newOrderDirection;
 
-    console.log(route().current());
+    console.log(route().current(), route(route().current()), params);
 
     router.get(route(route().current()), params, {
         preserveState: true,
