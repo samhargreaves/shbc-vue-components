@@ -14375,7 +14375,7 @@ const pl = new L2(), kn = {
   class: "relative",
   "data-te-dropdown-ref": ""
 }, tO = {
-  class: "flex items-center whitespace-nowrap rounded bg-primary px-2 text-white hover:bg-primary-700 motion-reduce:transition-none",
+  class: "focusable flex items-center whitespace-nowrap rounded bg-primary px-2 text-white hover:bg-primary-700 motion-reduce:transition-none",
   type: "button",
   id: "dropdownMenuButton3",
   "data-te-dropdown-toggle-ref": "",
@@ -14424,7 +14424,7 @@ const pl = new L2(), kn = {
   setup(t) {
     return (e, r) => (x(), A("li", null, [
       P("a", {
-        class: "block w-full whitespace-nowrap bg-transparent px-4 py-2 text-sm font-normal text-neutral-700 hover:bg-neutral-100 active:text-neutral-800 active:no-underline disabled:pointer-events-none disabled:bg-transparent disabled:text-neutral-400 dark:text-neutral-200 dark:hover:bg-neutral-600",
+        class: "focusable block w-full whitespace-nowrap bg-transparent px-4 py-2 text-sm font-normal text-neutral-700 hover:bg-neutral-100 active:text-neutral-800 active:no-underline disabled:pointer-events-none disabled:bg-transparent disabled:text-neutral-400 dark:text-neutral-200 dark:hover:bg-neutral-600",
         href: t.href,
         "data-te-dropdown-item-ref": ""
       }, U(t.title), 9, aO)
@@ -14694,24 +14694,24 @@ const pl = new L2(), kn = {
             t.linkReturn ? (x(), A(ce, { key: 0 }, [
               u.url === null ? (x(), A("button", {
                 key: 0,
-                class: "pointer-events-none relative block rounded bg-transparent px-3 py-1.5 text-sm text-neutral-500 transition-all duration-300 dark:text-neutral-400",
+                class: "focusable pointer-events-none relative block rounded bg-transparent px-3 py-1.5 text-sm text-neutral-500 transition-all duration-300 dark:text-neutral-400",
                 innerHTML: u.label,
                 onClick: s[0] || (s[0] = (f) => a(""))
               }, null, 8, IO)) : (x(), A("button", {
                 key: 1,
-                class: K(["relative block rounded bg-transparent px-3 py-1.5 text-sm text-neutral-600 transition-all duration-300 hover:bg-neutral-100 dark:text-white dark:hover:bg-neutral-700 dark:hover:text-white", { "font-bold text-primary": u.active }]),
+                class: K(["focusable relative block rounded bg-transparent px-3 py-1.5 text-sm text-neutral-600 transition-all duration-300 hover:bg-neutral-100 dark:text-white dark:hover:bg-neutral-700 dark:hover:text-white", { "font-bold text-primary": u.active }]),
                 innerHTML: u.label,
                 onClick: (f) => a(u.url)
               }, null, 10, DO))
             ], 64)) : (x(), A(ce, { key: 1 }, [
               u.url === null ? (x(), se(B(ct), {
                 key: 0,
-                class: "pointer-events-none relative block rounded bg-transparent px-3 py-1.5 text-sm text-neutral-500 transition-all duration-300 dark:text-neutral-400",
+                class: "focusable pointer-events-none relative block rounded bg-transparent px-3 py-1.5 text-sm text-neutral-500 transition-all duration-300 dark:text-neutral-400",
                 innerHTML: u.label,
                 href: ""
               }, null, 8, ["innerHTML"])) : (x(), se(B(ct), {
                 key: 1,
-                class: K(["relative block rounded bg-transparent px-3 py-1.5 text-sm text-neutral-600 transition-all duration-300 hover:bg-neutral-100 dark:text-white dark:hover:bg-neutral-700 dark:hover:text-white", { "font-bold text-primary": u.active }]),
+                class: K(["focusable relative block rounded bg-transparent px-3 py-1.5 text-sm text-neutral-600 transition-all duration-300 hover:bg-neutral-100 dark:text-white dark:hover:bg-neutral-700 dark:hover:text-white", { "font-bold text-primary": u.active }]),
                 href: u.url,
                 innerHTML: u.label,
                 preserveScroll: t.logs,
