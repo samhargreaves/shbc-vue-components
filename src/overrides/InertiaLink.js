@@ -3,10 +3,13 @@ import {
     Method,
     PageProps,
     Progress,
-    router,
     shouldIntercept,
 } from "@inertiajs/core";
 import { defineComponent, h } from "vue";
+//SHBC EDIT
+import { getInertiaRouter } from "@/Helpers";
+
+const router = getInertiaRouter();
 
 const Link = defineComponent({
     name: "Link",
