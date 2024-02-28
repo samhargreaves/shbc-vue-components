@@ -100,7 +100,7 @@ function ucwords(text) {
                 <button
                     v-if="submitBtn"
                     :disabled="props.form.processing"
-                    class="font-medium z-[2] inline-block rounded-r bg-primary px-6 pb-2 pt-2.5 text-xs uppercase leading-normal text-white shadow transition duration-150 ease-in-out hover:bg-primary-700 hover:shadow-lg focus:z-[3] focus:bg-primary-600 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-primary-700 active:shadow-lg"
+                    class="font-medium z-[2] inline-block rounded-r px-6 pb-2 pt-2.5 text-xs uppercase leading-normal text-white shadow transition duration-150 ease-in-out bg-primary hover:bg-primary-700 hover:shadow-lg focus:z-[3] focus:bg-primary-600 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-primary-700 active:shadow-lg"
                     type="submit"
                     id="button-input"
                 >

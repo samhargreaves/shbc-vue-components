@@ -1,10 +1,13 @@
 <script setup>
-import { router, useForm } from "@inertiajs/vue3";
+import { useForm } from "@inertiajs/vue3";
+import { getInertiaRouter } from "@/Helpers";
+
 import Link from "../../overrides/InertiaLink";
 import { PrimaryButton, InputError } from "../index";
 import { useDropzone } from "vue3-dropzone";
 import { ref, reactive, onMounted } from "vue";
 
+const router = getInertiaRouter();
 const props = defineProps({
     accept: { String, default: "image/*" },
     multiple: { Boolean, default: false },
