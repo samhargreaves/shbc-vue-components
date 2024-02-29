@@ -1,5 +1,5 @@
 <script setup>
-import { InputLabel, InputError } from "../index";
+import { InputLabel, InputError } from "../../index";
 
 const props = defineProps({
     id: {

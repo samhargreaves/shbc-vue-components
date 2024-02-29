@@ -1,5 +1,5 @@
 <script setup>
-import { PrimaryButton, Spinner } from "../index";
+import { PrimaryButton, Spinner } from "../../index";
 
 const props = defineProps({
     type: {

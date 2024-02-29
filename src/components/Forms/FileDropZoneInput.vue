@@ -3,7 +3,7 @@ import { useForm } from "@inertiajs/vue3";
 import { getInertiaRouter } from "@/Helpers";
 
 import Link from "../../overrides/InertiaLink";
-import { PrimaryButton, InputError } from "../index";
+import { PrimaryButton, InputError } from "../../index";
 import { useDropzone } from "vue3-dropzone";
 import { ref, reactive, onMounted } from "vue";
 

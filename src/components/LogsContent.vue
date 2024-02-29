@@ -8,8 +8,8 @@ import {
     faSpinner,
 } from "@fortawesome/free-solid-svg-icons";
 import { library } from "@fortawesome/fontawesome-svg-core";
-import { Pagination } from "./index";
-import { Spinner } from "./index";
+import { Pagination } from "../index";
+import { Spinner } from "../index";
 
 library.add(faPlus, faPencil, faCalendar, faBoxArchive, faSpinner);
 

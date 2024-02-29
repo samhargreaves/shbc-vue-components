@@ -25,7 +25,7 @@
  * @prop {string} sublabel - The sublabel for the input
  */
 
-import { InputLabel, TextInput, InputError, SubmitButton } from "../index";
+import { InputLabel, TextInput, InputError, SubmitButton } from "../../index";
 
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import { faWhatsapp } from "@fortawesome/free-brands-svg-icons";
@@ -119,7 +119,6 @@ function ucwords(text) {
                         '!rounded-l-none': addon,
                         '!rounded-r-none': !!submitBtn || whatsApp,
                     }"
-                    `
                     v-model="props.form[field]"
                     :required="props.required"
                     :disabled="props.disabled"

@@ -1,5 +1,5 @@
 <script setup>
-import { Input, Section } from "@/components/index";
+import { Input, Section } from "./index";
 import { useForm } from "@inertiajs/vue3";
 
 const form = useForm({

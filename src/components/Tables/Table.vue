@@ -1,5 +1,5 @@
 <script setup>
-import { Pagination } from "../index";
+import { Pagination } from "../../index";
 import { nextTick } from "vue";
 import { onMounted, onUnmounted, ref } from "vue";
 

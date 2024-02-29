@@ -1,7 +1,7 @@
 <script setup>
 import { useForm } from "@inertiajs/vue3";
 import Link from "../../overrides/InertiaLink";
-import { InputError, PrimaryButton } from "../index";
+import { InputError, PrimaryButton } from "../../index";
 import { useDropzone } from "vue3-dropzone";
 import { ref, reactive } from "vue";
 import { getInertiaRouter } from "@/Helpers";
