@@ -1,10 +1,9 @@
 <script setup>
-import { InputLabel, TextInput, InputError } from "../index";
+import { InputLabel, TextInput, InputError, SubmitButton } from "../index";
 
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import { faWhatsapp } from "@fortawesome/free-brands-svg-icons";
 import { library } from "@fortawesome/fontawesome-svg-core";
-
 library.add(faWhatsapp);
 
 const props = defineProps({
@@ -82,8 +81,7 @@ function ucwords(text) {
                     class="focusable relative m-0 block w-full flex-auto disabled:border-slate-200 disabled:bg-slate-50 disabled:text-slate-500 disabled:shadow-none"
                     :class="{
                         '!rounded-l-none': addon,
-                        '!rounded-r-none': !!submitBtn,
-                        '!rounded-r-none': whatsApp,
+                        '!rounded-r-none': !!submitBtn || whatsApp,
                     }"
                     v-model="props.form[field]"
                     :required="props.required"
@@ -97,18 +95,17 @@ function ucwords(text) {
                     :pattern="props.pattern"
                     :name="name ?? field"
                 />
-                <button
+                <SubmitButton
                     v-if="submitBtn"
-                    :disabled="props.form.processing"
-                    class="font-medium z-[2] inline-block rounded-r px-6 pb-2 pt-2.5 text-xs uppercase leading-normal text-white shadow transition duration-150 ease-in-out bg-primary hover:bg-primary-700 hover:shadow-lg focus:z-[3] focus:bg-primary-600 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-primary-700 active:shadow-lg"
-                    type="submit"
+                    :form="form"
+                    class="z-[2] inline-block rounded-l-none"
                     id="button-input"
                 >
                     {{ submitBtn }}
-                </button>
+                </SubmitButton>
                 <a
                     v-if="whatsApp"
-                    class="font-medium z-[2] inline-block rounded-r bg-primary px-2 py-2 text-xs uppercase leading-normal text-white shadow transition duration-150 ease-in-out hover:bg-primary-700 hover:shadow-lg focus:z-[3] focus:bg-primary-600 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-primary-700 active:shadow-lg"
+                    class="z-[2] inline-block rounded-r bg-primary px-2 py-2 text-xs font-medium uppercase leading-normal text-white shadow transition duration-150 ease-in-out hover:bg-primary-700 hover:shadow-lg focus:z-[3] focus:bg-primary-600 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-primary-700 active:shadow-lg"
                     :href="whatsApp"
                     target="_blank"
                 >

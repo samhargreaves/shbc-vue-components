@@ -12,7 +12,11 @@ const props = defineProps({
 </script>
 
 <template>
-    <PrimaryButton :disabled="form.processing || disabled" :type="type">
+    <PrimaryButton
+        :disabled="form.processing || disabled"
+        :type="type"
+        class="focusable"
+    >
         <div :class="{ 'opacity-25': form.processing }">
             <slot />
         </div>
