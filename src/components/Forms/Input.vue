@@ -69,12 +69,12 @@ function ucwords(text) {
                 {{ switchDescription ? switchDescription : "Enable" }}
             </label>
             <select
-                v-if="type === 'select'"
+                v-else-if="type === 'select'"
                 v-model="props.form[field]"
                 :required="props.required"
                 :disabled="props.disabled"
                 :name="name ?? field"
-                class="focusable mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 disabled:border-slate-200 disabled:bg-slate-50 disabled:text-slate-500 disabled:shadow-none"
+                class="focusable block w-full rounded border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 disabled:border-slate-200 disabled:bg-slate-50 disabled:text-slate-500 disabled:shadow-none"
             >
                 <slot />
             </select>
