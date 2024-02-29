@@ -1,3 +1,8 @@
 @import "tailwindcss/base";
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
+
+[type="checkbox"],
+[type="radio"] {
+    color: theme("colors.primary.DEFAULT");
+}
