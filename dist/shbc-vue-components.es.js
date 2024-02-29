@@ -3103,14 +3103,13 @@ const zm = { class: "relative mb-4 flex w-full max-w-full items-stretch" }, Um =
             }])
           }, null, 2),
           pe(" " + U(t.switchDescription ? t.switchDescription : "Enable"), 1)
-        ])) : z("", !0),
-        t.type === "select" ? je((x(), _("select", {
+        ])) : t.type === "select" ? je((x(), _("select", {
           key: 1,
           "onUpdate:modelValue": i[1] || (i[1] = (a) => e.form[t.field] = a),
           required: e.required,
           disabled: e.disabled,
           name: t.name ?? t.field,
-          class: "focusable mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 disabled:border-slate-200 disabled:bg-slate-50 disabled:text-slate-500 disabled:shadow-none"
+          class: "focusable block w-full rounded border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 disabled:border-slate-200 disabled:bg-slate-50 disabled:text-slate-500 disabled:shadow-none"
         }, [
           H(n.$slots, "default")
         ], 8, Hm)), [
