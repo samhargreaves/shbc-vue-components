@@ -1,4 +1,30 @@
 <script setup>
+/**
+ * Input component
+ *
+ * @component
+ *
+ * @prop {string} type - The type of the input
+ * @prop {string} field - The field name
+ * @prop {string} label - The label for the input
+ * @prop {string} name - The name attribute for the input
+ * @prop {boolean} required - Whether the input is required
+ * @prop {boolean} disabled - Whether the input is disabled
+ * @prop {number|string} min - The minimum value for the input
+ * @prop {number|string} max - The maximum value for the input
+ * @prop {number|string} step - The step value for the input
+ * @prop {object} form - The form object
+ * @prop {string} addon - The addon text
+ * @prop {string} placeholder - The placeholder for the input
+ * @prop {boolean} noLabel - Whether to hide the label
+ * @prop {string} submitBtn - The submit button text
+ * @prop {boolean} autofocus - Whether the input should be autofocused
+ * @prop {string} pattern - The pattern for the input
+ * @prop {string} whatsApp - The WhatsApp link
+ * @prop {string} switchDescription - The description for the switch
+ * @prop {string} sublabel - The sublabel for the input
+ */
+
 import { InputLabel, TextInput, InputError, SubmitButton } from "../index";
 
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
@@ -93,6 +119,7 @@ function ucwords(text) {
                         '!rounded-l-none': addon,
                         '!rounded-r-none': !!submitBtn || whatsApp,
                     }"
+                    `
                     v-model="props.form[field]"
                     :required="props.required"
                     :disabled="props.disabled"
