@@ -4423,7 +4423,7 @@ const $O = {
       type: Boolean,
       default: !1
     },
-    isDisabled: {
+    disabled: {
       type: Boolean,
       default: !1
     },
@@ -4457,7 +4457,7 @@ const $O = {
         placeholder: t.placeholder,
         class: "model-list !relative !mt-0 h-[42px] !max-w-full !rounded !border-gray-300 !shadow",
         "onUpdate:modelValue": a[0] || (a[0] = (o) => r("update:modelValue", o)),
-        "is-disabled": t.isDisabled
+        "is-disabled": t.disabled
       }, null, 8, ["id", "list", "modelValue", "option-value", "option-text", "option-disabled", "placeholder", "is-disabled"])) : (x(), E(ce, { key: 2 }, [
         ge(B(Ru), {
           id: t.id ?? t.field,
@@ -4471,8 +4471,8 @@ const $O = {
           "option-text": t.optionText,
           "option-disabled": t.optionDisabled,
           placeholder: t.placeholder,
-          class: "model-list !relative !mt-0 h-[42px] !max-w-full !rounded !border-gray-300 !shadow",
-          "is-disabled": t.isDisabled
+          class: "model-list !relative !mt-0 h-[42px] !max-w-full !rounded !border-gray-300 !px-3 !shadow",
+          "is-disabled": t.disabled
         }, null, 8, ["id", "list", "modelValue", "option-value", "option-text", "option-disabled", "placeholder", "is-disabled"]),
         ge(B(Zn), {
           message: t.form.errors[t.field]
