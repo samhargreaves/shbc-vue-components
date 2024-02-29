@@ -18,6 +18,14 @@ const props = defineProps({
         type: Boolean,
         default: true,
     },
+    backdropDuration: {
+        type: Number,
+        default: 200,
+    },
+    modalDuration: {
+        type: Number,
+        default: 200,
+    },
 });
 
 const emit = defineEmits(["close"]);
@@ -81,14 +89,14 @@ const maxWidthClass = computed(() => {
         <transition leave-active-class="duration-200">
             <div
                 v-show="show"
-                class="fixed inset-0 z-50 overflow-y-auto px-4 py-6 sm:px-0"
+                class="modal fixed inset-0 z-50 overflow-y-auto px-4 py-6 sm:px-0"
                 scroll-region
             >
                 <transition
-                    enter-active-class="ease-out duration-300"
+                    :enter-active-class="`backdrop-transition enter ease-out duration-[${backdropDuration}ms]`"
                     enter-from-class="opacity-0"
                     enter-to-class="opacity-100"
-                    leave-active-class="ease-in duration-200"
+                    :leave-active-class="`backdrop-transition leave ease-in duration-[${backdropDuration}ms]`"
                     leave-from-class="opacity-100"
                     leave-to-class="opacity-0"
                 >
@@ -97,15 +105,17 @@ const maxWidthClass = computed(() => {
                         class="fixed inset-0 transform transition-all"
                         @click="close"
                     >
-                        <div class="absolute inset-0 bg-gray-500 opacity-75" />
+                        <div
+                            class="backdrop absolute inset-0 bg-gray-500 opacity-75"
+                        />
                     </div>
                 </transition>
 
                 <transition
-                    enter-active-class="ease-out duration-300"
+                    :enter-active-class="`modal-transition enter ease-out duration-[${modalDuration}ms]`"
                     enter-from-class="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
                     enter-to-class="opacity-100 translate-y-0 sm:scale-100"
-                    leave-active-class="ease-in duration-200"
+                    :leave-active-class="`modal-transition leave ease-in duration-[${modalDuration}ms]`"
                     leave-from-class="opacity-100 translate-y-0 sm:scale-100"
                     leave-to-class="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
                 >
