@@ -35,7 +35,7 @@ const props = defineProps({
         type: Boolean,
         default: false,
     },
-    isDisabled: {
+    disabled: {
         type: Boolean,
         default: false,
     },
@@ -77,7 +77,7 @@ const ucwords = (text) => {
                 :placeholder="placeholder"
                 class="model-list !relative !mt-0 h-[42px] !max-w-full !rounded !border-gray-300 !shadow"
                 @update:modelValue="(val) => emit('update:modelValue', val)"
-                :is-disabled="isDisabled"
+                :is-disabled="disabled"
             ></model-list-select>
         </template>
         <template v-else>
@@ -89,9 +89,9 @@ const ucwords = (text) => {
                 :option-text="optionText"
                 :option-disabled="optionDisabled"
                 :placeholder="placeholder"
-                class="model-list !relative !mt-0 h-[42px] !max-w-full !rounded !border-gray-300 !shadow"
+                class="model-list !relative !mt-0 h-[42px] !max-w-full !rounded !border-gray-300 !px-3 !shadow"
                 @update:modelValue="(val) => emit('update:modelValue', val)"
-                :is-disabled="isDisabled"
+                :is-disabled="disabled"
             ></model-list-select>
             <InputError :message="form.errors[field]" />
         </template>
@@ -103,19 +103,23 @@ const ucwords = (text) => {
     @apply !border-accent-500 !ring-1 !ring-accent-500;
 }
 .model-list .search {
-    @apply !inline-flex !items-center !py-2 !text-base;
+    @apply !inline-flex !items-center !py-2 !text-base !font-normal;
 }
-.model-list .text.default {
-    @apply !text-black;
+.model-list .text {
+    @apply !text-base !font-normal leading-5 !text-black;
 }
 .model-list .menu {
     @apply !rounded-b !rounded-t-none !border-gray-300 !shadow;
 }
 .model-list .dropdown.icon {
-    @apply !right-1.5 !top-[0.45rem] !m-0 !h-fit !w-fit !p-0;
+    @apply !right-0 !top-0 !m-0 !aspect-square !h-full !p-0 !text-base !opacity-100;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e");
+    background-position: right 0.5rem center;
+    background-repeat: no-repeat;
+    background-size: 1.5em 1.5em;
+    padding-right: 2.5rem;
 }
 .model-list .dropdown.icon:before {
-    content: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='currentColor'%3e%3cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e") !important;
-    @apply !block !h-8 !w-8 !opacity-60;
+    content: "" !important;
 }
 </style>
