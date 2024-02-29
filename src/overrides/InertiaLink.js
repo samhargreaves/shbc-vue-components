@@ -1,10 +1,4 @@
-import {
-    mergeDataIntoQueryString,
-    Method,
-    PageProps,
-    Progress,
-    shouldIntercept,
-} from "@inertiajs/core";
+import { mergeDataIntoQueryString, shouldIntercept } from "@inertiajs/core";
 import { defineComponent, h } from "vue";
 //SHBC EDIT
 import { getInertiaRouter } from "@/Helpers";

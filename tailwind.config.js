@@ -1,7 +1,9 @@
+const defaultTheme = require("tailwindcss/defaultTheme");
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
     mode: "jit",
-    content: [],
+    content: ["./src/**/*.vue"],
     theme: {
         extend: {
             colors: {
