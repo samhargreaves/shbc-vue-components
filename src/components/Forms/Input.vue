@@ -155,3 +155,43 @@ function ucwords(text) {
         <InputError class="mt-2" :message="props.form.errors[field]" />
     </div>
 </template>
+
+<style scoped>
+.toggle-switch {
+    @apply relative mx-2 inline-block h-6 w-12 flex-none cursor-pointer rounded-xl bg-gray-300 transition-all;
+    box-shadow: 0.0625em 0.0625em 0.0625em rgba(0, 0, 0, 0.08) inset;
+}
+
+.toggle-switch::before {
+    @apply absolute left-0.5 top-0.5 block h-5 w-5 rounded-full bg-white bg-gradient-to-br from-transparent to-gray-200;
+    box-shadow: 0.0625em 0.0625em 0.0625em rgba(0, 0, 0, 0.08);
+    content: "";
+    transition: left 150ms;
+    will-change: left;
+}
+.toggle-switch:hover {
+    box-shadow: 0.0625em 0.0625em 0.125em rgba(0, 0, 0, 0.12) inset;
+}
+
+.toggle-switch:hover::before {
+    background-image: radial-gradient(
+        circle at 0.375em 0.375em,
+        rgba(0, 0, 0, 0) 0,
+        rgba(0, 0, 0, 0.0375) 1em
+    );
+    box-shadow: 0.0625em 0.0625em 0.0625em rgba(0, 0, 0, 0.12);
+}
+
+.checked {
+    @apply bg-primary;
+}
+
+.checked::before {
+    background-image: radial-gradient(
+        circle at 0.375em 0.375em,
+        rgba(0, 0, 0, 0) 0,
+        rgba(0, 0, 0, 0.05) 1em
+    );
+    left: 1.625em;
+}
+</style>

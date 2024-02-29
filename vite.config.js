@@ -41,6 +41,10 @@ export default ({ mode }) => {
             },
             host: "0.0.0.0",
             port: 80,
+            hmr: {
+                host: process.env.VITE_HMR_HOST,
+                port: 80,
+            },
         },
 
         css: {
