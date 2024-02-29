@@ -74,7 +74,7 @@ function ucwords(text) {
                 :required="props.required"
                 :disabled="props.disabled"
                 :name="name ?? field"
-                class="focusable relative m-0 block w-full flex-auto disabled:border-slate-200 disabled:bg-slate-50 disabled:text-slate-500 disabled:shadow-none"
+                class="focusable mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 disabled:border-slate-200 disabled:bg-slate-50 disabled:text-slate-500 disabled:shadow-none"
             >
                 <slot />
             </select>
