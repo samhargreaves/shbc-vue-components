@@ -3110,7 +3110,7 @@ const zm = { class: "relative mb-4 flex w-full max-w-full items-stretch" }, Um =
           required: e.required,
           disabled: e.disabled,
           name: t.name ?? t.field,
-          class: "focusable relative m-0 block w-full flex-auto disabled:border-slate-200 disabled:bg-slate-50 disabled:text-slate-500 disabled:shadow-none"
+          class: "focusable mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 disabled:border-slate-200 disabled:bg-slate-50 disabled:text-slate-500 disabled:shadow-none"
         }, [
           H(n.$slots, "default")
         ], 8, Hm)), [
