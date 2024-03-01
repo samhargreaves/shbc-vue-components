@@ -45,7 +45,7 @@ const props = defineProps({
     },
 });
 
-const emit = defineEmits(["update:modelValue"]);
+const emit = defineEmits(["update:modelValue", "searchchange"]);
 
 const ucwords = (text) => {
     let res = [];
@@ -77,6 +77,7 @@ const ucwords = (text) => {
                 :placeholder="placeholder"
                 class="model-list !relative !mt-0 h-[42px] !max-w-full !rounded !border-gray-300 !shadow"
                 @update:modelValue="(val) => emit('update:modelValue', val)"
+                @searchchange="($event) => emit('searchchange', $event)"
                 :is-disabled="disabled"
             ></model-list-select>
         </template>
@@ -91,6 +92,7 @@ const ucwords = (text) => {
                 :placeholder="placeholder"
                 class="model-list !relative !mt-0 h-[42px] !max-w-full !rounded !border-gray-300 !px-3 !shadow"
                 @update:modelValue="(val) => emit('update:modelValue', val)"
+                @searchchange="($event) => emit('searchchange', $event)"
                 :is-disabled="disabled"
             ></model-list-select>
             <InputError :message="form.errors[field]" />
