@@ -63,9 +63,11 @@ const searchChange = (_term) => {
 };
 
 const fetchList = async () => {
-    const response = await fetch(
-        `${props.url}?term=${term.value}&page=${page.value}`
-    );
+    const params = new URLSearchParams();
+    params.append("term", term.value);
+    params.append("page", page.value);
+
+    const response = await fetch(`${props.url}?${params.toString()}`);
     const results = await response.json();
     canIncreasePage.value = results.current_page < results.last_page;
 
