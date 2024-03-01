@@ -4432,7 +4432,7 @@ const $O = {
       default: !1
     }
   },
-  emits: ["update:modelValue"],
+  emits: ["update:modelValue", "searchchange"],
   setup(t, { emit: e }) {
     const r = e, n = (i) => {
       let a = [];
@@ -4457,6 +4457,7 @@ const $O = {
         placeholder: t.placeholder,
         class: "model-list !relative !mt-0 h-[42px] !max-w-full !rounded !border-gray-300 !shadow",
         "onUpdate:modelValue": a[0] || (a[0] = (o) => r("update:modelValue", o)),
+        onSearchchange: a[1] || (a[1] = (o) => r("searchchange", o)),
         "is-disabled": t.disabled
       }, null, 8, ["id", "list", "modelValue", "option-value", "option-text", "option-disabled", "placeholder", "is-disabled"])) : (x(), E(ce, { key: 2 }, [
         ge(B(Ru), {
@@ -4464,14 +4465,15 @@ const $O = {
           list: t.list,
           modelValue: t.form[t.field],
           "onUpdate:modelValue": [
-            a[1] || (a[1] = (o) => t.form[t.field] = o),
-            a[2] || (a[2] = (o) => r("update:modelValue", o))
+            a[2] || (a[2] = (o) => t.form[t.field] = o),
+            a[3] || (a[3] = (o) => r("update:modelValue", o))
           ],
           "option-value": t.optionValue,
           "option-text": t.optionText,
           "option-disabled": t.optionDisabled,
           placeholder: t.placeholder,
           class: "model-list !relative !mt-0 h-[42px] !max-w-full !rounded !border-gray-300 !px-3 !shadow",
+          onSearchchange: a[4] || (a[4] = (o) => r("searchchange", o)),
           "is-disabled": t.disabled
         }, null, 8, ["id", "list", "modelValue", "option-value", "option-text", "option-disabled", "placeholder", "is-disabled"]),
         ge(B(Zn), {
