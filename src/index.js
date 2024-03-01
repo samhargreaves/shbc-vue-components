@@ -35,6 +35,7 @@ import SecondaryButton from "./components/SecondaryButton.vue";
 import Section from "./components/Section.vue";
 import Spinner from "./components/Spinner.vue";
 import Stats from "./components/Stats.vue";
+import Select2ajax from "./components/Forms/Select2ajax.vue";
 
 const ComponentsSHBC = {
     install(App) {
@@ -59,6 +60,7 @@ export {
     Images,
     RadioButton,
     SubmitButton,
+    Select2ajax,
     // TABLES
     Table,
     Thead,
