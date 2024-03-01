@@ -35,6 +35,7 @@ import SecondaryButton from "./SecondaryButton.vue";
 import Section from "./Section.vue";
 import Spinner from "./Spinner.vue";
 import Stats from "./Stats.vue";
+import Select2ajax from "./Forms/Select2ajax.vue";
 // FORMS
 // TABLES
 // COMPONENTS
@@ -52,6 +53,7 @@ export {
     Images,
     RadioButton,
     SubmitButton,
+    Select2ajax,
     // TABLES
     Table,
     Thead,
