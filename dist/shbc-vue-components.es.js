@@ -14373,7 +14373,7 @@ const pl = new O2(), Cn = {
       href: t.href,
       method: t.method,
       data: t.data,
-      class: K(["focusable font-medium cursor-pointer select-none rounded px-2 leading-normal", r()]),
+      class: K(["focusable text-sm inline-flex justify-center items-center font-medium cursor-pointer select-none rounded px-2 leading-normal", r()]),
       as: "button"
     }, {
       default: Ae(() => [
@@ -14393,7 +14393,7 @@ const pl = new O2(), Cn = {
   class: "relative",
   "data-te-dropdown-ref": ""
 }, B2 = {
-  class: "focusable flex items-center whitespace-nowrap rounded bg-primary px-2 text-white hover:bg-primary-700 motion-reduce:transition-none",
+  class: "focusable flex text-sm items-center whitespace-nowrap rounded bg-primary px-2 text-white hover:bg-primary-700 motion-reduce:transition-none",
   type: "button",
   id: "dropdownMenuButton3",
   "data-te-dropdown-toggle-ref": "",
@@ -14442,7 +14442,7 @@ const pl = new O2(), Cn = {
   setup(t) {
     return (e, r) => (x(), E("li", null, [
       P("a", {
-        class: "focusable block w-full whitespace-nowrap bg-transparent px-4 py-2 text-sm font-normal text-neutral-700 hover:bg-neutral-100 active:text-neutral-800 active:no-underline disabled:pointer-events-none disabled:bg-transparent disabled:text-neutral-400 dark:text-neutral-200 dark:hover:bg-neutral-600",
+        class: "focusable inline-flex justify-center items-center w-full whitespace-nowrap bg-transparent px-4 py-2 text-sm font-normal text-neutral-700 hover:bg-neutral-100 active:text-neutral-800 active:no-underline disabled:pointer-events-none disabled:bg-transparent disabled:text-neutral-400 dark:text-neutral-200 dark:hover:bg-neutral-600",
         href: t.href,
         "data-te-dropdown-item-ref": ""
       }, U(t.title), 9, U2)
