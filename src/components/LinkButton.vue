@@ -31,9 +31,10 @@ const getClass = () => {
         :href="href"
         :method="method"
         :data="data"
-        class="focusable text-sm inline-flex justify-center items-center font-medium cursor-pointer select-none rounded px-2 leading-normal"
+        class="focusable gap-1 text-sm inline-flex justify-center items-center font-medium cursor-pointer select-none rounded px-2 leading-normal"
         :class="getClass()"
         as="button"
+        tabindex="0"
     >
         <slot />
     </Link>
@@ -42,8 +43,9 @@ const getClass = () => {
         v-else
         :href="href"
         :target="target"
-        class="focusable text-sm inline-flex justify-center items-center font-medium cursor-pointer select-none rounded px-2 leading-normal"
+        class="focusable gap-1 text-sm inline-flex justify-center items-center font-medium cursor-pointer select-none rounded px-2 leading-normal"
         :class="getClass()"
+        tabindex="0"
     >
         <slot />
     </a>

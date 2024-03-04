@@ -3,7 +3,7 @@ defineProps(["value", "sublabel", "required"]);
 </script>
 
 <template>
-    <label class="font-medium block text-sm text-gray-700">
+    <label class="font-medium block mb-1 text-sm text-gray-700">
         <span v-if="value">{{ value }}</span>
         <span v-else><slot /></span>
         <span v-if="!!sublabel" class="ml-2 text-xs text-gray-500">{{
