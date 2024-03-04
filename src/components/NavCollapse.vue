@@ -1,6 +1,7 @@
 <script setup>
 import { computed, ref, onMounted } from "vue";
 import Link from "../overrides/InertiaLink";
+import { Collapse } from "tw-elements";
 
 const props = defineProps({
     show: { type: Boolean, default: false },
