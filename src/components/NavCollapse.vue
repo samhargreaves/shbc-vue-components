@@ -4,7 +4,7 @@ import Link from "../overrides/InertiaLink";
 const props = defineProps({
     show: { type: Boolean, default: false },
     name: String,
-    icon: Object,
+    parent: String,
 });
 </script>
 
@@ -19,14 +19,14 @@ const props = defineProps({
             :data-te-target="`#dropdown-${name}`"
             :data-collapse-toggle="`#dropdown-${name}`"
             :aria-expanded="show ? 'true' : 'false'"
-            :data-te-collapse-collapsed="!show"
+            data-te-collapse-collapsed
         >
-            <FontAwesomeIcon v-bind:icon="icon" />
+            <slot name="icon" />
             <span class="ml-3 flex-1 whitespace-nowrap text-left">{{
                 name
             }}</span>
             <svg
-                class="h-3 w-3"
+                class="h-3 w-3 transform"
                 aria-hidden="true"
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -45,7 +45,7 @@ const props = defineProps({
             class="!visible space-y-1 px-4"
             :id="`dropdown-${name}`"
             data-te-collapse-item
-            :data-te-collapse-show="show"
+            data-te-collapse-show
             :data-te-parent="`#${parent}`"
             :aria-labelledby="`button-${item}`"
             :class="{ hidden: !show }"
@@ -54,3 +54,9 @@ const props = defineProps({
         </ul>
     </li>
 </template>
+
+<style scoped>
+[aria-expanded="true"] > svg {
+    transform: rotate(180deg);
+}
+</style>
