@@ -93,6 +93,7 @@ function ucwords(text) {
                     }"
                 ></div>
                 {{ switchDescription ? switchDescription : "Enable" }}
+                <slot name="switchDescription" />
             </label>
             <select
                 v-else-if="type === 'select'"

@@ -100,7 +100,7 @@ const ucwords = (text) => {
     </div>
 </template>
 
-<style lang="postcss">
+<style scoped>
 .model-list.search.active {
     @apply !border-accent-500 !ring-1 !ring-accent-500;
 }
