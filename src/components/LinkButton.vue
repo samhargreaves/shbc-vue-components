@@ -31,7 +31,7 @@ const getClass = () => {
         :href="href"
         :method="method"
         :data="data"
-        class="focusable font-medium cursor-pointer select-none rounded px-2 leading-normal"
+        class="focusable text-sm inline-flex justify-center items-center font-medium cursor-pointer select-none rounded px-2 leading-normal"
         :class="getClass()"
         as="button"
     >

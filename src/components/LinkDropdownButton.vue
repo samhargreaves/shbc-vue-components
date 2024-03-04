@@ -9,7 +9,7 @@ const props = defineProps({
 <template>
     <div class="relative" data-te-dropdown-ref>
         <button
-            class="focusable flex items-center whitespace-nowrap rounded bg-primary px-2 text-white hover:bg-primary-700 motion-reduce:transition-none"
+            class="focusable flex text-sm items-center whitespace-nowrap rounded bg-primary px-2 text-white hover:bg-primary-700 motion-reduce:transition-none"
             type="button"
             id="dropdownMenuButton3"
             data-te-dropdown-toggle-ref
