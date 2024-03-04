@@ -4,7 +4,6 @@ import Link from "../overrides/InertiaLink";
 const props = defineProps({
     show: { type: Boolean, default: false },
     name: String,
-    parent: String,
 });
 </script>
 
@@ -14,12 +13,12 @@ const props = defineProps({
             :id="name"
             type="button"
             data-te-collapse-init
+            data-te-ripple-init
+            data-te-ripple-color="light"
             class="group flex w-full items-center rounded-lg p-2 text-base text-gray-900 transition duration-75 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
             :aria-controls="`dropdown-${name}`"
             :data-te-target="`#dropdown-${name}`"
-            :data-collapse-toggle="`#dropdown-${name}`"
-            :aria-expanded="show ? 'true' : null"
-            :data-te-collapse-collapsed="!show"
+            :aria-expanded="show ? 'true' : 'false'"
         >
             <slot name="icon" />
             <span class="ml-3 flex-1 whitespace-nowrap text-left">{{
@@ -46,7 +45,6 @@ const props = defineProps({
             :id="`dropdown-${name}`"
             data-te-collapse-item
             :data-te-collapse-show="show"
-            :data-te-parent="`#${parent}`"
             :aria-labelledby="`button-${item}`"
             :class="{ hidden: !show }"
         >
