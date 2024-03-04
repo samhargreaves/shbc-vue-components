@@ -1,5 +1,5 @@
 <script setup>
-import { computed } from "vue";
+import { computed, ref } from "vue";
 import Link from "../overrides/InertiaLink";
 
 const props = defineProps({
