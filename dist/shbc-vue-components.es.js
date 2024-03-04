@@ -3182,7 +3182,7 @@ const Zn = (t, e) => {
       [Ut, t.message]
     ]);
   }
-}, Vm = { class: "font-medium block text-sm text-gray-700" }, Hm = { key: 0 }, Wm = { key: 1 }, qm = {
+}, Vm = { class: "font-medium block mb-1 text-sm text-gray-700" }, Hm = { key: 0 }, Wm = { key: 1 }, qm = {
   key: 2,
   class: "ml-2 text-xs text-gray-500"
 }, Gm = {
@@ -14373,8 +14373,9 @@ const pl = new O2(), Cn = {
       href: t.href,
       method: t.method,
       data: t.data,
-      class: K(["focusable text-sm inline-flex justify-center items-center font-medium cursor-pointer select-none rounded px-2 leading-normal", r()]),
-      as: "button"
+      class: K(["focusable gap-1 text-sm inline-flex justify-center items-center font-medium cursor-pointer select-none rounded px-2 leading-normal", r()]),
+      as: "button",
+      tabindex: "0"
     }, {
       default: Ae(() => [
         V(n.$slots, "default")
@@ -14384,7 +14385,8 @@ const pl = new O2(), Cn = {
       key: 1,
       href: t.href,
       target: t.target,
-      class: K(["focusable text-sm inline-flex justify-center items-center font-medium cursor-pointer select-none rounded px-2 leading-normal", r()])
+      class: K(["focusable gap-1 text-sm inline-flex justify-center items-center font-medium cursor-pointer select-none rounded px-2 leading-normal", r()]),
+      tabindex: "0"
     }, [
       V(n.$slots, "default")
     ], 10, F2));
