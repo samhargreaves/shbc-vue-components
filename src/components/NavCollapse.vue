@@ -5,6 +5,10 @@ const props = defineProps({
     show: { type: Boolean, default: false },
     name: String,
 });
+onMounted(async () => {
+    const { Collapse, initTE } = await import("tw-elements");
+    initTE({ Collapse }, { allowReinits: true });
+});
 </script>
 
 <template>
