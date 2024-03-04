@@ -36,6 +36,7 @@ import Section from "./components/Section.vue";
 import Spinner from "./components/Spinner.vue";
 import Stats from "./components/Stats.vue";
 import Select2ajax from "./components/Forms/Select2ajax.vue";
+import NavCollapse from "./components/NavCollapse.vue";
 
 const ComponentsSHBC = {
     install(App) {
@@ -88,5 +89,6 @@ export {
     Section,
     Spinner,
     Stats,
+    NavCollapse,
 };
 export * from "./Helpers.js";
