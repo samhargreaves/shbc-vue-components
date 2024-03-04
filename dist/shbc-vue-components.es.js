@@ -14982,7 +14982,7 @@ const Pp = /* @__PURE__ */ Jr(wO, [["render", AO]]), EO = { class: "flex flex-wr
     }, null, 8, ["id", "label", "list", "optionValue", "optionText", "optionDisabled", "placeholder", "field", "form", "modelValue", "noLabel", "disabled", "noForm"]));
   }
 };
-const PO = (t) => (Bp("data-v-59c0482a"), t = t(), jp(), t), $O = ["id", "aria-controls", "data-te-target", "data-collapse-toggle", "aria-expanded", "data-te-collapse-collapsed"], IO = { class: "ml-3 flex-1 whitespace-nowrap text-left" }, DO = /* @__PURE__ */ PO(() => /* @__PURE__ */ T("svg", {
+const PO = (t) => (Bp("data-v-24427637"), t = t(), jp(), t), $O = ["id", "aria-controls", "data-te-target", "aria-expanded"], IO = { class: "ml-3 flex-1 whitespace-nowrap text-left" }, DO = /* @__PURE__ */ PO(() => /* @__PURE__ */ T("svg", {
   class: "h-3 w-3 transform",
   "aria-hidden": "true",
   xmlns: "http://www.w3.org/2000/svg",
@@ -14996,12 +14996,11 @@ const PO = (t) => (Bp("data-v-59c0482a"), t = t(), jp(), t), $O = ["id", "aria-c
     "stroke-width": "2",
     d: "m1 1 4 4 4-4"
   })
-], -1)), RO = ["id", "data-te-collapse-show", "data-te-parent", "aria-labelledby"], NO = {
+], -1)), RO = ["id", "data-te-collapse-show", "aria-labelledby"], NO = {
   __name: "NavCollapse",
   props: {
     show: { type: Boolean, default: !1 },
-    name: String,
-    parent: String
+    name: String
   },
   setup(t) {
     return (e, r) => (x(), E("li", null, [
@@ -15009,12 +15008,12 @@ const PO = (t) => (Bp("data-v-59c0482a"), t = t(), jp(), t), $O = ["id", "aria-c
         id: t.name,
         type: "button",
         "data-te-collapse-init": "",
+        "data-te-ripple-init": "",
+        "data-te-ripple-color": "light",
         class: "group flex w-full items-center rounded-lg p-2 text-base text-gray-900 transition duration-75 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700",
         "aria-controls": `dropdown-${t.name}`,
         "data-te-target": `#dropdown-${t.name}`,
-        "data-collapse-toggle": `#dropdown-${t.name}`,
-        "aria-expanded": t.show ? "true" : null,
-        "data-te-collapse-collapsed": !t.show
+        "aria-expanded": t.show ? "true" : "false"
       }, [
         V(e.$slots, "icon", {}, void 0, !0),
         T("span", IO, U(t.name), 1),
@@ -15025,14 +15024,13 @@ const PO = (t) => (Bp("data-v-59c0482a"), t = t(), jp(), t), $O = ["id", "aria-c
         id: `dropdown-${t.name}`,
         "data-te-collapse-item": "",
         "data-te-collapse-show": t.show,
-        "data-te-parent": `#${t.parent}`,
         "aria-labelledby": `button-${e.item}`
       }, [
         V(e.$slots, "default", {}, void 0, !0)
       ], 10, RO)
     ]));
   }
-}, PA = /* @__PURE__ */ Jr(NO, [["__scopeId", "data-v-59c0482a"]]), $A = {
+}, PA = /* @__PURE__ */ Jr(NO, [["__scopeId", "data-v-24427637"]]), $A = {
   install(t) {
     for (const e in components)
       t.component(e, components[e]);
