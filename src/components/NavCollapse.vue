@@ -18,8 +18,8 @@ const props = defineProps({
             :aria-controls="`dropdown-${name}`"
             :data-te-target="`#dropdown-${name}`"
             :data-collapse-toggle="`#dropdown-${name}`"
-            :aria-expanded="show ? 'true' : 'false'"
-            data-te-collapse-collapsed
+            :aria-expanded="show ? 'true' : null"
+            :data-te-collapse-collapsed="!show"
         >
             <slot name="icon" />
             <span class="ml-3 flex-1 whitespace-nowrap text-left">{{
@@ -45,7 +45,7 @@ const props = defineProps({
             class="!visible space-y-1 px-4"
             :id="`dropdown-${name}`"
             data-te-collapse-item
-            data-te-collapse-show
+            :data-te-collapse-show="show"
             :data-te-parent="`#${parent}`"
             :aria-labelledby="`button-${item}`"
             :class="{ hidden: !show }"
@@ -56,7 +56,7 @@ const props = defineProps({
 </template>
 
 <style scoped>
-[aria-expanded="true"] > svg {
+[data-te-collapse-collapsed] > svg {
     transform: rotate(180deg);
 }
 </style>
