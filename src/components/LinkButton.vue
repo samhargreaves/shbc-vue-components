@@ -42,7 +42,7 @@ const getClass = () => {
         v-else
         :href="href"
         :target="target"
-        class="focusable font-medium cursor-pointer select-none rounded px-2 leading-normal"
+        class="focusable text-sm inline-flex justify-center items-center font-medium cursor-pointer select-none rounded px-2 leading-normal"
         :class="getClass()"
     >
         <slot />
