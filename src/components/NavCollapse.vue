@@ -1,28 +1,34 @@
 <script setup>
 import { computed } from "vue";
 import Link from "../overrides/InertiaLink";
+
 const props = defineProps({
     show: { type: Boolean, default: false },
     name: String,
 });
-onMounted(async () => {
-    const { Collapse, initTE } = await import("tw-elements");
-    initTE({ Collapse }, { allowReinits: true });
+const collapseRef = ref(null);
+const collapseTe = ref(null);
+const isVisible = ref(props.show);
+
+onMounted(() => {
+    collapseTe.value = new Collapse(collapseRef.value, {
+        toggle: props.show,
+    });
 });
+
+const onClick = () => {
+    collapseTe.value.toggle();
+    isVisible.value = !isVisible.value;
+};
 </script>
 
 <template>
     <li>
         <button
             :id="name"
-            type="button"
-            data-te-collapse-init
-            data-te-ripple-init
-            data-te-ripple-color="light"
-            class="group flex w-full items-center rounded-lg p-2 text-base text-gray-900 transition duration-75 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
-            :aria-controls="`dropdown-${name}`"
-            :data-te-target="`#dropdown-${name}`"
-            :aria-expanded="show ? 'true' : 'false'"
+            @click="onClick"
+            class="focusable group flex w-full items-center rounded-lg p-2 text-base text-gray-900 transition duration-75 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
+            :aria-controls="name ? name.replaceAll(' ', '_') : `collapsable`"
         >
             <slot name="icon" />
             <span class="ml-3 flex-1 whitespace-nowrap text-left">{{
@@ -44,13 +50,11 @@ onMounted(async () => {
                 />
             </svg>
         </button>
+
         <ul
-            class="!visible space-y-1 px-4"
-            :id="`dropdown-${name}`"
-            data-te-collapse-item
-            :data-te-collapse-show="show"
-            :aria-labelledby="`button-${item}`"
-            :class="{ hidden: !show }"
+            class="!visible hidden space-y-1 px-4"
+            :id="name ? name.replaceAll(' ', '_') : `collapsable`"
+            ref="collapseRef"
         >
             <slot />
         </ul>
