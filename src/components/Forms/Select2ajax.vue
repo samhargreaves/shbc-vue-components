@@ -62,10 +62,18 @@ const searchChange = (_term) => {
     fetchList();
 };
 
-const fetchList = async () => {
+const fetchList = async (appendAjaxId = false) => {
     const params = new URLSearchParams();
     params.append("term", term.value);
     params.append("page", page.value);
+
+    if (appendAjaxId) {
+        const currentValue = props.form?.[props.field] || props.modelValue;
+        console.log(currentValue);
+        if (currentValue) {
+            params.append("ajax_id", currentValue);
+        }
+    }
 
     const response = await fetch(`${props.url}?${params.toString()}`);
     const results = await response.json();
@@ -80,7 +88,7 @@ const fetchList = async () => {
 };
 
 onMounted(() => {
-    fetchList();
+    fetchList(true);
 
     const menu = document
         .getElementById(props.id)
