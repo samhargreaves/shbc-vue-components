@@ -14954,7 +14954,7 @@ const Pp = /* @__PURE__ */ Xr(wO, [["render", AO]]), EO = { class: "flex flex-wr
       const g = new URLSearchParams();
       if (g.append("term", u.value), g.append("page", a.value), p) {
         const b = ((y = r.form) == null ? void 0 : y[r.field]) || r.modelValue;
-        console.log(b), b && g.append("ajax_id", b);
+        b && g.append("ajax_id", b);
       }
       const h = await (await fetch(`${r.url}?${g.toString()}`)).json();
       if (o.value = h.current_page < h.last_page, a.value === 1) {
