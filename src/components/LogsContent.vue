@@ -10,6 +10,7 @@ import {
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { Pagination } from "../index";
 import { Spinner } from "../index";
+import Link from "../overrides/InertiaLink";
 
 library.add(faPlus, faPencil, faCalendar, faBoxArchive, faSpinner);
 
@@ -45,11 +46,21 @@ const props = defineProps({
                                     class="text-bold mr-0.5 text-sm text-primary-500"
                                     >{{ item.reference }}</span
                                 >
-                                <span
-                                    v-if="item.causer"
-                                    class="text-sm text-primary-500"
-                                    >({{ item.causer?.first_name }})</span
-                                >
+                                <template v-if="item.causer">
+                                    <Link
+                                        v-if="item.causer.id"
+                                        :href="
+                                            route('users.show', item.causer.id)
+                                        "
+                                        class="text-sm text-primary-500"
+                                        >({{ item.causer.first_name }})</Link
+                                    >
+                                    <span
+                                        v-else
+                                        class="text-sm text-primary-500"
+                                        >({{ item.causer.first_name }})</span
+                                    >
+                                </template>
                             </span>
                             <span class="text-sm text-neutral-500">{{
                                 item.created_date_full
