@@ -69,7 +69,6 @@ const fetchList = async (appendAjaxId = false) => {
 
     if (appendAjaxId) {
         const currentValue = props.form?.[props.field] || props.modelValue;
-        console.log(currentValue);
         if (currentValue) {
             params.append("ajax_id", currentValue);
         }
