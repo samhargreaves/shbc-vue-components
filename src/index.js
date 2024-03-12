@@ -15,6 +15,7 @@ import Thead from "./components/Tables/Thead.vue";
 import Th from "./components/Tables/Th.vue";
 import Td from "./components/Tables/Td.vue";
 import TrCollapseHandler from "./components/Tables/TrCollapseHandler.vue";
+import TrCollapse from "./components/Tables/TrCollapse.vue";
 import TableItemCard from "./components/Tables/TableItemCard.vue";
 import Alert from "./components/Alert.vue";
 import CollapsibleSection from "./components/CollapsibleSection.vue";
@@ -67,6 +68,7 @@ export {
     Thead,
     Th,
     Td,
+    TrCollapse,
     TrCollapseHandler,
     TableItemCard,
     // COMPONENTS
