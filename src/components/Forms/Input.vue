@@ -52,6 +52,12 @@ const props = defineProps({
     whatsApp: String,
     switchDescription: String,
     sublabel: String,
+
+    modelValue: {},
+    noForm: {
+        type: Boolean,
+        default: false,
+    },
 });
 function ucwords(text) {
     let res = [];
@@ -74,7 +80,10 @@ function ucwords(text) {
             :sublabel="sublabel"
             :required="required"
         />
-        <div class="relative mb-4 flex w-full max-w-full items-stretch">
+        <div
+            class="relative flex w-full max-w-full items-stretch"
+            :class="noLabel ? '' : 'mb-4'"
+        >
             <label v-if="type === 'checkbox'" class="flex items-center">
                 <input
                     :id="field"

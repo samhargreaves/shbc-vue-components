@@ -38,6 +38,8 @@ import Spinner from "./components/Spinner.vue";
 import Stats from "./components/Stats.vue";
 import Select2ajax from "./components/Forms/Select2ajax.vue";
 import NavCollapse from "./components/NavCollapse.vue";
+import DescriptionList from "./components/DescriptionList.vue";
+import DescriptionListItem from "./components/DescriptionListItem.vue";
 
 const ComponentsSHBC = {
     install(App) {
@@ -92,5 +94,7 @@ export {
     Spinner,
     Stats,
     NavCollapse,
+    DescriptionList,
+    DescriptionListItem,
 };
 export * from "./Helpers.js";
