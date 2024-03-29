@@ -18,7 +18,12 @@ defineProps({
                 class="relative mb-2 rounded-b-lg border-b-2 border-gray-200 bg-neutral-50 px-6 py-1 text-center"
             >
                 <span>{{ header }}</span>
-                <slot name="headerButton" />
+                <div
+                    v-if="$slots.headerButton"
+                    class="absolute right-0 top-0 mt-1 mr-2"
+                >
+                    <slot name="headerButton" />
+                </div>
             </div>
             <div :class="{ 'px-4 pb-2': header }">
                 <slot />
