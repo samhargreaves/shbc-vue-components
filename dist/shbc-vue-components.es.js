@@ -1,5 +1,5 @@
 import { computed as re, withDirectives as je, openBlock as w, createElementBlock as O, vModelCheckbox as tf, defineComponent as dr, watch as $a, h as zt, createBlock as ie, unref as F, createCommentVNode as V, createElementVNode as C, normalizeClass as Y, createTextVNode as ce, toDisplayString as z, renderSlot as j, vModelSelect as Dp, Fragment as ae, createVNode as he, withCtx as we, vShow as Ut, ref as ne, onMounted as dt, vModelText as Rp, resolveDirective as Np, normalizeProps as Ve, guardReactiveProps as Ke, renderList as Ze, resolveDynamicComponent as zo, mergeProps as Mn, toHandlers as Lp, Transition as Mr, withModifiers as Bt, withKeys as Tr, normalizeStyle as ta, shallowRef as Fp, markRaw as ru, reactive as ml, onUnmounted as Xn, toRefs as Mp, nextTick as Bp, Teleport as jp, pushScopeId as zp, popScopeId as Up } from "vue";
-const Vp = ["value"], XO = {
+const Vp = ["value"], QO = {
   __name: "Checkbox",
   props: {
     checked: {
@@ -3179,7 +3179,7 @@ const pr = (t, e) => {
       }, null, 8, ["message"])
     ]));
   }
-}, QO = /* @__PURE__ */ pr(Hm, [["__scopeId", "data-v-a86f4663"]]), Wm = { class: "text-sm text-red-600" }, ri = {
+}, ZO = /* @__PURE__ */ pr(Hm, [["__scopeId", "data-v-a86f4663"]]), Wm = { class: "text-sm text-red-600" }, ri = {
   __name: "InputError",
   props: ["message"],
   setup(t) {
@@ -3223,7 +3223,7 @@ const pr = (t, e) => {
       ref: r
     }, null, 40, Xm));
   }
-}, Zm = { class: "relative mb-4 flex w-full flex-wrap items-stretch" }, eg = ["id", "required", "disabled", "autocomplete", "placeholder", "autofocus", "rows"], ZO = {
+}, Zm = { class: "relative mb-4 flex w-full flex-wrap items-stretch" }, eg = ["id", "required", "disabled", "autocomplete", "placeholder", "autofocus", "rows"], e_ = {
   __name: "Textarea",
   props: {
     field: String,
@@ -4041,7 +4041,7 @@ function Mg(t, e, r, n, i, a) {
   ], 10, Eg);
 }
 const Bg = /* @__PURE__ */ $l(Ag, [["render", Mg]]);
-const e_ = {
+const t_ = {
   __name: "DropdownSearchbar",
   props: {
     options: Array,
@@ -8832,7 +8832,7 @@ Please specify a more appropriate element using the "as" attribute. For example:
     } }, e);
   };
 } });
-function t_(t) {
+function r_(t) {
   return t.toLocaleString("en-GB", {
     minimumFractionDigits: 2,
     maximumFractionDigits: 2
@@ -8844,11 +8844,11 @@ function c1(t) {
     currency: "GBP"
   }).format(t);
 }
-function r_(t) {
+function n_(t) {
   return u1().props.auth.permissions.includes(t);
 }
 let qs = null;
-function n_(t) {
+function i_(t) {
   qs = t;
 }
 function Ua() {
@@ -9646,7 +9646,7 @@ const B1 = { class: "flex w-full flex-col" }, j1 = {
 }, V1 = { key: 2 }, H1 = {
   key: 3,
   class: "select-none"
-}, i_ = {
+}, a_ = {
   __name: "FileDropZoneInput",
   props: {
     accept: { String, default: "image/*" },
@@ -9711,7 +9711,7 @@ const B1 = { class: "flex w-full flex-col" }, j1 = {
 }, tw = {
   key: 1,
   class: "mt-2"
-}, rw = /* @__PURE__ */ C("hr", null, null, -1), nw = { class: "container mx-auto px-5 py-2 lg:px-8 lg:pt-8" }, iw = { class: "-m-1 flex flex-wrap md:-m-2" }, aw = { class: "flex w-1/3 flex-wrap" }, ow = { class: "h-full w-full p-1 shadow md:p-2" }, sw = ["src"], a_ = {
+}, rw = /* @__PURE__ */ C("hr", null, null, -1), nw = { class: "container mx-auto px-5 py-2 lg:px-8 lg:pt-8" }, iw = { class: "-m-1 flex flex-wrap md:-m-2" }, aw = { class: "flex w-1/3 flex-wrap" }, ow = { class: "h-full w-full p-1 shadow md:p-2" }, sw = ["src"], o_ = {
   __name: "Images",
   props: {
     images: Object,
@@ -9856,7 +9856,7 @@ const B1 = { class: "flex w-full flex-col" }, j1 = {
       ])) : V("", !0)
     ], 64));
   }
-}, lw = { class: "mb-[0.125rem] block min-h-[1.5rem] pl-[1.5rem]" }, uw = ["name", "value", "id", "checked"], cw = ["for"], o_ = {
+}, lw = { class: "mb-[0.125rem] block min-h-[1.5rem] pl-[1.5rem]" }, uw = ["name", "value", "id", "checked"], cw = ["for"], s_ = {
   __name: "RadioButton",
   props: {
     id: String,
@@ -9926,7 +9926,7 @@ const B1 = { class: "flex w-full flex-col" }, j1 = {
 }, pw = ["id"], hw = {
   key: 0,
   class: "text-sm text-gray-600"
-}, mw = { class: "flex flex-col" }, s_ = {
+}, mw = { class: "flex flex-col" }, l_ = {
   __name: "Table",
   props: {
     total: Number,
@@ -10034,7 +10034,7 @@ function vw(t, e) {
     j(t.$slots, "default")
   ]);
 }
-const l_ = /* @__PURE__ */ pr(gw, [["render", vw]]);
+const u_ = /* @__PURE__ */ pr(gw, [["render", vw]]);
 var bw = {
   prefix: "fas",
   iconName: "sort-down",
@@ -10071,7 +10071,7 @@ var bw = {
 const Aw = {
   key: 0,
   class: "order-arrows absolute right-3 top-0 flex h-full items-center md:right-4"
-}, u_ = {
+}, c_ = {
   __name: "Th",
   props: {
     orderBy: String
@@ -10125,7 +10125,7 @@ function kw(t, e) {
     j(t.$slots, "default")
   ]);
 }
-const c_ = /* @__PURE__ */ pr(Ew, [["render", kw]]), Tw = ["data-te-target", "aria-controls"], f_ = {
+const f_ = /* @__PURE__ */ pr(Ew, [["render", kw]]), Tw = ["data-te-target", "aria-controls"], d_ = {
   __name: "TrCollapseHandler",
   props: {
     collapse_id: {
@@ -10143,7 +10143,7 @@ const c_ = /* @__PURE__ */ pr(Ew, [["render", kw]]), Tw = ["data-te-target", "ar
       j(e.$slots, "default")
     ], 8, Tw));
   }
-}, Pw = { colspan: "999" }, $w = ["id"], d_ = {
+}, Pw = { colspan: "999" }, $w = ["id"], p_ = {
   __name: "TrCollapse",
   props: {
     collapse_id: {
@@ -12393,7 +12393,7 @@ const bS = { class: "mb-2 flex w-full flex-wrap justify-between text-sm text-gra
 }, AS = { class: "mb-1" }, ES = {
   key: 0,
   class: "w-full whitespace-normal font-semibold text-primary"
-}, CS = { class: "w-full break-words" }, kS = { class: "mb-1 flex flex-col" }, TS = { key: 1 }, T_ = {
+}, CS = { class: "w-full break-words" }, kS = { class: "mb-1 flex flex-col" }, TS = { key: 1 }, P_ = {
   __name: "TableItemCard",
   props: {
     key: Number,
@@ -14242,7 +14242,7 @@ const hl = new C2(), Pn = {
       })
     ])
   ])
-], -1), P_ = {
+], -1), $_ = {
   __name: "Alert",
   props: {
     message: String
@@ -14311,7 +14311,7 @@ const hl = new C2(), Pn = {
       ], 2)
     ], 2));
   }
-}, j2 = { class: "relative" }, $_ = {
+}, j2 = { class: "relative" }, I_ = {
   __name: "Dropdown",
   props: {
     align: {
@@ -14371,7 +14371,7 @@ const hl = new C2(), Pn = {
       })
     ]));
   }
-}, I_ = {
+}, D_ = {
   __name: "DropdownLink",
   setup(t) {
     return (e, r) => (w(), ie(F(Qe), { class: "focusable block w-full px-4 py-2 text-left text-sm leading-5 text-gray-700 transition duration-150 ease-in-out hover:bg-gray-100 focus:bg-gray-100 focus:outline-none" }, {
@@ -14381,7 +14381,7 @@ const hl = new C2(), Pn = {
       _: 3
     }));
   }
-}, z2 = ["href", "target"], D_ = {
+}, z2 = ["href", "target"], R_ = {
   __name: "LinkButton",
   props: {
     href: String,
@@ -14451,7 +14451,7 @@ const hl = new C2(), Pn = {
   class: "absolute z-[1000] float-left m-0 hidden min-w-max list-none overflow-hidden rounded-lg border-none bg-white bg-clip-padding text-left text-base shadow-lg dark:bg-neutral-700 [&[data-te-dropdown-show]]:block",
   "aria-labelledby": "dropdownMenuButton3",
   "data-te-dropdown-menu-ref": ""
-}, R_ = {
+}, N_ = {
   __name: "LinkDropdownButton",
   props: {
     title: String
@@ -14467,7 +14467,7 @@ const hl = new C2(), Pn = {
       ])
     ]));
   }
-}, q2 = ["href"], N_ = {
+}, q2 = ["href"], L_ = {
   __name: "LinkDropdownButtonItem",
   props: {
     href: String,
@@ -14482,7 +14482,7 @@ const hl = new C2(), Pn = {
       }, z(t.title), 9, q2)
     ]));
   }
-}, L_ = {
+}, F_ = {
   __name: "Logs",
   props: {
     header: { default: "Logs" },
@@ -14587,7 +14587,7 @@ const hl = new C2(), Pn = {
   "scroll-region": ""
 }, cO = /* @__PURE__ */ C("div", { class: "backdrop absolute inset-0 bg-gray-500 opacity-75" }, null, -1), fO = [
   cO
-], F_ = {
+], M_ = {
   __name: "Modal",
   props: {
     show: {
@@ -14698,7 +14698,7 @@ const hl = new C2(), Pn = {
       })
     ]));
   }
-}, dO = { class: "ml-3 flex-1 whitespace-nowrap" }, M_ = {
+}, dO = { class: "ml-3 flex-1 whitespace-nowrap" }, B_ = {
   __name: "NavLink",
   props: {
     href: String,
@@ -14810,7 +14810,7 @@ const hl = new C2(), Pn = {
       j(e.$slots, "default")
     ], 8, vO));
   }
-}, bO = ["type"], B_ = {
+}, bO = ["type"], j_ = {
   __name: "DangerButton",
   props: {
     type: {
@@ -14826,7 +14826,7 @@ const hl = new C2(), Pn = {
       j(e.$slots, "default")
     ], 8, bO));
   }
-}, j_ = {
+}, z_ = {
   __name: "ResponsiveNavLink",
   props: ["href", "active"],
   setup(t) {
@@ -14843,7 +14843,7 @@ const hl = new C2(), Pn = {
       _: 3
     }, 8, ["href", "class"]));
   }
-}, wO = ["type"], z_ = {
+}, wO = ["type"], U_ = {
   __name: "SecondaryButton",
   props: {
     type: {
@@ -14862,7 +14862,10 @@ const hl = new C2(), Pn = {
 }, xO = {
   key: 0,
   class: "relative mb-2 rounded-b-lg border-b-2 border-gray-200 bg-neutral-50 px-6 py-1 text-center"
-}, U_ = {
+}, SO = {
+  key: 0,
+  class: "absolute right-0 top-0 mt-1 mr-2"
+}, V_ = {
   __name: "Section",
   props: {
     header: String,
@@ -14880,7 +14883,9 @@ const hl = new C2(), Pn = {
       }, [
         t.header ? (w(), O("div", xO, [
           C("span", null, z(t.header), 1),
-          j(e.$slots, "headerButton")
+          e.$slots.headerButton ? (w(), O("div", SO, [
+            j(e.$slots, "headerButton")
+          ])) : V("", !0)
         ])) : V("", !0),
         C("div", {
           class: Y({ "px-4 pb-2": t.header })
@@ -14890,16 +14895,16 @@ const hl = new C2(), Pn = {
       ], 2)
     ], 2));
   }
-}, SO = {}, OO = {
+}, OO = {}, _O = {
   class: "inline-block h-8 w-8 animate-spin rounded-full border-4 border-solid border-current border-r-transparent align-[-0.125em] text-primary motion-reduce:animate-[spin_1.5s_linear_infinite]",
   role: "status"
-}, _O = /* @__PURE__ */ C("span", { class: "!absolute !-m-px !h-px !w-px !overflow-hidden !whitespace-nowrap !border-0 !p-0 ![clip:rect(0,0,0,0)]" }, "Loading...", -1), AO = [
-  _O
+}, AO = /* @__PURE__ */ C("span", { class: "!absolute !-m-px !h-px !w-px !overflow-hidden !whitespace-nowrap !border-0 !p-0 ![clip:rect(0,0,0,0)]" }, "Loading...", -1), EO = [
+  AO
 ];
-function EO(t, e) {
-  return w(), O("div", OO, AO);
+function CO(t, e) {
+  return w(), O("div", _O, EO);
 }
-const Ip = /* @__PURE__ */ pr(SO, [["render", EO]]), CO = { class: "flex flex-wrap gap-2 lg:flex-nowrap" }, kO = ["onClick"], TO = { class: "h:10 rounded-t-lg bg-white py-1 text-center md:h-10 md:py-2" }, PO = { class: "font-medium text-xl leading-tight text-neutral-800" }, $O = { class: "flex flex-auto flex-col gap-y-4 p-1 text-center md:py-2" }, V_ = {
+const Ip = /* @__PURE__ */ pr(OO, [["render", CO]]), kO = { class: "flex flex-wrap gap-2 lg:flex-nowrap" }, TO = ["onClick"], PO = { class: "h:10 rounded-t-lg bg-white py-1 text-center md:h-10 md:py-2" }, $O = { class: "font-medium text-xl leading-tight text-neutral-800" }, IO = { class: "flex flex-auto flex-col gap-y-4 p-1 text-center md:py-2" }, H_ = {
   __name: "Stats",
   props: {
     stats: Object,
@@ -14913,7 +14918,7 @@ const Ip = /* @__PURE__ */ pr(SO, [["render", EO]]), CO = { class: "flex flex-wr
       a(o) && (o = null), r("updateSearch", o);
     }, a = (o) => n.statusName != null ? route().params[n.statusName] == o : route().params.status == o;
     return (o, s) => (w(), O("div", null, [
-      C("div", CO, [
+      C("div", kO, [
         (w(!0), O(ae, null, Ze(t.stats, (u) => (w(), O("div", {
           class: Y(["flex w-full cursor-pointer flex-col rounded-lg border bg-gray-100 shadow", {
             "border-primary bg-primary-50 shadow-primary-50": a(u.name)
@@ -14922,16 +14927,16 @@ const Ip = /* @__PURE__ */ pr(SO, [["render", EO]]), CO = { class: "flex flex-wr
           key: u.value
         }, [
           C("div", null, [
-            C("div", TO, [
-              C("h5", PO, z(u.value), 1)
+            C("div", PO, [
+              C("h5", $O, z(u.value), 1)
             ])
           ]),
-          C("div", $O, z(u.label ?? u.name), 1)
-        ], 10, kO))), 128))
+          C("div", IO, z(u.label ?? u.name), 1)
+        ], 10, TO))), 128))
       ])
     ]));
   }
-}, H_ = {
+}, W_ = {
   __name: "Select2ajax",
   props: {
     id: {
@@ -15026,7 +15031,7 @@ const Ip = /* @__PURE__ */ pr(SO, [["render", EO]]), CO = { class: "flex flex-wr
     }, null, 8, ["id", "label", "list", "optionValue", "optionText", "optionDisabled", "placeholder", "field", "form", "modelValue", "noLabel", "disabled", "noForm"]));
   }
 };
-const IO = (t) => (zp("data-v-c909f1b6"), t = t(), Up(), t), DO = ["id", "aria-controls"], RO = { class: "ml-3 flex-1 whitespace-nowrap text-left" }, NO = /* @__PURE__ */ IO(() => /* @__PURE__ */ C("svg", {
+const DO = (t) => (zp("data-v-c909f1b6"), t = t(), Up(), t), RO = ["id", "aria-controls"], NO = { class: "ml-3 flex-1 whitespace-nowrap text-left" }, LO = /* @__PURE__ */ DO(() => /* @__PURE__ */ C("svg", {
   class: "h-3 w-3 transform",
   "aria-hidden": "true",
   xmlns: "http://www.w3.org/2000/svg",
@@ -15040,7 +15045,7 @@ const IO = (t) => (zp("data-v-c909f1b6"), t = t(), Up(), t), DO = ["id", "aria-c
     "stroke-width": "2",
     d: "m1 1 4 4 4-4"
   })
-], -1)), LO = ["id"], FO = {
+], -1)), FO = ["id"], MO = {
   __name: "NavCollapse",
   props: {
     show: { type: Boolean, default: !1 },
@@ -15064,9 +15069,9 @@ const IO = (t) => (zp("data-v-c909f1b6"), t = t(), Up(), t), DO = ["id", "aria-c
         "aria-controls": t.name ? t.name.replaceAll(" ", "_") : "collapsable"
       }, [
         j(o.$slots, "icon", {}, void 0, !0),
-        C("span", RO, z(t.name), 1),
-        NO
-      ], 8, DO),
+        C("span", NO, z(t.name), 1),
+        LO
+      ], 8, RO),
       C("ul", {
         class: "!visible hidden space-y-1 px-4",
         id: t.name ? t.name.replaceAll(" ", "_") : "collapsable",
@@ -15074,21 +15079,21 @@ const IO = (t) => (zp("data-v-c909f1b6"), t = t(), Up(), t), DO = ["id", "aria-c
         ref: r
       }, [
         j(o.$slots, "default", {}, void 0, !0)
-      ], 8, LO)
+      ], 8, FO)
     ]));
   }
-}, W_ = /* @__PURE__ */ pr(FO, [["__scopeId", "data-v-c909f1b6"]]), MO = {}, BO = { class: "border-t border-gray-100" }, jO = { class: "divide-y divide-gray-100" };
-function zO(t, e) {
-  return w(), O("div", BO, [
-    C("dl", jO, [
+}, q_ = /* @__PURE__ */ pr(MO, [["__scopeId", "data-v-c909f1b6"]]), BO = {}, jO = { class: "border-t border-gray-100" }, zO = { class: "divide-y divide-gray-100" };
+function UO(t, e) {
+  return w(), O("div", jO, [
+    C("dl", zO, [
       j(t.$slots, "default")
     ])
   ]);
 }
-const q_ = /* @__PURE__ */ pr(MO, [["render", zO]]), UO = { class: "description-list-item px-4 py-2 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6" }, VO = { class: "flex items-center text-sm font-medium" }, HO = { class: "mt-1 min-h-[42px] text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0" }, WO = { class: "flex min-h-full items-center" }, qO = { class: "flex-grow" }, GO = {
+const G_ = /* @__PURE__ */ pr(BO, [["render", UO]]), VO = { class: "description-list-item px-4 py-2 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6" }, HO = { class: "flex items-center text-sm font-medium" }, WO = { class: "mt-1 min-h-[42px] text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0" }, qO = { class: "flex min-h-full items-center" }, GO = { class: "flex-grow" }, YO = {
   key: 0,
   class: "ml-4 flex-shrink-0"
-}, YO = { class: "flex-grow" }, KO = { class: "ml-4 flex-shrink-0" }, G_ = {
+}, KO = { class: "flex-grow" }, JO = { class: "ml-4 flex-shrink-0" }, Y_ = {
   __name: "DescriptionListItem",
   props: {
     editable: {
@@ -15108,18 +15113,18 @@ const q_ = /* @__PURE__ */ pr(MO, [["render", zO]]), UO = { class: "description-
     const e = t, r = ne(!1), n = () => {
       e.editable && (r.value = !r.value);
     };
-    return (i, a) => (w(), O("div", UO, [
-      C("dt", VO, [
+    return (i, a) => (w(), O("div", VO, [
+      C("dt", HO, [
         ce(z(t.label) + " ", 1),
         j(i.$slots, "label")
       ]),
-      C("dd", HO, [
-        C("div", WO, [
+      C("dd", WO, [
+        C("div", qO, [
           r.value ? (w(), O(ae, { key: 1 }, [
-            C("div", YO, [
+            C("div", KO, [
               j(i.$slots, "edit")
             ]),
-            C("span", KO, [
+            C("span", JO, [
               C("button", {
                 type: "button",
                 onClick: n,
@@ -15129,11 +15134,11 @@ const q_ = /* @__PURE__ */ pr(MO, [["render", zO]]), UO = { class: "description-
               ])
             ])
           ], 64)) : (w(), O(ae, { key: 0 }, [
-            C("div", qO, [
+            C("div", GO, [
               j(i.$slots, "default"),
               ce(" " + z(t.value), 1)
             ]),
-            t.editable ? (w(), O("span", GO, [
+            t.editable ? (w(), O("span", YO, [
               C("button", {
                 type: "button",
                 onClick: n,
@@ -15147,59 +15152,59 @@ const q_ = /* @__PURE__ */ pr(MO, [["render", zO]]), UO = { class: "description-
       ])
     ]));
   }
-}, Y_ = {
+}, K_ = {
   install(t) {
     for (const e in components)
       t.component(e, components[e]);
   }
 };
 export {
-  P_ as Alert,
-  XO as Checkbox,
+  $_ as Alert,
+  QO as Checkbox,
   B2 as CollapsibleSection,
-  B_ as DangerButton,
-  q_ as DescriptionList,
-  G_ as DescriptionListItem,
-  $_ as Dropdown,
-  I_ as DropdownLink,
-  e_ as DropdownSearchbar,
-  i_ as FileDropZoneInput,
-  a_ as Images,
-  QO as Input,
+  j_ as DangerButton,
+  G_ as DescriptionList,
+  Y_ as DescriptionListItem,
+  I_ as Dropdown,
+  D_ as DropdownLink,
+  t_ as DropdownSearchbar,
+  a_ as FileDropZoneInput,
+  o_ as Images,
+  ZO as Input,
   ri as InputError,
   Pl as InputLabel,
-  D_ as LinkButton,
-  R_ as LinkDropdownButton,
-  N_ as LinkDropdownButtonItem,
-  L_ as Logs,
+  R_ as LinkButton,
+  N_ as LinkDropdownButton,
+  L_ as LinkDropdownButtonItem,
+  F_ as Logs,
   lO as LogsContent,
-  F_ as Modal,
-  W_ as NavCollapse,
-  M_ as NavLink,
+  M_ as Modal,
+  q_ as NavCollapse,
+  B_ as NavLink,
   Pp as Pagination,
   $p as PrimaryButton,
-  o_ as RadioButton,
-  j_ as ResponsiveNavLink,
+  s_ as RadioButton,
+  z_ as ResponsiveNavLink,
   Kg as SearchSelect,
-  z_ as SecondaryButton,
-  U_ as Section,
-  H_ as Select2ajax,
+  U_ as SecondaryButton,
+  V_ as Section,
+  W_ as Select2ajax,
   Ip as Spinner,
-  V_ as Stats,
+  H_ as Stats,
   dw as SubmitButton,
-  s_ as Table,
-  T_ as TableItemCard,
-  c_ as Td,
+  l_ as Table,
+  P_ as TableItemCard,
+  f_ as Td,
   Qm as TextInput,
-  ZO as Textarea,
-  u_ as Th,
-  l_ as Thead,
-  d_ as TrCollapse,
-  f_ as TrCollapseHandler,
-  Y_ as default,
+  e_ as Textarea,
+  c_ as Th,
+  u_ as Thead,
+  p_ as TrCollapse,
+  d_ as TrCollapseHandler,
+  K_ as default,
   Ua as getInertiaRouter,
-  r_ as hasPermission,
+  n_ as hasPermission,
   c1 as moneyFormat,
-  t_ as numberFormat,
-  n_ as setInertiaRouter
+  r_ as numberFormat,
+  i_ as setInertiaRouter
 };
