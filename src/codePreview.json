@@ -1,0 +1,55 @@
+{
+    "FileInput":[
+        "import { Input } from \"./@shbc-vue-components\";",
+        "",
+        "<div class=\"flex gap-4 items-center\">",
+        "<FileDropZoneInput :form=\"form\" field=\"img\" />",
+        "<FileDropZoneInput :form=\"form\" field=\"img\" label=\"MyLabel\" />",
+        "</div>"
+    ],
+    "Switch":[
+        "import { Input } from \"./@shbc-vue-components\";",
+        "",
+        "<div class=\"flex gap-4 items-center\">",
+        "   <Input :form=\"form\" field=\"subscribe\" type=\"checkbox\" />",
+        "   <Input :form=\"form\" field=\"subscribe\" type=\"checkbox\" noLabel />",
+        "   <Input :form=\"form\" field=\"subscribe\" type=\"checkbox\" switchDescription=\"Description\" label=\"MyLabel\"/>",
+        "</div>"
+    ],
+    "Input":[
+        "import { Input } from \"./@shbc-vue-components\";",
+        "",
+        "<div class=\"grid w-full gap-5 py-2 grid-cols-3\">",
+        "   <Input :form=\"form\" field=\"name\" />",
+        "   <Input :form=\"form\" field=\"name\" disabled />",
+        "   <Input :form=\"form\" field=\"name2\" noLabel />",
+        "   <Input :form=\"form\" field=\"name3\" addon=\"Name\" />",
+        "   <Input :form=\"form\" field=\"name4\" submitBtn=\"Action\" />",
+        "   <Input :form=\"form\" field=\"name5\" whatsApp=\"#myUrl\" />",
+        "</div>"
+    ],
+    "Buttons":[
+        "import { SubmitButton, PrimaryButton, SecondaryButton, DangerButton } from \"./@shbc-vue-components\";",
+        "",
+        "<div class=\"flex w-full gap-5 py-2\">",
+        "   <SubmitButton :form=\"form\">Submit</SubmitButton>",
+        "   <PrimaryButton>Primary</PrimaryButton>",
+        "   <SecondaryButton>Secondary</SecondaryButton>",
+        "   <DangerButton>Danger</DangerButton>",
+        "</div>"
+    ],
+    "Section":[
+        "import Section from \"./@shbc-vue-components/Section.vue\";",
+        "",
+        "<Section header=\"MySection\" :open=\"true\">",
+        "        My Section Data",
+        "</Section>"
+    ],
+    "CollapsibleSection": [
+        "import CollapsibleSection from \"./@shbc-vue-components/CollapsibleSection.vue\";",
+        "",
+        "<CollapsibleSection header=\"MyCollapsibleSection\">",
+        "   My Section Data",
+        "</CollapsibleSection>"
+    ]
+}
