@@ -3179,7 +3179,7 @@ const pr = (t, e) => {
       }, null, 8, ["message"])
     ]));
   }
-}, ZO = /* @__PURE__ */ pr(Hm, [["__scopeId", "data-v-a86f4663"]]), Wm = { class: "text-sm text-red-600" }, ri = {
+}, ZO = /* @__PURE__ */ pr(Hm, [["__scopeId", "data-v-2467ec99"]]), Wm = { class: "text-sm text-red-600" }, ri = {
   __name: "InputError",
   props: ["message"],
   setup(t) {
@@ -3189,7 +3189,7 @@ const pr = (t, e) => {
       [Ut, t.message]
     ]);
   }
-}, qm = { class: "font-medium block mb-1 text-sm text-gray-700" }, Gm = { key: 0 }, Ym = { key: 1 }, Km = {
+}, qm = { class: "mb-1 block text-sm font-medium text-gray-700" }, Gm = { key: 0 }, Ym = { key: 1 }, Km = {
   key: 2,
   class: "ml-2 text-xs text-gray-500"
 }, Jm = {
@@ -4490,7 +4490,7 @@ const Yg = {
       ], 64))
     ]));
   }
-}, Kg = /* @__PURE__ */ pr(Yg, [["__scopeId", "data-v-c29ec715"]]);
+}, Kg = /* @__PURE__ */ pr(Yg, [["__scopeId", "data-v-cebb574a"]]);
 function Nf(t, e) {
   return function() {
     return t.apply(e, arguments);
@@ -9689,7 +9689,7 @@ const B1 = { class: "flex w-full flex-col" }, j1 = {
             "border-red-600 bg-primary-100": e.form.errors[t.field] ?? r.value
           }])
         }, [
-          C("div", Mn({ class: "p-4' font-medium flex h-20 w-full cursor-copy flex-col items-center justify-center" }, F(a)()), [
+          C("div", Mn({ class: "p-4' flex h-20 w-full cursor-copy flex-col items-center justify-center font-medium" }, F(a)()), [
             t.label ? (w(), O("p", j1, z(t.label), 1)) : V("", !0),
             C("input", Mn(F(o)(), { name: t.field }), null, 16, z1),
             F(s) ? (w(), O("span", U1, "Drop the " + z(n(t.field)) + " here ...", 1)) : t.form[t.field] ? (w(), O("span", V1, z(((p = t.form[t.field]) == null ? void 0 : p.path) ?? "File prepared"), 1)) : (w(), O("span", H1, "Drag 'n' drop " + z(n(t.field)) + " here", 1))
@@ -9775,7 +9775,7 @@ const B1 = { class: "flex w-full flex-col" }, j1 = {
           C("div", {
             class: Y(["w-full rounded-l-lg border-2 border-r-0 border-dashed border-primary-200 bg-primary-50 transition duration-100 ease-in-out hover:border-primary-600 hover:text-primary", { "border-primary-400 bg-primary-100": p.dragEneted }])
           }, [
-            C("div", Mn({ class: "p-4' font-medium flex h-20 w-full cursor-copy items-center justify-center" }, F(u)()), [
+            C("div", Mn({ class: "p-4' flex h-20 w-full cursor-copy items-center justify-center font-medium" }, F(u)()), [
               C("input", Ve(Ke(F(c)())), null, 16),
               p.isDragActive ? (w(), O("span", q1, "Drop the files here ...")) : (w(), O("span", G1, "Drag 'n' drop images here"))
             ], 16),
@@ -9806,7 +9806,7 @@ const B1 = { class: "flex w-full flex-col" }, j1 = {
             key: 0,
             value: F(n).progress.percentage,
             max: "100"
-          }, z(F(n).progress.percentage) + "% ", 9, Q1)) : V("", !0)
+          }, z(F(n).progress.percentage) + "%", 9, Q1)) : V("", !0)
         ]),
         p.$page.props.errors.image ? (w(), ie(F(ri), {
           key: 0,
@@ -9820,7 +9820,7 @@ const B1 = { class: "flex w-full flex-col" }, j1 = {
             class: "transition ease-in-out"
           }, {
             default: we(() => [
-              F(n).recentlySuccessful ? (w(), O("p", ew, " Images uploaded. ")) : V("", !0)
+              F(n).recentlySuccessful ? (w(), O("p", ew, "Images uploaded.")) : V("", !0)
             ]),
             _: 1
           })
@@ -9877,7 +9877,7 @@ const B1 = { class: "flex w-full flex-col" }, j1 = {
     };
     return (i, a) => (w(), O("div", lw, [
       C("input", {
-        class: "relative float-left -ml-[1.5rem] mr-1 mt-0.5 h-5 w-5 appearance-none rounded-full border-2 border-solid border-neutral-300 before:pointer-events-none before:absolute before:h-4 before:w-4 before:scale-0 before:rounded-full before:bg-transparent before:opacity-0 before:shadow-[0px_0px_0px_13px_transparent] before:content-[''] after:absolute after:z-[1] after:block after:h-4 after:w-4 after:rounded-full after:content-[''] checked:border-accent checked:before:opacity-[0.16] checked:after:absolute checked:after:left-1/2 checked:after:top-1/2 checked:after:h-[0.625rem] checked:after:w-[0.625rem] checked:after:rounded-full checked:after:border-accent checked:after:bg-accent checked:after:content-[''] checked:after:[transform:translate(-50%,-50%)] hover:cursor-pointer hover:before:opacity-[0.04] hover:before:shadow-[0px_0px_0px_13px_rgba(0,0,0,0.6)] focus:shadow-none focus:outline-none focus:ring-0 ring-accent focus:before:scale-100 focus:before:opacity-[0.12] focus:before:shadow-[0px_0px_0px_13px_rgba(0,0,0,0.6)] focus:before:transition-[box-shadow_0.2s,transform_0.2s] checked:focus:border-accent checked:focus:before:scale-100 checked:focus:before:shadow-[0px_0px_0px_13px] checked:focus:before:shadow-primary checked:focus:before:transition-[box-shadow_0.2s,transform_0.2s]",
+        class: "relative float-left -ml-[1.5rem] mr-1 mt-0.5 h-5 w-5 appearance-none rounded-full border-2 border-solid border-neutral-300 ring-accent before:pointer-events-none before:absolute before:h-4 before:w-4 before:scale-0 before:rounded-full before:bg-transparent before:opacity-0 before:shadow-[0px_0px_0px_13px_transparent] before:content-[''] after:absolute after:z-[1] after:block after:h-4 after:w-4 after:rounded-full after:content-[''] checked:border-accent checked:before:opacity-[0.16] checked:after:absolute checked:after:left-1/2 checked:after:top-1/2 checked:after:h-[0.625rem] checked:after:w-[0.625rem] checked:after:rounded-full checked:after:border-accent checked:after:bg-accent checked:after:content-[''] checked:after:[transform:translate(-50%,-50%)] hover:cursor-pointer hover:before:opacity-[0.04] hover:before:shadow-[0px_0px_0px_13px_rgba(0,0,0,0.6)] focus:shadow-none focus:outline-none focus:ring-0 focus:before:scale-100 focus:before:opacity-[0.12] focus:before:shadow-[0px_0px_0px_13px_rgba(0,0,0,0.6)] focus:before:transition-[box-shadow_0.2s,transform_0.2s] checked:focus:border-accent checked:focus:before:scale-100 checked:focus:before:shadow-[0px_0px_0px_13px] checked:focus:before:shadow-primary checked:focus:before:transition-[box-shadow_0.2s,transform_0.2s]",
         type: "radio",
         name: t.name,
         value: t.value,
@@ -10028,7 +10028,7 @@ const B1 = { class: "flex w-full flex-col" }, j1 = {
       }, null, 8, ["links"])) : V("", !0)
     ], 10, pw));
   }
-}, gw = {}, yw = { class: "font-medium border-b bg-neutral-100 dark:border-neutral-500" };
+}, gw = {}, yw = { class: "border-b bg-neutral-100 font-medium dark:border-neutral-500" };
 function vw(t, e) {
   return w(), O("thead", yw, [
     j(t.$slots, "default")
@@ -12506,10 +12506,7 @@ const bS = { class: "mb-2 flex w-full flex-wrap justify-between text-sm text-gra
             e.itemId ? (w(), O(ae, { key: 0 }, [
               e.itemId.routeName ? (w(), ie(F(Qe), {
                 key: 1,
-                href: r.route(
-                  e.itemId.routeName,
-                  e.itemId.routeData ? e.itemId.routeData : e.itemId.id
-                )
+                href: r.route(e.itemId.routeName, e.itemId.routeData ? e.itemId.routeData : e.itemId.id)
               }, {
                 default: we(() => [
                   e.itemId.prefix || e.itemId.prefix == null ? (w(), O(ae, { key: 0 }, [
@@ -12536,7 +12533,7 @@ const bS = { class: "mb-2 flex w-full flex-wrap justify-between text-sm text-gra
             (w(!0), O(ae, null, Ze(t.pills, (a, o) => (w(), O(ae, { key: o }, [
               a.text ? (w(), O("span", {
                 key: 0,
-                class: "whitespace-nowrap rounded-md border p-1 px-2 text-white bg-primary",
+                class: "whitespace-nowrap rounded-md border bg-primary p-1 px-2 text-white",
                 style: ta({
                   backgroundColor: a.color ? a.color : null
                 })
@@ -14405,7 +14402,7 @@ const hl = new C2(), Pn = {
       href: t.href,
       method: t.method,
       data: t.data,
-      class: Y(["focusable gap-1 text-sm inline-flex justify-center items-center font-medium cursor-pointer select-none rounded px-2 leading-normal", r()]),
+      class: Y(["focusable inline-flex cursor-pointer select-none items-center justify-center gap-1 rounded px-2 text-sm font-medium leading-normal", r()]),
       as: "button",
       tabindex: "0"
     }, {
@@ -14417,7 +14414,7 @@ const hl = new C2(), Pn = {
       key: 1,
       href: t.href,
       target: t.target,
-      class: Y(["focusable gap-1 text-sm inline-flex justify-center items-center font-medium cursor-pointer select-none rounded px-2 leading-normal", r()]),
+      class: Y(["focusable inline-flex cursor-pointer select-none items-center justify-center gap-1 rounded px-2 text-sm font-medium leading-normal", r()]),
       tabindex: "0"
     }, [
       j(n.$slots, "default")
@@ -14427,7 +14424,7 @@ const hl = new C2(), Pn = {
   class: "relative",
   "data-te-dropdown-ref": ""
 }, V2 = {
-  class: "focusable flex text-sm items-center whitespace-nowrap rounded bg-primary px-2 text-white hover:bg-primary-700 motion-reduce:transition-none",
+  class: "focusable flex items-center whitespace-nowrap rounded bg-primary px-2 text-sm text-white hover:bg-primary-700 motion-reduce:transition-none",
   type: "button",
   id: "dropdownMenuButton3",
   "data-te-dropdown-toggle-ref": "",
@@ -14476,7 +14473,7 @@ const hl = new C2(), Pn = {
   setup(t) {
     return (e, r) => (w(), O("li", null, [
       C("a", {
-        class: "focusable inline-flex justify-center items-center w-full whitespace-nowrap bg-transparent px-4 py-2 text-sm font-normal text-neutral-700 hover:bg-neutral-100 active:text-neutral-800 active:no-underline disabled:pointer-events-none disabled:bg-transparent disabled:text-neutral-400 dark:text-neutral-200 dark:hover:bg-neutral-600",
+        class: "focusable inline-flex w-full items-center justify-center whitespace-nowrap bg-transparent px-4 py-2 text-sm font-normal text-neutral-700 hover:bg-neutral-100 active:text-neutral-800 active:no-underline disabled:pointer-events-none disabled:bg-transparent disabled:text-neutral-400 dark:text-neutral-200 dark:hover:bg-neutral-600",
         href: t.href,
         "data-te-dropdown-item-ref": ""
       }, z(t.title), 9, q2)
@@ -14549,7 +14546,7 @@ const hl = new C2(), Pn = {
                       class: "text-sm text-primary-500"
                     }, {
                       default: we(() => [
-                        ce("(" + z(n.causer.first_name) + ")", 1)
+                        ce(" (" + z(n.causer.first_name) + ") ", 1)
                       ]),
                       _: 2
                     }, 1032, ["href"])) : (w(), O("span", nO, "(" + z(n.causer.first_name) + ")", 1))
@@ -14747,10 +14744,7 @@ const hl = new C2(), Pn = {
       if (!n.links || n.links.length <= 3)
         return n.links;
       const o = n.links[0], s = n.links[n.links.length - 1], u = n.links.findIndex((p) => p.active);
-      let c = Math.max(1, u - Math.floor(n.maxPagesToShow / 2)), f = Math.min(
-        n.links.length - 2,
-        c + n.maxPagesToShow - 1
-      );
+      let c = Math.max(1, u - Math.floor(n.maxPagesToShow / 2)), f = Math.min(n.links.length - 2, c + n.maxPagesToShow - 1);
       return f - c < n.maxPagesToShow - 1 && (c = Math.max(1, f - n.maxPagesToShow + 1)), [o, ...n.links.slice(c, f + 1), s];
     }), a = (o) => {
       r("change", o);
@@ -14864,7 +14858,7 @@ const hl = new C2(), Pn = {
   class: "relative mb-2 rounded-b-lg border-b-2 border-gray-200 bg-neutral-50 px-6 py-1 text-center"
 }, SO = {
   key: 0,
-  class: "absolute right-0 top-0 mt-1 mr-2"
+  class: "absolute right-0 top-0 mr-2 mt-1"
 }, V_ = {
   __name: "Section",
   props: {
@@ -14876,7 +14870,7 @@ const hl = new C2(), Pn = {
   },
   setup(t) {
     return (e, r) => (w(), O("div", {
-      class: Y(["rounded-lg border-2 border-gray-200 dark:border-gray-700 bg-white", { "px-4 py-2": !t.header, "overflow-hidden": t.overflow }])
+      class: Y(["rounded-lg border-2 border-gray-200 bg-white dark:border-gray-700", { "px-4 py-2": !t.header, "overflow-hidden": t.overflow }])
     }, [
       C("div", {
         class: Y(["sm:rounded-lg", { "p-1": !t.header }])
@@ -14904,7 +14898,7 @@ const hl = new C2(), Pn = {
 function CO(t, e) {
   return w(), O("div", _O, EO);
 }
-const Ip = /* @__PURE__ */ pr(OO, [["render", CO]]), kO = { class: "flex flex-wrap gap-2 lg:flex-nowrap" }, TO = ["onClick"], PO = { class: "h:10 rounded-t-lg bg-white py-1 text-center md:h-10 md:py-2" }, $O = { class: "font-medium text-xl leading-tight text-neutral-800" }, IO = { class: "flex flex-auto flex-col gap-y-4 p-1 text-center md:py-2" }, H_ = {
+const Ip = /* @__PURE__ */ pr(OO, [["render", CO]]), kO = { class: "flex flex-wrap gap-2 lg:flex-nowrap" }, TO = ["onClick"], PO = { class: "h:10 rounded-t-lg bg-white py-1 text-center md:h-10 md:py-2" }, $O = { class: "text-xl font-medium leading-tight text-neutral-800" }, IO = { class: "flex flex-auto flex-col gap-y-4 p-1 text-center md:py-2" }, H_ = {
   __name: "Stats",
   props: {
     stats: Object,
@@ -15031,7 +15025,7 @@ const Ip = /* @__PURE__ */ pr(OO, [["render", CO]]), kO = { class: "flex flex-wr
     }, null, 8, ["id", "label", "list", "optionValue", "optionText", "optionDisabled", "placeholder", "field", "form", "modelValue", "noLabel", "disabled", "noForm"]));
   }
 };
-const DO = (t) => (zp("data-v-c909f1b6"), t = t(), Up(), t), RO = ["id", "aria-controls"], NO = { class: "ml-3 flex-1 whitespace-nowrap text-left" }, LO = /* @__PURE__ */ DO(() => /* @__PURE__ */ C("svg", {
+const DO = (t) => (zp("data-v-03a62b00"), t = t(), Up(), t), RO = ["id", "aria-controls"], NO = { class: "ml-3 flex-1 whitespace-nowrap text-left" }, LO = /* @__PURE__ */ DO(() => /* @__PURE__ */ C("svg", {
   class: "h-3 w-3 transform",
   "aria-hidden": "true",
   xmlns: "http://www.w3.org/2000/svg",
@@ -15082,7 +15076,7 @@ const DO = (t) => (zp("data-v-c909f1b6"), t = t(), Up(), t), RO = ["id", "aria-c
       ], 8, FO)
     ]));
   }
-}, q_ = /* @__PURE__ */ pr(MO, [["__scopeId", "data-v-c909f1b6"]]), BO = {}, jO = { class: "border-t border-gray-100" }, zO = { class: "divide-y divide-gray-100" };
+}, q_ = /* @__PURE__ */ pr(MO, [["__scopeId", "data-v-03a62b00"]]), BO = {}, jO = { class: "border-t border-gray-100" }, zO = { class: "divide-y divide-gray-100" };
 function UO(t, e) {
   return w(), O("div", jO, [
     C("dl", zO, [
