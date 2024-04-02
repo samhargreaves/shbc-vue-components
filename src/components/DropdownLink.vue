@@ -1,5 +1,5 @@
 <script setup>
-import Link from "../overrides/InertiaLink";
+import Link from '../overrides/InertiaLink';
 </script>
 
 <template>

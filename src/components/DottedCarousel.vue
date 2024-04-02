@@ -1,5 +1,5 @@
 <script setup>
-import { ref, onMounted, watch } from "vue";
+import { ref, onMounted, watch } from 'vue';
 
 const currentSlide = ref(0);
 const activeDot = ref(null);
@@ -21,7 +21,7 @@ watch(currentSlide, (index) => {
 const slideTo = (event, index) => {
     currentSlide.value = index;
     container.value.scrollTo({
-        behavior: "smooth",
+        behavior: 'smooth',
         left:
             container.value.scrollLeft +
             container.value.getBoundingClientRect().left +
@@ -32,16 +32,13 @@ const slideTo = (event, index) => {
 };
 
 const updateCurrentSlide = () => {
-    const slideWidth =
-        container.value.children[0].getBoundingClientRect().width;
-    currentSlide.value = Math.round(
-        container.value.scrollLeft / (slideWidth + props.gap)
-    );
+    const slideWidth = container.value.children[0].getBoundingClientRect().width;
+    currentSlide.value = Math.round(container.value.scrollLeft / (slideWidth + props.gap));
 };
 
 onMounted(() => {
     updateCurrentSlide();
-    container.value.addEventListener("scroll", updateCurrentSlide);
+    container.value.addEventListener('scroll', updateCurrentSlide);
 });
 </script>
 
@@ -63,9 +60,7 @@ onMounted(() => {
                     ref="activeDot"
                 />
                 <div
-                    v-for="(slide, index) in Array(
-                        $slots.default().length
-                    ).fill('')"
+                    v-for="(slide, index) in Array($slots.default().length).fill('')"
                     :key="index"
                     class="h-2 w-2 cursor-pointer rounded-full bg-accent"
                     @click="slideTo($event, index)"

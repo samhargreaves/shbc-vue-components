@@ -1,6 +1,6 @@
 <script setup>
-import { ModelListSelect } from "vue-search-select";
-import { InputLabel, InputError } from "../../index";
+import { ModelListSelect } from 'vue-search-select';
+import { InputLabel, InputError } from '../../index';
 
 const props = defineProps({
     id: {
@@ -45,27 +45,23 @@ const props = defineProps({
     },
 });
 
-const emit = defineEmits(["update:modelValue", "searchchange"]);
+const emit = defineEmits(['update:modelValue', 'searchchange']);
 
 const ucwords = (text) => {
     let res = [];
-    text.split("_")
-        .join(" ")
-        .split(" ")
+    text.split('_')
+        .join(' ')
+        .split(' ')
         .map(function (v) {
             res.push(v[0].toUpperCase() + v.slice(1));
         });
-    return res.join(" ");
+    return res.join(' ');
 };
 </script>
 
 <template>
     <div>
-        <InputLabel
-            v-if="!noLabel && (label || field)"
-            :for="id ?? field"
-            :value="ucwords(label ?? field)"
-        />
+        <InputLabel v-if="!noLabel && (label || field)" :for="id ?? field" :value="ucwords(label ?? field)" />
         <template v-if="noForm">
             <model-list-select
                 :id="id ?? field"
@@ -122,6 +118,6 @@ const ucwords = (text) => {
     padding-right: 2.5rem;
 }
 .model-list .dropdown.icon:before {
-    content: "" !important;
+    content: '' !important;
 }
 </style>

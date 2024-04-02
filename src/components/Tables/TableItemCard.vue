@@ -1,7 +1,7 @@
 <script setup>
-import Link from "../../overrides/InertiaLink";
-import { moneyFormat } from "../../Helpers";
-import { stringify } from "postcss";
+import Link from '../../overrides/InertiaLink';
+import { moneyFormat } from '../../Helpers';
+import { stringify } from 'postcss';
 
 const props = defineProps({
     key: Number,
@@ -92,59 +92,29 @@ const props = defineProps({
         text: {
             type: String,
             required: false,
-            default: "Amount: ",
+            default: 'Amount: ',
         },
         amount: {
             type: String,
             required: true,
-            default: "0.00",
+            default: '0.00',
         },
     },
 });
 </script>
 
 <template>
-    <div
-        :key="props.key"
-        class="mt-3 rounded-md border border-gray-300 bg-white px-4 py-3 lg:border lg:border-gray-300"
-    >
-        <div
-            class="mb-2 flex w-full flex-wrap justify-between text-sm text-gray-600 max-xxs:text-xxs"
-        >
-            <div
-                v-if="props.itemId || props.timeStamp"
-                class="mb-2 h-fit w-full xs:w-fit"
-            >
+    <div :key="props.key" class="mt-3 rounded-md border border-gray-300 bg-white px-4 py-3 lg:border lg:border-gray-300">
+        <div class="mb-2 flex w-full flex-wrap justify-between text-sm text-gray-600 max-xxs:text-xxs">
+            <div v-if="props.itemId || props.timeStamp" class="mb-2 h-fit w-full xs:w-fit">
                 <!-- ID -->
                 <template v-if="props.itemId">
                     <span v-if="!props.itemId.routeName">
-                        <template
-                            v-if="
-                                props.itemId.prefix ||
-                                props.itemId.prefix == undefined
-                            "
-                            >#</template
-                        >
+                        <template v-if="props.itemId.prefix || props.itemId.prefix == undefined">#</template>
                         {{ props.itemId.id }}
                     </span>
-                    <Link
-                        v-else
-                        :href="
-                            route(
-                                props.itemId.routeName,
-                                props.itemId.routeData
-                                    ? props.itemId.routeData
-                                    : props.itemId.id
-                            )
-                        "
-                    >
-                        <template
-                            v-if="
-                                props.itemId.prefix ||
-                                props.itemId.prefix == undefined
-                            "
-                            >#</template
-                        >
+                    <Link v-else :href="route(props.itemId.routeName, props.itemId.routeData ? props.itemId.routeData : props.itemId.id)">
+                        <template v-if="props.itemId.prefix || props.itemId.prefix == undefined">#</template>
                         {{ props.itemId.id }}
                     </Link>
                 </template>
@@ -159,7 +129,7 @@ const props = defineProps({
                 <template v-for="(pill, index) in pills" :key="index">
                     <span
                         v-if="pill.text"
-                        class="whitespace-nowrap rounded-md border p-1 px-2 text-white bg-primary"
+                        class="whitespace-nowrap rounded-md border bg-primary p-1 px-2 text-white"
                         :style="{
                             backgroundColor: pill.color ? pill.color : null,
                         }"
@@ -171,30 +141,16 @@ const props = defineProps({
         </div>
         <!-- Title -->
         <template v-if="props.title">
-            <p
-                v-if="!props.title.routeName && !props.title.href"
-                class="font-semibold"
-            >
+            <p v-if="!props.title.routeName && !props.title.href" class="font-semibold">
                 {{ props.title.text }}
             </p>
-            <Link
-                v-else
-                :href="
-                    props.title.href
-                        ? props.title.href
-                        : route(props.title.routeName, props.title.routeData)
-                "
-                class="font-semibold"
-            >
+            <Link v-else :href="props.title.href ? props.title.href : route(props.title.routeName, props.title.routeData)" class="font-semibold">
                 {{ props.title.text }}
             </Link>
         </template>
         <!-- Engineer Note -->
         <div class="mb-1">
-            <p
-                class="w-full whitespace-normal font-semibold text-primary"
-                v-if="props.extraText"
-            >
+            <p class="w-full whitespace-normal font-semibold text-primary" v-if="props.extraText">
                 Engineer Note:
                 <span class="w-full break-words">{{ props.extraText }}</span>
             </p>
@@ -202,19 +158,12 @@ const props = defineProps({
         <!-- Options -->
         <div class="mb-1 flex flex-col">
             <template v-for="(option, index) in options">
-                <span
-                    v-if="!option.routeName && !option.href"
-                    :style="{ color: option.color ? option.color : '#000' }"
-                >
+                <span v-if="!option.routeName && !option.href" :style="{ color: option.color ? option.color : '#000' }">
                     {{ option.text }}
                 </span>
                 <Link
                     v-else
-                    :href="
-                        option.href
-                            ? option.href
-                            : route(option.routeName, option.routeData)
-                    "
+                    :href="option.href ? option.href : route(option.routeName, option.routeData)"
                     :style="{ color: option.color ? option.color : '#000' }"
                 >
                     {{ option.text }}
@@ -223,9 +172,7 @@ const props = defineProps({
         </div>
         <!-- Text in money format -->
         <div v-if="props.amount?.amount">
-            <span>{{
-                props.amount.text + moneyFormat(props.amount.amount)
-            }}</span>
+            <span>{{ props.amount.text + moneyFormat(props.amount.amount) }}</span>
         </div>
         <div>
             <slot></slot>

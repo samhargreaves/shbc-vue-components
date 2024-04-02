@@ -13,7 +13,7 @@ const onClick = (status) => {
     if (ifSelected(status)) {
         status = null;
     }
-    emit("updateSearch", status);
+    emit('updateSearch', status);
 };
 
 const ifSelected = (status) => {
@@ -31,26 +31,19 @@ const ifSelected = (status) => {
                 v-for="s in stats"
                 class="flex w-full cursor-pointer flex-col rounded-lg border bg-gray-100 shadow"
                 :class="{
-                    'border-primary bg-primary-50 shadow-primary-50':
-                        ifSelected(s.name),
+                    'border-primary bg-primary-50 shadow-primary-50': ifSelected(s.name),
                 }"
                 @click="onClick(s.name)"
                 :key="s.value"
             >
                 <div>
-                    <div
-                        class="h:10 rounded-t-lg bg-white py-1 text-center md:h-10 md:py-2"
-                    >
-                        <h5
-                            class="font-medium text-xl leading-tight text-neutral-800"
-                        >
+                    <div class="h:10 rounded-t-lg bg-white py-1 text-center md:h-10 md:py-2">
+                        <h5 class="text-xl font-medium leading-tight text-neutral-800">
                             {{ s.value }}
                         </h5>
                     </div>
                 </div>
-                <div
-                    class="flex flex-auto flex-col gap-y-4 p-1 text-center md:py-2"
-                >
+                <div class="flex flex-auto flex-col gap-y-4 p-1 text-center md:py-2">
                     {{ s.label ?? s.name }}
                 </div>
             </div>

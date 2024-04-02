@@ -1,5 +1,5 @@
 <script setup>
-import { InputLabel, InputError } from "../../index";
+import { InputLabel, InputError } from '../../index';
 
 const props = defineProps({
     field: String,
@@ -16,25 +16,21 @@ const props = defineProps({
 });
 function ucwords(text) {
     let res = [];
-    text.split("_")
-        .join(" ")
-        .split(" ")
+    text.split('_')
+        .join(' ')
+        .split(' ')
         .map(function (v) {
             res.push(v[0].toUpperCase() + v.slice(1));
         });
-    return res.join(" ");
+    return res.join(' ');
 }
 
-defineEmits(["update:modelValue"]);
+defineEmits(['update:modelValue']);
 </script>
 
 <template>
     <div>
-        <InputLabel
-            v-if="!noLabel"
-            :for="field"
-            :value="label ? label : ucwords(field)"
-        />
+        <InputLabel v-if="!noLabel" :for="field" :value="label ? label : ucwords(field)" />
         <div class="relative mb-4 flex w-full flex-wrap items-stretch">
             <textarea
                 :id="field"

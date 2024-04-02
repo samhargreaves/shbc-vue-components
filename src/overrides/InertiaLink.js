@@ -1,14 +1,14 @@
-import { mergeDataIntoQueryString, shouldIntercept } from "@inertiajs/core";
-import { defineComponent, h } from "vue";
+import { mergeDataIntoQueryString, shouldIntercept } from '@inertiajs/core';
+import { defineComponent, h } from 'vue';
 //SHBC EDIT
-import { getInertiaRouter } from "@/Helpers";
+import { getInertiaRouter } from '@/Helpers';
 
 const Link = defineComponent({
-    name: "Link",
+    name: 'Link',
     props: {
         as: {
             type: String,
-            default: "a",
+            default: 'a',
         },
         data: {
             type: Object,
@@ -20,7 +20,7 @@ const Link = defineComponent({
         },
         method: {
             type: String,
-            default: "get",
+            default: 'get',
         },
         replace: {
             type: Boolean,
@@ -44,7 +44,7 @@ const Link = defineComponent({
         },
         queryStringArrayFormat: {
             type: String,
-            default: "brackets",
+            default: 'brackets',
         },
     },
     setup(props, { slots, attrs }) {
@@ -54,12 +54,12 @@ const Link = defineComponent({
             const method = props.method.toLowerCase();
             const [href, data] = mergeDataIntoQueryString(
                 method,
-                props.href || "",
+                props.href || '',
                 props.data,
                 props.queryStringArrayFormat
             );
 
-            if (as === "a" && method !== "get") {
+            if (as === 'a' && method !== 'get') {
                 console.warn(
                     `Creating POST/PUT/PATCH/DELETE <a> links is discouraged as it causes "Open Link in New Tab/Window" accessibility issues.\n\nPlease specify a more appropriate element using the "as" attribute. For example:\n\n<Link href="${href}" method="${method}" as="button">...</Link>`
                 );
@@ -69,7 +69,7 @@ const Link = defineComponent({
                 props.as,
                 {
                     ...attrs,
-                    ...(as === "a" ? { href } : {}),
+                    ...(as === 'a' ? { href } : {}),
                     onClick: (event) => {
                         if (shouldIntercept(event)) {
                             event.preventDefault();
@@ -80,7 +80,7 @@ const Link = defineComponent({
                                 replace: props.replace,
                                 preserveScroll: props.preserveScroll,
                                 preserveState:
-                                    props.preserveState ?? method !== "get",
+                                    props.preserveState ?? method !== 'get',
                                 only: props.only,
                                 headers: props.headers,
                                 onCancelToken:

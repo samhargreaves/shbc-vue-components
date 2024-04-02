@@ -1,5 +1,5 @@
 <script setup>
-import { InputLabel, InputError } from "../../index";
+import { InputLabel, InputError } from '../../index';
 
 const props = defineProps({
     id: {
@@ -37,17 +37,17 @@ const props = defineProps({
     },
 });
 
-const emit = defineEmits(["update:modelValue"]);
+const emit = defineEmits(['update:modelValue']);
 
 const ucwords = (text) => {
     let res = [];
-    text.split("_")
-        .join(" ")
-        .split(" ")
+    text.split('_')
+        .join(' ')
+        .split(' ')
         .map(function (v) {
             res.push(v[0].toUpperCase() + v.slice(1));
         });
-    return res.join(" ");
+    return res.join(' ');
 };
 
 const click = (item) => {
@@ -62,16 +62,14 @@ const click = (item) => {
         }
 
         props.form[props.field] = values;
-        emit("update:modelValue", values);
+        emit('update:modelValue', values);
     } catch (e) {
         console.error(e);
     }
 };
 
 const isSelected = (item) => {
-    return props.form[props.field]?.includes(
-        item[props.optionValue].toString()
-    );
+    return props.form[props.field]?.includes(item[props.optionValue].toString());
 };
 
 const getSelectedItems = () => {
@@ -81,16 +79,8 @@ const getSelectedItems = () => {
 
 <template>
     <div class="w-full">
-        <InputLabel
-            v-if="!noLabel && (label || field)"
-            :for="id ?? field"
-            :value="ucwords(label ?? field)"
-        />
-        <div
-            class="model-list relative flex w-full min-w-[10rem]"
-            data-te-dropdown-ref
-            :id="id ?? field"
-        >
+        <InputLabel v-if="!noLabel && (label || field)" :for="id ?? field" :value="ucwords(label ?? field)" />
+        <div class="model-list relative flex w-full min-w-[10rem]" data-te-dropdown-ref :id="id ?? field">
             <button
                 class="flex h-10 w-full items-center justify-between whitespace-nowrap rounded border border-gray-300 px-3 py-2 pr-5 text-base leading-normal shadow outline outline-1 outline-transparent transition duration-150 ease-in-out aria-expanded:rounded-b-none aria-expanded:border-accent-500 aria-expanded:outline-accent-500 motion-reduce:transition-none"
                 type="button"
@@ -100,19 +90,12 @@ const getSelectedItems = () => {
                 aria-expanded="false"
                 :disabled="isDisabled"
             >
-                <span v-if="getSelectedItems().length > 0"
-                    >{{ getSelectedItems().length }} selected</span
-                >
+                <span v-if="getSelectedItems().length > 0">{{ getSelectedItems().length }} selected</span>
                 <span v-else>
                     {{ placeholder }}
                 </span>
                 <span class="ml-2 w-2">
-                    <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 20 20"
-                        fill="currentColor"
-                        class="h-5 w-5"
-                    >
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-5 w-5">
                         <path
                             fill-rule="evenodd"
                             d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
@@ -121,10 +104,7 @@ const getSelectedItems = () => {
                     </svg>
                 </span>
             </button>
-            <div
-                class="absolute z-[1000] !-mt-1 hidden min-w-full bg-white [&[data-te-dropdown-show]]:block"
-                data-te-dropdown-menu-ref
-            >
+            <div class="absolute z-[1000] !-mt-1 hidden min-w-full bg-white [&[data-te-dropdown-show]]:block" data-te-dropdown-menu-ref>
                 <ul
                     class="float-left m-0 box-border max-h-80 min-w-full list-none overflow-auto rounded rounded-t-none border border-t-0 border-gray-300 bg-clip-padding text-left text-base shadow"
                 >
@@ -134,12 +114,7 @@ const getSelectedItems = () => {
                         :key="item[optionValue]"
                         class="flex w-full min-w-full cursor-pointer items-center justify-start border-t border-gray-50 px-4 py-3 text-sm font-normal leading-4 hover:bg-[rgba(0,0,0,.03)]"
                     >
-                        <div
-                            class="-ml-2 mr-2 h-4 w-4 rounded border"
-                            :class="
-                                isSelected(item) ? 'bg-primary' : 'bg-white'
-                            "
-                        ></div>
+                        <div class="-ml-2 mr-2 h-4 w-4 rounded border" :class="isSelected(item) ? 'bg-primary' : 'bg-white'"></div>
                         {{ item[optionText] }}
                     </li>
                 </ul>

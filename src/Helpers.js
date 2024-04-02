@@ -1,16 +1,16 @@
-import { usePage } from "@inertiajs/vue3";
+import { usePage } from '@inertiajs/vue3';
 
 function numberFormat(number) {
-    return number.toLocaleString("en-GB", {
+    return number.toLocaleString('en-GB', {
         minimumFractionDigits: 2,
         maximumFractionDigits: 2,
     });
 }
 
 function moneyFormat(number) {
-    return new Intl.NumberFormat("en-GB", {
-        style: "currency",
-        currency: "GBP",
+    return new Intl.NumberFormat('en-GB', {
+        style: 'currency',
+        currency: 'GBP',
     }).format(number);
 }
 
@@ -28,12 +28,12 @@ function setInertiaRouter(router) {
 function getInertiaRouter() {
     if (inertiaRouter === null) {
         console.error(
-            "Inertia router is not set. Please set it first:" +
-                "\n\n// app.js" +
+            'Inertia router is not set. Please set it first:' +
+                '\n\n// app.js' +
                 "\nimport { setInertiaRouter } from '@shbc/vue-components';" +
                 "\nimport { router } from '@inertiajs/vue3';" +
-                "\n// createInertiaApp(...);" +
-                "\nsetInertiaRouter(router);\n\n"
+                '\n// createInertiaApp(...);' +
+                '\nsetInertiaRouter(router);\n\n'
         );
     }
     return inertiaRouter;

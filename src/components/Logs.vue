@@ -1,8 +1,8 @@
 <script setup>
-import { LogsContent, CollapsibleSection } from "../index";
+import { LogsContent, CollapsibleSection } from '../index';
 
 const props = defineProps({
-    header: { default: "Logs" },
+    header: { default: 'Logs' },
     logs: Object,
 });
 </script>

@@ -1,14 +1,14 @@
 <script setup>
-import { Head } from "@inertiajs/vue3";
-import Link from "../overrides/InertiaLink";
+import { Head } from '@inertiajs/vue3';
+import Link from '../overrides/InertiaLink';
 
 const props = defineProps({
     href: String,
     colourClasses: {
-        default: () => ["bg-primary", "text-white", "hover:bg-primary-700"],
+        default: () => ['bg-primary', 'text-white', 'hover:bg-primary-700'],
     },
     target: {
-        default: () => ["_self"],
+        default: () => ['_self'],
     },
     disabled: {
         type: Boolean,
@@ -19,9 +19,7 @@ const props = defineProps({
 });
 
 const getClass = () => {
-    return props.disabled
-        ? [...props.colourClasses, ["opacity-50", "pointer-events-none"]]
-        : props.colourClasses;
+    return props.disabled ? [...props.colourClasses, ['opacity-50', 'pointer-events-none']] : props.colourClasses;
 };
 </script>
 
@@ -31,7 +29,7 @@ const getClass = () => {
         :href="href"
         :method="method"
         :data="data"
-        class="focusable gap-1 text-sm inline-flex justify-center items-center font-medium cursor-pointer select-none rounded px-2 leading-normal"
+        class="focusable inline-flex cursor-pointer select-none items-center justify-center gap-1 rounded px-2 text-sm font-medium leading-normal"
         :class="getClass()"
         as="button"
         tabindex="0"
@@ -43,7 +41,7 @@ const getClass = () => {
         v-else
         :href="href"
         :target="target"
-        class="focusable gap-1 text-sm inline-flex justify-center items-center font-medium cursor-pointer select-none rounded px-2 leading-normal"
+        class="focusable inline-flex cursor-pointer select-none items-center justify-center gap-1 rounded px-2 text-sm font-medium leading-normal"
         :class="getClass()"
         tabindex="0"
     >

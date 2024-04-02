@@ -25,11 +25,11 @@
  * @prop {string} sublabel - The sublabel for the input
  */
 
-import { InputLabel, TextInput, InputError, SubmitButton } from "../../index";
+import { InputLabel, TextInput, InputError, SubmitButton } from '../../index';
 
-import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
-import { faWhatsapp } from "@fortawesome/free-brands-svg-icons";
-import { library } from "@fortawesome/fontawesome-svg-core";
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
+import { faWhatsapp } from '@fortawesome/free-brands-svg-icons';
+import { library } from '@fortawesome/fontawesome-svg-core';
 library.add(faWhatsapp);
 
 const props = defineProps({
@@ -61,29 +61,20 @@ const props = defineProps({
 });
 function ucwords(text) {
     let res = [];
-    text.split("_")
-        .join(" ")
-        .split(" ")
+    text.split('_')
+        .join(' ')
+        .split(' ')
         .map(function (v) {
             res.push(v[0].toUpperCase() + v.slice(1));
         });
-    return res.join(" ");
+    return res.join(' ');
 }
 </script>
 
 <template>
     <div>
-        <InputLabel
-            v-if="!noLabel"
-            :for="field"
-            :value="label ? label : ucwords(field)"
-            :sublabel="sublabel"
-            :required="required"
-        />
-        <div
-            class="relative flex w-full max-w-full items-stretch"
-            :class="noLabel ? '' : 'mb-4'"
-        >
+        <InputLabel v-if="!noLabel" :for="field" :value="label ? label : ucwords(field)" :sublabel="sublabel" :required="required" />
+        <div class="relative flex w-full max-w-full items-stretch" :class="noLabel ? '' : 'mb-4'">
             <label v-if="type === 'checkbox'" class="flex items-center">
                 <input
                     :id="field"
@@ -101,7 +92,7 @@ function ucwords(text) {
                         disabled: props.disabled,
                     }"
                 ></div>
-                {{ switchDescription ? switchDescription : "Enable" }}
+                {{ switchDescription ? switchDescription : 'Enable' }}
                 <slot name="switchDescription" />
             </label>
             <select
@@ -141,12 +132,7 @@ function ucwords(text) {
                     :pattern="props.pattern"
                     :name="name ?? field"
                 />
-                <SubmitButton
-                    v-if="submitBtn"
-                    :form="form"
-                    class="z-[2] inline-block rounded-l-none"
-                    id="button-input"
-                >
+                <SubmitButton v-if="submitBtn" :form="form" class="z-[2] inline-block rounded-l-none" id="button-input">
                     {{ submitBtn }}
                 </SubmitButton>
                 <a
@@ -155,10 +141,7 @@ function ucwords(text) {
                     :href="whatsApp"
                     target="_blank"
                 >
-                    <FontAwesomeIcon
-                        v-bind:icon="'fab fa-whatsapp'"
-                        size="2xl"
-                    />
+                    <FontAwesomeIcon v-bind:icon="'fab fa-whatsapp'" size="2xl" />
                 </a>
             </template>
         </div>
@@ -175,7 +158,7 @@ function ucwords(text) {
 .toggle-switch::before {
     @apply absolute left-0.5 top-0.5 block h-5 w-5 rounded-full bg-white bg-gradient-to-br from-transparent to-gray-200;
     box-shadow: 0.0625em 0.0625em 0.0625em rgba(0, 0, 0, 0.08);
-    content: "";
+    content: '';
     transition: left 150ms;
     will-change: left;
 }
@@ -184,11 +167,7 @@ function ucwords(text) {
 }
 
 .toggle-switch:hover::before {
-    background-image: radial-gradient(
-        circle at 0.375em 0.375em,
-        rgba(0, 0, 0, 0) 0,
-        rgba(0, 0, 0, 0.0375) 1em
-    );
+    background-image: radial-gradient(circle at 0.375em 0.375em, rgba(0, 0, 0, 0) 0, rgba(0, 0, 0, 0.0375) 1em);
     box-shadow: 0.0625em 0.0625em 0.0625em rgba(0, 0, 0, 0.12);
 }
 
@@ -197,11 +176,7 @@ function ucwords(text) {
 }
 
 .checked::before {
-    background-image: radial-gradient(
-        circle at 0.375em 0.375em,
-        rgba(0, 0, 0, 0) 0,
-        rgba(0, 0, 0, 0.05) 1em
-    );
+    background-image: radial-gradient(circle at 0.375em 0.375em, rgba(0, 0, 0, 0) 0, rgba(0, 0, 0, 0.05) 1em);
     left: 1.625em;
 }
 </style>

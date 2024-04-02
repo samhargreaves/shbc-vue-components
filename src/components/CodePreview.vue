@@ -1,31 +1,24 @@
 <script setup>
-import { onMounted, ref } from "vue";
+import { onMounted, ref } from 'vue';
 const props = defineProps({
-  code: Array,
+    code: Array,
 });
 
 const codeBlock = ref(null);
 
 onMounted(() => {
-  codeBlock.value = props.code.join("\n");
+    codeBlock.value = props.code.join('\n');
 });
 
 const copy = () => {
-  console.log(codeBlock.value);
-  navigator.clipboard.writeText(codeBlock.value);
+    console.log(codeBlock.value);
+    navigator.clipboard.writeText(codeBlock.value);
 };
 </script>
 
 <template>
-  <div class="relative rounded-md overflow-auto mt-2">
-    <div
-      class="absolute top-1 text-white right-3 text-right hover:cursor-pointer"
-      @click="copy"
-    >
-      copy
+    <div class="relative mt-2 overflow-auto rounded-md">
+        <div class="absolute right-3 top-1 text-right text-white hover:cursor-pointer" @click="copy">copy</div>
+        <pre v-highlightjs><code class="javascript !p-4" >{{ codeBlock }}</code></pre>
     </div>
-    <pre
-      v-highlightjs
-    ><code class="javascript !p-4" >{{ codeBlock }}</code></pre>
-  </div>
 </template>

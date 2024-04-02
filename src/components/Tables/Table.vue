@@ -1,7 +1,7 @@
 <script setup>
-import { Pagination } from "../../index";
-import { nextTick } from "vue";
-import { onMounted, onUnmounted, ref } from "vue";
+import { Pagination } from '../../index';
+import { nextTick } from 'vue';
+import { onMounted, onUnmounted, ref } from 'vue';
 
 const props = defineProps({
     total: Number,
@@ -12,7 +12,7 @@ const props = defineProps({
     },
     collapse_id: {
         type: String,
-        default: "collapse",
+        default: 'collapse',
     },
     sticky: {
         type: Boolean,
@@ -32,65 +32,63 @@ const sticky_header = ref(null);
 const handleScroll = () => {
     const tableEl = table.value;
     const headerPosition = tableEl.getBoundingClientRect().top;
-    const navHeight = document.querySelector("nav").offsetHeight;
+    const navHeight = document.querySelector('nav').offsetHeight;
     const posY = headerPosition - navHeight;
     const wrapperEl = sticky_wrapper.value;
-    const distFromBot =
-        tableEl.getBoundingClientRect().height + headerPosition - navHeight * 2;
+    const distFromBot = tableEl.getBoundingClientRect().height + headerPosition - navHeight * 2;
 
     if (posY <= 0 && distFromBot > 0) {
-        if (wrapperEl.dataset.sticky === "true") return;
+        if (wrapperEl.dataset.sticky === 'true') return;
 
-        wrapperEl.style.display = "block";
-        wrapperEl.dataset.sticky = "true";
+        wrapperEl.style.display = 'block';
+        wrapperEl.dataset.sticky = 'true';
 
         wrapperEl.style.top = `${navHeight}px`;
-        wrapperEl.style.width = table_container.value.offsetWidth + "px";
+        wrapperEl.style.width = table_container.value.offsetWidth + 'px';
 
         return;
     }
 
-    wrapperEl.dataset.sticky = "";
-    wrapperEl.style.display = "";
+    wrapperEl.dataset.sticky = '';
+    wrapperEl.style.display = '';
 };
 
 const updateScrollX = () => {
-    sticky_header.value.style.marginLeft =
-        -table_container.value.scrollLeft + "px";
+    sticky_header.value.style.marginLeft = -table_container.value.scrollLeft + 'px';
 };
 
 const initSticky = () => {
     if (!table.value) return;
-    const header = table.value.querySelector("thead tr");
+    const header = table.value.querySelector('thead tr');
     let cloneContainer = sticky_header.value;
-    cloneContainer.innerHTML = "";
-    let ths = header?.querySelectorAll("th");
+    cloneContainer.innerHTML = '';
+    let ths = header?.querySelectorAll('th');
     ths?.forEach((th) => {
         const clone = th.cloneNode(true);
-        clone.style.width = th.offsetWidth + "px";
+        clone.style.width = th.offsetWidth + 'px';
         cloneContainer.appendChild(clone);
     });
 
     const wrapperEl = sticky_wrapper.value;
-    wrapperEl.style.width = table_container.value.offsetWidth + "px";
+    wrapperEl.style.width = table_container.value.offsetWidth + 'px';
 };
 
 if (props.sticky) {
     onMounted(() => {
         nextTick(() => {
             initSticky();
-            window.addEventListener("scroll", handleScroll, { passive: true });
-            window.addEventListener("resize", initSticky, { passive: true });
-            table_container.value.addEventListener("scroll", updateScrollX, {
+            window.addEventListener('scroll', handleScroll, { passive: true });
+            window.addEventListener('resize', initSticky, { passive: true });
+            table_container.value.addEventListener('scroll', updateScrollX, {
                 passive: true,
             });
         });
     });
 
     onUnmounted(() => {
-        window.removeEventListener("scroll", handleScroll);
-        window.removeEventListener("resize", initSticky);
-        table_container.value?.removeEventListener("scroll", updateScrollX);
+        window.removeEventListener('scroll', handleScroll);
+        window.removeEventListener('resize', initSticky);
+        table_container.value?.removeEventListener('scroll', updateScrollX);
     });
 }
 </script>
@@ -110,20 +108,12 @@ if (props.sticky) {
                 <table
                     class="min-w-full text-left text-sm font-light"
                     :class="{
-                        'mb-14 [&>*>tr]:border-l-4 [&>*>tr]:border-l-pink-500':
-                            collapsable,
+                        'mb-14 [&>*>tr]:border-l-4 [&>*>tr]:border-l-pink-500': collapsable,
                     }"
                     ref="table"
                 >
-                    <div
-                        v-if="sticky"
-                        ref="sticky_wrapper"
-                        class="fixed hidden w-full overflow-hidden bg-neutral-100"
-                    >
-                        <div
-                            ref="sticky_header"
-                            class="w-max [&>th]:align-middle"
-                        ></div>
+                    <div v-if="sticky" ref="sticky_wrapper" class="fixed hidden w-full overflow-hidden bg-neutral-100">
+                        <div ref="sticky_header" class="w-max [&>th]:align-middle"></div>
                     </div>
                     <slot />
                 </table>

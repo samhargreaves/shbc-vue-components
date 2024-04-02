@@ -2,7 +2,7 @@
 .vs__selected-options {
     padding: 0.2rem;
 }
-.vs__dropdown-toggle[aria-expanded="true"] {
+.vs__dropdown-toggle[aria-expanded='true'] {
     border-width: 2px;
     border-color: rgb(99 102 241 / var(--tw-border-opacity)) !important;
 }
@@ -18,10 +18,10 @@
 }
 </style>
 <script setup>
-import { faWhatsapp } from "@fortawesome/free-brands-svg-icons";
-import { library } from "@fortawesome/fontawesome-svg-core";
-import VueSelect from "vue-select";
-import "vue-select/dist/vue-select.css";
+import { faWhatsapp } from '@fortawesome/free-brands-svg-icons';
+import { library } from '@fortawesome/fontawesome-svg-core';
+import VueSelect from 'vue-select';
+import 'vue-select/dist/vue-select.css';
 
 library.add(faWhatsapp);
 
@@ -33,10 +33,5 @@ const props = defineProps({
 </script>
 
 <template>
-    <VueSelect
-        :options="options"
-        :label="label"
-        :placeholder="placeholder"
-        class="min-w-44"
-    ></VueSelect>
+    <VueSelect :options="options" :label="label" :placeholder="placeholder" class="min-w-44"></VueSelect>
 </template>

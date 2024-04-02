@@ -1,6 +1,6 @@
 <script setup>
-import { SearchSelect } from "../../index";
-import { ref, onMounted } from "vue";
+import { SearchSelect } from '../../index';
+import { ref, onMounted } from 'vue';
 
 const props = defineProps({
     id: {
@@ -12,15 +12,15 @@ const props = defineProps({
     },
     optionValue: {
         type: String,
-        default: "value",
+        default: 'value',
     },
     optionText: {
         type: String,
-        default: "label",
+        default: 'label',
     },
     optionDisabled: {
         type: String,
-        default: "disabled",
+        default: 'disabled',
     },
     placeholder: {
         type: String,
@@ -48,12 +48,12 @@ const props = defineProps({
     },
 });
 
-const emit = defineEmits(["update:modelValue"]);
+const emit = defineEmits(['update:modelValue']);
 const list = ref([]);
 const page = ref(1);
 const canIncreasePage = ref(true);
 const lastScrollTop = ref(0);
-const term = ref("");
+const term = ref('');
 
 const searchChange = (_term) => {
     page.value = 1;
@@ -64,13 +64,13 @@ const searchChange = (_term) => {
 
 const fetchList = async (appendAjaxId = false) => {
     const params = new URLSearchParams();
-    params.append("term", term.value);
-    params.append("page", page.value);
+    params.append('term', term.value);
+    params.append('page', page.value);
 
     if (appendAjaxId) {
         const currentValue = props.form?.[props.field] || props.modelValue;
         if (currentValue) {
-            params.append("ajax_id", currentValue);
+            params.append('ajax_id', currentValue);
         }
     }
 
@@ -89,17 +89,12 @@ const fetchList = async (appendAjaxId = false) => {
 onMounted(() => {
     fetchList(true);
 
-    const menu = document
-        .getElementById(props.id)
-        .parentNode.querySelector(".menu");
+    const menu = document.getElementById(props.id).parentNode.querySelector('.menu');
     menu?.addEventListener(
-        "scroll",
+        'scroll',
         (e) => {
             if (e.target.scrollTop > lastScrollTop.value) {
-                if (
-                    e.target.scrollTop + e.target.clientHeight >=
-                    e.target.scrollHeight
-                ) {
+                if (e.target.scrollTop + e.target.clientHeight >= e.target.scrollHeight) {
                     if (canIncreasePage.value) {
                         page.value++;
                         fetchList();

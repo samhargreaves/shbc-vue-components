@@ -1,5 +1,135 @@
 {
-    "FileInput":[
+    "Table": [
+        "<Table",
+        "  class=\"w-full\"",
+        "  :total=\"30\"",
+        "  :links=\"[",
+        "    { url: '#table', label: 'label - 1' },",
+        "    { url: '#table', label: 'label - 2' },",
+        "    { url: '#table', label: 'label - 3' },",
+        "    { url: '#table', label: 'label - 4' },",
+        "  ]\"",
+        "  :sticky=\"true\"",
+        ">",
+        "  <Thead>",
+        "    <Tr>",
+        "      <Th>Header 1</Th>",
+        "      <Th>Header 2</Th>",
+        "      <Th>Header 3</Th>",
+        "    </Tr>",
+        "  </Thead>",
+        "  <tbody>",
+        "    <Tr>",
+        "      <Td>Row 1 - Col 1</Td>",
+        "      <Td>Row 1 - Col 2</Td>",
+        "      <Td>Row 1 - Col 3</Td>",
+        "    </Tr>",
+        "    <Tr>",
+        "      <Td>Row 2 - Col 1</Td>",
+        "      <Td>Row 2 - Col 2</Td>",
+        "      <Td>Row 2 - Col 3</Td>",
+        "    </Tr>",
+        "    <Tr>",
+        "      <Td>Row 3 - Col 1</Td>",
+        "      <Td>Row 3 - Col 2</Td>",
+        "      <Td>Row 3 - Col 3</Td>",
+        "    </Tr>",
+        "    <TrCollapse>",
+        "      <Td>Row 4 - Col 1</Td>",
+        "      <Td>Row 4 - Col 2</Td>",
+        "      <Td>Row 4 - Col 3</Td>",
+        "    </TrCollapse>",
+        "    <TrCollapseHandler>",
+        "      <Td>Row 4 - Col 1</Td>",
+        "      <Td>Row 4 - Col 2</Td>",
+        "      <Td>Row 4 - Col 3</Td>",
+        "    </TrCollapseHandler>",
+        "  </tbody>",
+        "</Table>"
+    ],
+    "TextInput": [
+        "import { TextInput } from \"./@shbc-vue-components\";",
+        "",
+        "<TextInput :form=\"form\" field=\"name\" label=\"Name\" modelValue=\"myValue\" />"
+    ],
+    "Textarea": [
+        "import { Textarea } from \"./@shbc-vue-components\";",
+        "",
+        "<Textarea :form=\"form\" field=\"note\" label=\"Note\" rows=\"4\" />"
+    ],
+    "SelectMultiple": [
+        "import { SelectMultiple } from \"./@shbc-vue-components\";",
+        "",
+        "<SelectMultiple",
+        "   id=\"ba_country\"",
+        "   label=\"Country\"",
+        "   :list=\"[",
+        "     { id: 1, name: 'India' },",
+        "     { id: 2, name: 'USA' },",
+        "     { id: 3, name: 'UK' },",
+        "   ]\"",
+        "   optionValue=\"id\"",
+        "   optionText=\"name\"",
+        "   placeholder=\"Select Country\"",
+        "   field=\"ba_country\"",
+        "   :form=\"form\"",
+        "/>"
+    ],
+    "SearchSelect": ["---"],
+    "RadioButton": [
+        "import { RadioButton } from \"./@shbc-vue-components\";",
+        "",
+        "<div class=\"flex gap-4\">",
+        "   <RadioButton :value=\"null\" v-model=\"form.option\" id=\"radioDefault01\" :isChecked=\"true\" name=\"option\" label=\"All\"/>",
+        "   <RadioButton value=\"In Stock\" v-model=\"form.option\" id=\"radioDefault02\" name=\"option\" label=\"In Stock\"/>",
+        "   <RadioButton value=\"eng_note\" v-model=\"form.option\" id=\"radioDefault03\" name=\"option\" label=\"With Engineer Notes\"/>",
+        "</div>"
+    ],
+    "InputLabel": [
+        "import { InputLabel } from \"./@shbc-vue-components\";",
+        "",
+        "<div class=\"flex gap-4 flex-col\">",
+        "   <InputLabel value=\"My Label - 1\" />",
+        "   <InputLabel value=\"My Label - 2\" :required=\"true\" />",
+        "   <InputLabel value=\"My Label - 2\" sublabel=\"subLabel\" />",
+        "</div>"
+    ],
+    "InputError": [
+        "import { InputError } from \"./@shbc-vue-components\";",
+        "",
+        "<div class=\"flex gap-4 flex-col\">",
+        "   <textarea class=\"-mb-3\">My input</textarea>",
+        "   <InputError message=\"Something is wrong\" />",
+        "</div>"
+    ],
+    "Dropdown": [
+        "import { DropdownSearchbar } from \"./@shbc-vue-components\";",
+        "",
+        "<div class=\"flex gap-4 items-center\">",
+        "   <DropdownSearchbar",
+        "       :options=\"[",
+        "           'my first option',",
+        "           'some random option',",
+        "       ]\"",
+        "   />",
+        "   <DropdownSearchbar placeholder=\"find me\" />",
+        "</div>"
+    ],
+    "Checkbox": [
+        "import { Checkbox } from \"./@shbc-vue-components\";",
+        "",
+        "const form = useForm({",
+        "  checkbox: false,",
+        "});",
+        "",
+        "<Checkbox value=\"value\" v-model:checked=\"form.checkbox\" />",
+        "<div class=\"flex gap-4 items-center\">",
+        " <Checkbox value=\"value\" @update:checked=\"(value) => (form.checkbox = value)\"/>",
+        " {{ form.checkbox ? \"checked\" : \"notChecked\" }}",
+        " <Checkbox checked />",
+        "</div>"
+    ],
+    "FileInput": [
         "import { Input } from \"./@shbc-vue-components\";",
         "",
         "<div class=\"flex gap-4 items-center\">",
@@ -7,7 +137,7 @@
         "<FileDropZoneInput :form=\"form\" field=\"img\" label=\"MyLabel\" />",
         "</div>"
     ],
-    "Switch":[
+    "Switch": [
         "import { Input } from \"./@shbc-vue-components\";",
         "",
         "<div class=\"flex gap-4 items-center\">",
@@ -16,7 +146,7 @@
         "   <Input :form=\"form\" field=\"subscribe\" type=\"checkbox\" switchDescription=\"Description\" label=\"MyLabel\"/>",
         "</div>"
     ],
-    "Input":[
+    "Input": [
         "import { Input } from \"./@shbc-vue-components\";",
         "",
         "<div class=\"grid w-full gap-5 py-2 grid-cols-3\">",
@@ -28,7 +158,7 @@
         "   <Input :form=\"form\" field=\"name5\" whatsApp=\"#myUrl\" />",
         "</div>"
     ],
-    "Buttons":[
+    "Buttons": [
         "import { SubmitButton, PrimaryButton, SecondaryButton, DangerButton } from \"./@shbc-vue-components\";",
         "",
         "<div class=\"flex w-full gap-5 py-2\">",
@@ -38,7 +168,7 @@
         "   <DangerButton>Danger</DangerButton>",
         "</div>"
     ],
-    "Section":[
+    "Section": [
         "import Section from \"./@shbc-vue-components/Section.vue\";",
         "",
         "<Section header=\"MySection\" :open=\"true\">",

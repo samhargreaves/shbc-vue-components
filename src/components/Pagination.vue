@@ -43,10 +43,10 @@
 </template>
 
 <script setup>
-import Link from "../overrides/InertiaLink";
-import { computed } from "vue";
+import Link from '../overrides/InertiaLink';
+import { computed } from 'vue';
 
-const emit = defineEmits(["change"]);
+const emit = defineEmits(['change']);
 
 const props = defineProps({
     links: Array,
@@ -74,10 +74,7 @@ const filteredLinks = computed(() => {
     const activeIndex = props.links.findIndex((link) => link.active);
 
     let start = Math.max(1, activeIndex - Math.floor(props.maxPagesToShow / 2));
-    let end = Math.min(
-        props.links.length - 2,
-        start + props.maxPagesToShow - 1
-    );
+    let end = Math.min(props.links.length - 2, start + props.maxPagesToShow - 1);
 
     if (end - start < props.maxPagesToShow - 1) {
         start = Math.max(1, end - props.maxPagesToShow + 1);
@@ -87,6 +84,6 @@ const filteredLinks = computed(() => {
 });
 
 const handleChange = (label) => {
-    emit("change", label);
+    emit('change', label);
 };
 </script>

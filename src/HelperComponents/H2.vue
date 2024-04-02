@@ -1,18 +1,13 @@
 <script setup>
-import { defineProps } from "vue";
+import { defineProps } from 'vue';
 const props = defineProps({
-  title: String,
+    title: String,
 });
 </script>
 
 <template>
-  <div class="flex mt-10 items-center gutters">
-    <h2
-      :id="title.toLowerCase()"
-      class="text-lg font-bold text-primary whitespace-nowrap mr-4"
-    >
-      # {{ title }}
-    </h2>
-    <div class="border-t-2 w-full border-dashed border-primary flex-grow"></div>
-  </div>
+    <div class="gutters mt-10 flex items-center">
+        <h2 :id="title.toLowerCase()" class="mr-4 whitespace-nowrap text-lg font-bold text-primary"># {{ title }}</h2>
+        <div class="w-full flex-grow border-t-2 border-dashed border-primary"></div>
+    </div>
 </template>
