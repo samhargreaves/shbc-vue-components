@@ -26,7 +26,7 @@ const onClick = () => {
 };
 </script>
 <template>
-    <div class="mt-2 overflow-hidden rounded-lg border-2 border-gray-200 dark:border-gray-700" :class="{ 'px-4 py-2': !header }">
+    <div class="mt-2 rounded-lg border-2 border-gray-200 dark:border-gray-700" :class="{ 'px-4 py-2': !header }">
         <div class="bg-white sm:rounded-lg" :class="{ 'p-1': !header }">
             <div
                 @click="onClick"
@@ -39,7 +39,7 @@ const onClick = () => {
                     {{ isVisible ? 'Hide' : 'Show' }}
                 </button>
             </div>
-            <div class="!visible hidden" :id="header ? header.replaceAll(' ', '_') : `collapsable`" ref="collapseRef">
+            <div class="!visible hidden overflow-hidden" :id="header ? header.replaceAll(' ', '_') : `collapsable`" ref="collapseRef">
                 <div :class="{ 'px-4 pb-2': header }" class="mt-2">
                     <slot />
                 </div>
