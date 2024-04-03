@@ -2,7 +2,7 @@
 defineProps({
     header: String,
     overflow: {
-        default: true,
+        default: false,
         type: Boolean,
     },
 });
