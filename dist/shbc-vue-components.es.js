@@ -14286,7 +14286,7 @@ const hl = new C2(), Pn = {
       }, [
         C("div", {
           onClick: a,
-          class: "focusable !block rounded-b-lg border-b-2 border-gray-200 bg-neutral-50 px-6 py-1 text-center",
+          class: "focusable !block rounded-lg border-b-2 border-gray-200 bg-neutral-50 px-6 py-1 text-center",
           tabindex: "0",
           "aria-controls": t.header ? t.header.replaceAll(" ", "_") : "collapsable"
         }, [
@@ -14855,7 +14855,7 @@ const hl = new C2(), Pn = {
   }
 }, xO = {
   key: 0,
-  class: "relative mb-2 rounded-b-lg border-b-2 border-gray-200 bg-neutral-50 px-6 py-1 text-center"
+  class: "relative mb-2 rounded-lg border-b-2 border-gray-200 bg-neutral-50 px-6 py-1 text-center"
 }, SO = {
   key: 0,
   class: "absolute right-0 top-0 mr-2 mt-1"
