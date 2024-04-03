@@ -30,7 +30,7 @@ const onClick = () => {
         <div class="bg-white sm:rounded-lg" :class="{ 'p-1': !header }">
             <div
                 @click="onClick"
-                class="focusable !block rounded-b-lg border-b-2 border-gray-200 bg-neutral-50 px-6 py-1 text-center"
+                class="focusable !block rounded-lg border-b-2 border-gray-200 bg-neutral-50 px-6 py-1 text-center"
                 tabindex="0"
                 :aria-controls="header ? header.replaceAll(' ', '_') : `collapsable`"
             >
