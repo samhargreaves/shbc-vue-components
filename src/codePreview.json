@@ -1,8 +1,43 @@
 {
-    "DescriptionList": [
-        "import { DescriptionList } from \"./@shbc-vue-components\";",
+    "Spinner": [
+        "import { Spinner } from \"./@shbc-vue-components\";",
         "",
-        "<DescriptionList>my description list</DescriptionList>"
+        "<Spinner />"
+    ],
+    "Modal": [
+        "import { Modal } from \"./@shbc-vue-components\";",
+        "",
+        "<SecondaryButton @click=\"modal = true\">Open Modal</SecondaryButton>",
+        "<Modal :show=\"modal\" @close=\"modal = false\">",
+        "   <div class=\"p-4\">My modal content</div>",
+        "</Modal>"
+    ],
+    "Logs": [
+        "import { Logs } from \"./@shbc-vue-components\";",
+        "",
+        "<Logs header=\"myLogs\" :logs=\"{}\" />"
+    ],
+    "Dropdown": [
+        "import { Dropdown, DropdownLink } from \"./@shbc-vue-components\";",
+        "",
+        "<Dropdown align=\"left\" content-classes=\"p-2 bg-gray-200\">",
+        "    <template #trigger>Click me</template>",
+        "    <template #content>",
+        "        <ul>",
+        "            <li><DropdownLink href=\"#url1\">item 1</DropdownLink></li>",
+        "            <li><DropdownLink href=\"#url2\">item 2</DropdownLink></li>",
+        "            <li><DropdownLink href=\"#url3\">item 3</DropdownLink></li>",
+        "        </ul>",
+        "    </template>",
+        "</Dropdown>"
+    ],
+    "DescriptionList": [
+        "import { DescriptionList, DescriptionListItem } from \"./@shbc-vue-components\";",
+        "",
+        "<DescriptionList>",
+        "   <DescriptionListItem editable>my description list</DescriptionListItem>",
+        "   <DescriptionListItem editable label=\"my label\" value=\"random\" />",
+        "</DescriptionList>"
     ],
     "Alert":[
         "import { Alert } from \"./@shbc-vue-components\";",
@@ -134,7 +169,7 @@
         "   <InputError message=\"Something is wrong\" />",
         "</div>"
     ],
-    "Dropdown": [
+    "DropdownSearchBar": [
         "import { DropdownSearchbar } from \"./@shbc-vue-components\";",
         "",
         "<div class=\"flex gap-4 items-center\">",
@@ -191,13 +226,17 @@
         "</div>"
     ],
     "Buttons": [
-        "import { SubmitButton, PrimaryButton, SecondaryButton, DangerButton } from \"./@shbc-vue-components\";",
+        "import { SubmitButton, PrimaryButton, SecondaryButton, DangerButton, LinkDropdownButton, LinkDropdownButtonItem } from \"./@shbc-vue-components\";",
         "",
         "<div class=\"flex w-full gap-5 py-2\">",
         "   <SubmitButton :form=\"form\">Submit</SubmitButton>",
         "   <PrimaryButton>Primary</PrimaryButton>",
         "   <SecondaryButton>Secondary</SecondaryButton>",
         "   <DangerButton>Danger</DangerButton>",
+        "   <LinkButton href=\"#mylink1\">myLink button</LinkButton>",
+        "   <LinkDropdownButton title=\"myLink Dropdown button\">",
+        "       <LinkDropdownButtonItem title=\"MyTitle\" href=\"#myRoute\" />",
+        "   </LinkDropdownButton>",
         "</div>"
     ],
     "Section": [

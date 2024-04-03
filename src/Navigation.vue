@@ -1,6 +1,6 @@
 <template>
-    <div class="flex h-screen">
-        <nav class="fixed left-0 top-0 h-full w-64 overflow-y-scroll bg-primary-900 text-white">
+    <div class="flex h-screen w-full">
+        <nav class="fixed left-0 top-0 z-10 h-full w-64 overflow-y-scroll bg-primary-900 text-white">
             <ul class="flex flex-col gap-2 p-4">
                 <li class="font-bold text-primary">SHCB Components</li>
                 <li>
@@ -68,10 +68,33 @@
                     <a href="#descriptionlist" class="block rounded-md p-2 hover:bg-primary-800">Description List</a>
                 </li>
                 <li>
-                    <a href="#descriptionlistitem" class="block rounded-md p-2 hover:bg-primary-800">Description List Item</a>
+                    <a href="#dottedcarousel" class="block rounded-md p-2 hover:bg-primary-800">DottedCarousel</a>
+                </li>
+                <li>
+                    <a href="#dropdown" class="block rounded-md p-2 hover:bg-primary-800">Dropdown</a>
+                </li>
+                <li>
+                    <a href="#logs" class="block rounded-md p-2 hover:bg-primary-800">Logs</a>
+                </li>
+                <li>
+                    <a href="#modal" class="block rounded-md p-2 hover:bg-primary-800">Modal</a>
+                </li>
+                <li>
+                    <a href="#navcollapse" class="block rounded-md p-2 hover:bg-primary-800">NavCollapse</a>
+                </li>
+                <li>
+                    <a href="#pagination" class="block rounded-md p-2 hover:bg-primary-800">Pagination</a>
+                </li>
+                <li>
+                    <a href="#spinner" class="block rounded-md p-2 hover:bg-primary-800">Spinner</a>
+                </li>
+                <li>
+                    <a href="#stats" class="block rounded-md p-2 hover:bg-primary-800">Stats</a>
                 </li>
             </ul>
         </nav>
-        <slot />
+        <div class="max-w-full">
+            <slot />
+        </div>
     </div>
 </template>

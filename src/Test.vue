@@ -18,6 +18,12 @@ import {
     TableItemCard,
     Alert,
     DescriptionList,
+    DescriptionListItem,
+    Dropdown,
+    LinkButton,
+    Logs,
+    Modal,
+    Spinner,
 } from './index';
 import { SubmitButton, PrimaryButton, SecondaryButton, DangerButton } from './index';
 import { useForm } from '@inertiajs/vue3';
@@ -29,8 +35,13 @@ import Thead from './components/Tables/Thead.vue';
 import Checkbox from './components/Forms/Checkbox.vue';
 import Th from './components/Tables/Th.vue';
 import InputError from './components/Forms/InputError.vue';
+import DottedCarousel from './components/DottedCarousel.vue';
 import SelectMultiple from './components/Forms/SelectMultiple.vue';
 import { prefix } from '@fortawesome/free-brands-svg-icons';
+import DropdownLink from './components/DropdownLink.vue';
+import LinkDropdownButton from './components/LinkDropdownButton.vue';
+import Stats from './components/Stats.vue';
+import { ref } from 'vue';
 
 const form = useForm({
     name: '',
@@ -44,10 +55,12 @@ const form = useForm({
     ba_country: '',
     note: '',
 });
+
+const modal = ref(false);
 </script>
 <template>
     <Navigation>
-        <main class="content-container ml-64 h-fit w-full bg-white py-8">
+        <main class="content-container h-fit w-full bg-white py-8 pl-64">
             <Section class="mx-16 mb-8 text-center">
                 <h1 class="text-xl">Components showcase</h1>
                 <div class="inline-block h-4 w-4 rounded-full bg-primary" />
@@ -289,7 +302,7 @@ const form = useForm({
                         <DropdownSearchbar :options="['my first option', 'my second option', 'some random option']" />
                         <DropdownSearchbar placeholder="find me" />
                     </div>
-                    <CodePreview :code="codePreview.Dropdown" />
+                    <CodePreview :code="codePreview.DropdownSearchBar" />
                 </div>
                 <Table class="gutters mt-4">
                     <Thead>
@@ -827,6 +840,10 @@ const form = useForm({
                         <PrimaryButton>Primary</PrimaryButton>
                         <SecondaryButton>Secondary</SecondaryButton>
                         <DangerButton>Danger</DangerButton>
+                        <LinkButton href="#mylink1">myLink button</LinkButton>
+                        <LinkDropdownButton title="myLink Dropdown button">
+                            <LinkDropdownButtonItem title="MyTitle" href="#myRoute" />
+                        </LinkDropdownButton>
                     </div>
                     <CodePreview :code="codePreview.Buttons" />
                 </div>
@@ -836,6 +853,7 @@ const form = useForm({
                             <Th>Element</Th>
                             <Th>Propertie</Th>
                             <Th>Type</Th>
+                            <Th>Default</Th>
                         </Tr>
                     </Thead>
                     <tbody class="[&>*:nth-child(odd)]:bg-gray-50">
@@ -843,36 +861,80 @@ const form = useForm({
                             <Td>SubmitButton</Td>
                             <Td>type</Td>
                             <Td>String</Td>
+                            <Td></Td>
                         </Tr>
                         <Tr>
                             <Td></Td>
                             <Td>disabled</Td>
                             <Td>Boolean</Td>
+                            <Td></Td>
                         </Tr>
                         <Tr>
                             <Td></Td>
                             <Td>form</Td>
                             <Td>Object</Td>
+                            <Td></Td>
                         </Tr>
                         <Tr>
                             <Td>PrimaryButton</Td>
                             <Td>type</Td>
                             <Td>String</Td>
+                            <Td></Td>
                         </Tr>
                         <Tr>
                             <Td></Td>
                             <Td>disabled</Td>
                             <Td>Boolean</Td>
+                            <Td></Td>
                         </Tr>
                         <Tr>
                             <Td>SecondaryButton</Td>
                             <Td>type</Td>
                             <Td>String</Td>
+                            <Td></Td>
                         </Tr>
                         <Tr>
                             <Td>DangerButton</Td>
                             <Td>type</Td>
                             <Td>String</Td>
+                            <Td></Td>
+                        </Tr>
+                        <Tr>
+                            <Td>LinkButton</Td>
+                            <Td>href</Td>
+                            <Td>String</Td>
+                            <Td></Td>
+                        </Tr>
+                        <Tr>
+                            <Td></Td>
+                            <Td>colourClasses</Td>
+                            <Td>String</Td>
+                            <Td>bg-primary text-white hover:bg-primary-700</Td>
+                        </Tr>
+                        <Tr>
+                            <Td></Td>
+                            <Td>target</Td>
+                            <Td>String</Td>
+                            <Td>_self</Td>
+                        </Tr>
+                        <Tr>
+                            <Td></Td>
+                            <Td>disabled</Td>
+                            <Td>Boolean</Td>
+                            <Td>false</Td>
+                        </Tr>
+                        <Tr>
+                            <Td></Td>
+                            <Td>method</Td>
+                            <Td>String</Td>
+                            <Td></Td>
+                        </Tr>
+
+                        <Tr>
+                            <Td></Td>
+                            <Td>data</Td>
+                            <Td>Object</Td>
+                            <Td></Td>
                         </Tr>
                     </tbody>
                 </Table>
@@ -1278,19 +1340,341 @@ const form = useForm({
                 <H2 title="DescriptionList" />
 
                 <div class="gutters bg-white py-2">
-                    <DescriptionList>my description list</DescriptionList>
+                    <DescriptionList>
+                        <DescriptionListItem editable>my description list</DescriptionListItem>
+                        <DescriptionListItem editable label="my label" value="random" />
+                    </DescriptionList>
                     <CodePreview :code="codePreview.DescriptionList" />
+                </div>
+                <Table class="gutters mt-4">
+                    <Thead>
+                        <Tr>
+                            <Th>Element</Th>
+                            <Th>Propertie</Th>
+                            <Th>Type</Th>
+                            <Th>Default</Th>
+                        </Tr>
+                    </Thead>
+                    <tbody class="[&>*:nth-child(odd)]:bg-gray-50">
+                        <Tr>
+                            <Td>DescriptionListItem</Td>
+                            <Td>editable</Td>
+                            <Td>Boolean</Td>
+                            <Td>false</Td>
+                        </Tr>
+                        <Tr>
+                            <Td></Td>
+                            <Td>label</Td>
+                            <Td>String</Td>
+                            <Td>''</Td>
+                        </Tr>
+                        <Tr>
+                            <Td></Td>
+                            <Td>value</Td>
+                            <Td>String</Td>
+                            <Td></Td>
+                        </Tr>
+                    </tbody>
+                </Table>
+            </div>
+
+            <!-- * DottedCarousel -->
+            <div class="my-40">
+                <H2 title="DottedCarousel" />
+
+                <div class="gutters bg-white py-2">
+                    <!--<DottedCarousel>dwadwa</DottedCarousel>-->
+                    Uncaught TypeError: Cannot read properties of undefined (reading 'getBoundingClientRect')
+                    <CodePreview :code="codePreview.DescriptionList" />
+                </div>
+                <Table class="gutters mt-4">
+                    <Thead>
+                        <Tr>
+                            <Th>Propertie</Th>
+                            <Th>Type</Th>
+                            <Th>Default</Th>
+                        </Tr>
+                    </Thead>
+                    <tbody class="[&>*:nth-child(odd)]:bg-gray-50">
+                        <Tr>
+                            <Td>padding</Td>
+                            <Td>Number</Td>
+                            <Td>0</Td>
+                        </Tr>
+                        <Tr>
+                            <Td>gap</Td>
+                            <Td>Number</Td>
+                            <Td>20</Td>
+                        </Tr>
+                    </tbody>
+                </Table>
+            </div>
+
+            <!-- * Dropdown -->
+            <div class="my-40">
+                <H2 title="Dropdown" />
+
+                <div class="gutters bg-white py-2">
+                    <Dropdown align="left" content-classes="p-2 bg-gray-200">
+                        <template #trigger>Click me</template>
+                        <template #content>
+                            <ul>
+                                <DropdownLink href="#url1">item 1</DropdownLink>
+                                <DropdownLink href="#url2">item 2</DropdownLink>
+                                <DropdownLink href="#url3">item 3</DropdownLink>
+                            </ul>
+                        </template>
+                    </Dropdown>
+
+                    <CodePreview :code="codePreview.Dropdown" />
+                </div>
+                <Table class="gutters mt-4">
+                    <Thead>
+                        <Tr>
+                            <Th>Propertie</Th>
+                            <Th>Type</Th>
+                            <Th>Default</Th>
+                        </Tr>
+                    </Thead>
+                    <tbody class="[&>*:nth-child(odd)]:bg-gray-50">
+                        <Tr>
+                            <Td>align</Td>
+                            <Td>String</Td>
+                            <Td>right</Td>
+                        </Tr>
+                        <Tr>
+                            <Td>width</Td>
+                            <Td>String</Td>
+                            <Td>48</Td>
+                        </Tr>
+                        <Tr>
+                            <Td>contentClasses</Td>
+                            <Td>String</Td>
+                            <Td>py-1 bg-white</Td>
+                        </Tr>
+                    </tbody>
+                </Table>
+            </div>
+
+            <!-- * Dropdown -->
+            <div class="my-40">
+                <H2 title="Dropdown" />
+
+                <div class="gutters bg-white py-2">
+                    <Dropdown align="left" content-classes="p-2 bg-gray-200">
+                        <template #trigger>Click me</template>
+                        <template #content>
+                            <ul>
+                                <DropdownLink href="#url1">item 1</DropdownLink>
+                                <DropdownLink href="#url2">item 2</DropdownLink>
+                                <DropdownLink href="#url3">item 3</DropdownLink>
+                            </ul>
+                        </template>
+                    </Dropdown>
+
+                    <CodePreview :code="codePreview.Dropdown" />
+                </div>
+                <Table class="gutters mt-4">
+                    <Thead>
+                        <Tr>
+                            <Th>Propertie</Th>
+                            <Th>Type</Th>
+                            <Th>Default</Th>
+                        </Tr>
+                    </Thead>
+                    <tbody class="[&>*:nth-child(odd)]:bg-gray-50">
+                        <Tr>
+                            <Td>align</Td>
+                            <Td>String</Td>
+                            <Td>right</Td>
+                        </Tr>
+                        <Tr>
+                            <Td>width</Td>
+                            <Td>String</Td>
+                            <Td>48</Td>
+                        </Tr>
+                        <Tr>
+                            <Td>contentClasses</Td>
+                            <Td>String</Td>
+                            <Td>py-1 bg-white</Td>
+                        </Tr>
+                    </tbody>
+                </Table>
+            </div>
+
+            <!-- * Logs -->
+            <div class="my-40">
+                <H2 title="Logs" />
+
+                <div class="gutters bg-white py-2">
+                    <Logs header="myLogs" :logs="{}" />
+                    <CodePreview :code="codePreview.Logs" />
+                </div>
+                <Table class="gutters mt-4">
+                    <Thead>
+                        <Tr>
+                            <Th>Propertie</Th>
+                            <Th>Type</Th>
+                            <Th>Default</Th>
+                        </Tr>
+                    </Thead>
+                    <tbody class="[&>*:nth-child(odd)]:bg-gray-50">
+                        <Tr>
+                            <Td>header</Td>
+                            <Td>String</Td>
+                            <Td>Logs</Td>
+                        </Tr>
+                        <Tr>
+                            <Td>logs</Td>
+                            <Td>Object</Td>
+                            <Td></Td>
+                        </Tr>
+                    </tbody>
+                </Table>
+            </div>
+
+            <!-- * Modal -->
+            <div class="my-40">
+                <H2 title="Modal" />
+
+                <div class="gutters bg-white py-2">
+                    <SecondaryButton @click="modal = true">Open Modal</SecondaryButton>
+                    <Modal :show="modal" @close="modal = false">
+                        <div class="p-4">My modal content</div>
+                    </Modal>
+                    <CodePreview :code="codePreview.Modal" />
+                </div>
+                <Table class="gutters mt-4">
+                    <Thead>
+                        <Tr>
+                            <Th>Propertie</Th>
+                            <Th>Type</Th>
+                            <Th>Default</Th>
+                        </Tr>
+                    </Thead>
+                    <tbody class="[&>*:nth-child(odd)]:bg-gray-50">
+                        <Tr>
+                            <Td>show</Td>
+                            <Td>Boolean</Td>
+                            <Td>false</Td>
+                        </Tr>
+                        <Tr>
+                            <Td>maxWidth</Td>
+                            <Td>String</Td>
+                            <Td>2xl</Td>
+                        </Tr>
+                        <Tr>
+                            <Td>closeable</Td>
+                            <Td>Boolean</Td>
+                            <Td>true</Td>
+                        </Tr>
+                        <Tr>
+                            <Td>hideOverflow</Td>
+                            <Td>Boolean</Td>
+                            <Td>true</Td>
+                        </Tr>
+                        <Tr>
+                            <Td>backdropDuration</Td>
+                            <Td>Number</Td>
+                            <Td>200</Td>
+                        </Tr>
+                        <Tr>
+                            <Td>modalDuration</Td>
+                            <Td>Number</Td>
+                            <Td>200</Td>
+                        </Tr>
+                    </tbody>
+                </Table>
+            </div>
+
+            <!-- * NavCollapse -->
+            <div class="my-40">
+                <H2 title="NavCollapse" />
+
+                <div class="gutters bg-white py-2">
+                    <NavCollapse name="dwawda">What is this component for?</NavCollapse>
+                    <CodePreview :code="[]" />
+                </div>
+                <Table class="gutters mt-4">
+                    <Thead>
+                        <Tr>
+                            <Th>Propertie</Th>
+                            <Th>Type</Th>
+                            <Th>Default</Th>
+                        </Tr>
+                    </Thead>
+                    <tbody class="[&>*:nth-child(odd)]:bg-gray-50">
+                        <Tr>
+                            <Td>show</Td>
+                            <Td>Boolean</Td>
+                            <Td>false</Td>
+                        </Tr>
+                        <Tr>
+                            <Td>name</Td>
+                            <Td>String</Td>
+                            <Td></Td>
+                        </Tr>
+                    </tbody>
+                </Table>
+            </div>
+
+            <!-- * Pagination -->
+            <div class="my-40">
+                <H2 title="Pagination" />
+
+                <div class="gutters bg-white py-2">
+                    <Pagination
+                        :links="[
+                            { url: '#table', label: 'label - 1' },
+                            { url: '#table', label: 'label - 2' },
+                            { url: '#table', label: 'label - 3' },
+                            { url: '#table', label: 'label - 4' },
+                        ]"
+                    />
+                    needs working on
+                    <CodePreview :code="[]" />
+                </div>
+                <Table class="gutters mt-4">
+                    <Thead>
+                        <Tr>
+                            <Th>Propertie</Th>
+                            <Th>Type</Th>
+                            <Th>Default</Th>
+                        </Tr>
+                    </Thead>
+                    <tbody class="[&>*:nth-child(odd)]:bg-gray-50">
+                        <Tr>
+                            <Td>show</Td>
+                            <Td>Boolean</Td>
+                            <Td>false</Td>
+                        </Tr>
+                        <Tr>
+                            <Td>name</Td>
+                            <Td>String</Td>
+                            <Td></Td>
+                        </Tr>
+                    </tbody>
+                </Table>
+            </div>
+
+            <!-- * Spinner -->
+            <div class="my-40">
+                <H2 title="Spinner" />
+
+                <div class="gutters bg-white py-2">
+                    <Spinner />
+                    <CodePreview :code="codePreview.Spinner" />
                 </div>
             </div>
 
-            <!-- * Description List Item -->
+            <!-- * Stats -->
             <div class="my-40">
-                <H2 title="DescriptionListItem" />
+                <H2 title="Stats" />
 
                 <div class="gutters bg-white py-2">
-                    <!-- ! finish this component docs -->
-                    <DescriptionListItem :editable="true" label="dwadwa">my description list</DescriptionListItem>
-                    <CodePreview :code="codePreview.DescriptionList" />
+                    Uncaught ReferenceError: route is not defined
+                    <!--<Stats statusName="/" :stats="[{ name: 'name1', value: 'value1', label: 'label1' }]" />-->
+                    <CodePreview :code="codePreview.Spinner" />
                 </div>
             </div>
         </main>
