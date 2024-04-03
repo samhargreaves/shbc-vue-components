@@ -14260,7 +14260,7 @@ const hl = new C2(), Pn = {
   class: "text-xs font-semibold uppercase leading-normal text-primary hover:text-primary-700",
   type: "button"
 }, M2 = ["id"], B2 = {
-  __name: "CollapsibleSection",
+  __name: "CollapsableSection",
   props: {
     header: String,
     open: {
@@ -15155,6 +15155,7 @@ const G_ = /* @__PURE__ */ pr(BO, [["render", UO]]), VO = { class: "description-
 export {
   $_ as Alert,
   QO as Checkbox,
+  B2 as CollapsableSection,
   B2 as CollapsibleSection,
   j_ as DangerButton,
   G_ as DescriptionList,
