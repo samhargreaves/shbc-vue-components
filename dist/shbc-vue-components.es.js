@@ -14279,7 +14279,7 @@ const hl = new C2(), Pn = {
       n.value.toggle(), i.value = !i.value;
     };
     return (o, s) => (w(), O("div", {
-      class: Y(["mt-2 overflow-hidden rounded-lg border-2 border-gray-200 dark:border-gray-700", { "px-4 py-2": !t.header }])
+      class: Y(["mt-2 rounded-lg border-2 border-gray-200 dark:border-gray-700", { "px-4 py-2": !t.header }])
     }, [
       C("div", {
         class: Y(["bg-white sm:rounded-lg", { "p-1": !t.header }])
@@ -14294,7 +14294,7 @@ const hl = new C2(), Pn = {
           C("button", F2, z(i.value ? "Hide" : "Show"), 1)
         ], 8, L2),
         C("div", {
-          class: "!visible hidden",
+          class: "!visible hidden overflow-hidden",
           id: t.header ? t.header.replaceAll(" ", "_") : "collapsable",
           ref_key: "collapseRef",
           ref: r
@@ -14864,7 +14864,7 @@ const hl = new C2(), Pn = {
   props: {
     header: String,
     overflow: {
-      default: !0,
+      default: !1,
       type: Boolean
     }
   },
