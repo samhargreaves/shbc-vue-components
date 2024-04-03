@@ -1,6 +1,6 @@
 <template>
     <div class="flex h-screen">
-        <nav class="fixed left-0 top-0 h-full w-64 bg-primary-900 text-white">
+        <nav class="fixed left-0 top-0 h-full w-64 overflow-y-scroll bg-primary-900 text-white">
             <ul class="flex flex-col gap-2 p-4">
                 <li class="font-bold text-primary">SHCB Components</li>
                 <li>
@@ -60,6 +60,15 @@
                 </li>
                 <li>
                     <a href="#tableitemcard" class="block rounded-md p-2 hover:bg-primary-800">TableItemCard</a>
+                </li>
+                <li>
+                    <a href="#alert" class="block rounded-md p-2 hover:bg-primary-800">Alert</a>
+                </li>
+                <li>
+                    <a href="#descriptionlist" class="block rounded-md p-2 hover:bg-primary-800">Description List</a>
+                </li>
+                <li>
+                    <a href="#descriptionlistitem" class="block rounded-md p-2 hover:bg-primary-800">Description List Item</a>
                 </li>
             </ul>
         </nav>

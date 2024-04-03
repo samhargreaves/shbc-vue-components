@@ -18,7 +18,7 @@ import TrCollapseHandler from './components/Tables/TrCollapseHandler.vue';
 import TrCollapse from './components/Tables/TrCollapse.vue';
 import TableItemCard from './components/Tables/TableItemCard.vue';
 import Alert from './components/Alert.vue';
-import CollapsibleSection from './components/CollapsibleSection.vue';
+import CollapsableSection from './components/CollapsableSection.vue';
 import Dropdown from './components/Dropdown.vue';
 import DropdownLink from './components/DropdownLink.vue';
 import LinkButton from './components/LinkButton.vue';
@@ -75,7 +75,8 @@ export {
     TableItemCard,
     // COMPONENTS
     Alert,
-    CollapsibleSection,
+    CollapsableSection,
+    CollapsableSection as CollapsibleSection,
     Dropdown,
     DropdownLink,
     LinkButton,

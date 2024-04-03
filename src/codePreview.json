@@ -1,5 +1,37 @@
 {
+    "DescriptionList": [
+        "import { DescriptionList } from \"./@shbc-vue-components\";",
+        "",
+        "<DescriptionList>my description list</DescriptionList>"
+    ],
+    "Alert":[
+        "import { Alert } from \"./@shbc-vue-components\";",
+        "",
+        "<Alert>My alert message</Alert>"
+    ],
+    "TableItemCard": [
+        "import { TableItemCard } from \"./@shbc-vue-components\";",
+        "",
+        "<TableItemCard",
+        "  :itemId=\"{ id: 2, prefix: false }\"",
+        "  :pills=\"[{ text: 'myStatus' }]\"",
+        "  :options=\"[",
+        "    {",
+        "      text: 'No. Items: 342',",
+        "    },",
+        "    {",
+        "      text: 'Sold: 23',",
+        "    },",
+        "  ]\"",
+        "  timeStamp=\"12.10.2024\"",
+        "  :title=\"{ text: 'Some Product Name' }\"",
+        "  extraText=\"my note\"",
+        "  :amount=\"{ text: 'Amount: ', amount: 23.45 }\"",
+        "/>"
+    ],
     "Table": [
+        "import { Table } from \"./@shbc-vue-components\";",
+        "",
         "<Table",
         "  class=\"w-full\"",
         "  :total=\"30\"",

@@ -1,6 +1,6 @@
 <script setup>
 import CodePreview from './components/CodePreview.vue';
-import CollapsibleSection from './components/CollapsibleSection.vue';
+import CollapsableSection from './components/CollapsableSection.vue';
 import {
     Input,
     Section,
@@ -15,6 +15,9 @@ import {
     Textarea,
     TextInput,
     TrCollapseHandler,
+    TableItemCard,
+    Alert,
+    DescriptionList,
 } from './index';
 import { SubmitButton, PrimaryButton, SecondaryButton, DangerButton } from './index';
 import { useForm } from '@inertiajs/vue3';
@@ -27,6 +30,7 @@ import Checkbox from './components/Forms/Checkbox.vue';
 import Th from './components/Tables/Th.vue';
 import InputError from './components/Forms/InputError.vue';
 import SelectMultiple from './components/Forms/SelectMultiple.vue';
+import { prefix } from '@fortawesome/free-brands-svg-icons';
 
 const form = useForm({
     name: '',
@@ -906,7 +910,7 @@ const form = useForm({
 
             <div class="my-40">
                 <div class="gutters bg-white py-2">
-                    <CollapsibleSection class="mb-2" header="MyCollapsibleSection" :open="true">My Section Data</CollapsibleSection>
+                    <CollapsableSection class="mb-2" header="MyCollapsibleSection" :open="true">My Section Data</CollapsableSection>
                     <CodePreview :code="codePreview.CollapsibleSection" />
                 </div>
                 <Table class="gutters mt-4">
@@ -1057,120 +1061,237 @@ const form = useForm({
                 <H2 title="TableItemCard" />
 
                 <div class="gutters bg-white py-2">
-                    <Table
-                        class="w-full"
-                        :total="30"
-                        :links="[
-                            { url: '#table', label: 'label - 1' },
-                            { url: '#table', label: 'label - 2' },
-                            { url: '#table', label: 'label - 3' },
-                            { url: '#table', label: 'label - 4' },
+                    <TableItemCard
+                        :itemId="{ id: 2, prefix: false }"
+                        :pills="[{ text: 'myStatus' }]"
+                        :options="[
+                            {
+                                text: 'No. Items: 342',
+                            },
+                            {
+                                text: 'Sold: 23',
+                            },
                         ]"
-                        :sticky="true"
-                    >
-                        <Thead>
-                            <Tr>
-                                <Th>Header 1</Th>
-                                <Th>Header 2</Th>
-                                <Th>Header 3</Th>
-                            </Tr>
-                        </Thead>
-                        <tbody>
-                            <Tr>
-                                <Td>Row 1 - Col 1</Td>
-                                <Td>Row 1 - Col 2</Td>
-                                <Td>Row 1 - Col 3</Td>
-                            </Tr>
-                            <Tr>
-                                <Td>Row 2 - Col 1</Td>
-                                <Td>Row 2 - Col 2</Td>
-                                <Td>Row 2 - Col 3</Td>
-                            </Tr>
-                            <Tr>
-                                <Td>Row 3 - Col 1</Td>
-                                <Td>Row 3 - Col 2</Td>
-                                <Td>Row 3 - Col 3</Td>
-                            </Tr>
-                            <TrCollapse>
-                                <Td>Row 4 - Col 1</Td>
-                                <Td>Row 4 - Col 2</Td>
-                                <Td>Row 4 - Col 3</Td>
-                            </TrCollapse>
-                            <TrCollapseHandler>
-                                <Td>Row 4 - Col 1</Td>
-                                <Td>Row 4 - Col 2</Td>
-                                <Td>Row 4 - Col 3</Td>
-                            </TrCollapseHandler>
-                        </tbody>
-                    </Table>
-                    <CodePreview :code="codePreview.Table" />
+                        timeStamp="12.10.2024"
+                        :title="{ text: 'Some Product Name' }"
+                        extraText="my note"
+                        :amount="{ text: 'Amount: ', amount: 23.45 }"
+                    />
+                    <CodePreview :code="codePreview.TableItemCard" />
                 </div>
                 <Table class="gutters mt-4">
                     <Thead>
                         <Tr>
-                            <Th>Element</Th>
                             <Th>Propertie</Th>
                             <Th>Type</Th>
-                            <Th>Default</Th>
+                            <Th>Inner Propertie</Th>
+                            <Th>Inner Propertie Type</Th>
+                            <Th>Inner Propertie Default</Th>
+                            <Th>Inner Propertie Required</Th>
                         </Tr>
                     </Thead>
                     <tbody class="[&>*:nth-child(odd)]:bg-gray-50">
                         <Tr>
-                            <Td>Table</Td>
-                            <Td>total</Td>
+                            <Td>key</Td>
                             <Td>Number</Td>
                             <Td></Td>
-                        </Tr>
-                        <Tr>
                             <Td></Td>
-                            <Td>links</Td>
-                            <Td>Array</Td>
+                            <Td></Td>
                             <Td></Td>
                         </Tr>
                         <Tr>
+                            <Td>item</Td>
+                            <Td>Object</Td>
                             <Td></Td>
-                            <Td>collapsable</Td>
-                            <Td>Boolean</Td>
+                            <Td></Td>
+                            <Td></Td>
+                            <Td></Td>
+                        </Tr>
+                        <Tr>
+                            <Td>itemId</Td>
+                            <Td>Object</Td>
+                            <Td>id</Td>
+                            <Td>String</Td>
+                            <Td></Td>
+                            <Td>true</Td>
+                        </Tr>
+                        <Tr>
+                            <Td></Td>
+                            <Td></Td>
+                            <Td>routeName</Td>
+                            <Td>String</Td>
+                            <Td>null</Td>
                             <Td>false</Td>
                         </Tr>
                         <Tr>
                             <Td></Td>
-                            <Td>collapse_id</Td>
+                            <Td></Td>
+                            <Td>routeData</Td>
                             <Td>String</Td>
-                            <Td>collapse</Td>
+                            <Td></Td>
+                            <Td>false</Td>
                         </Tr>
                         <Tr>
                             <Td></Td>
-                            <Td>sticky</Td>
+                            <Td></Td>
+                            <Td>prefix</Td>
                             <Td>Boolean</Td>
+                            <Td>true</Td>
+                            <Td>false</Td>
+                        </Tr>
+                        <Tr>
+                            <Td>extraText</Td>
+                            <Td>String</Td>
+                            <Td></Td>
+                            <Td></Td>
+                            <Td></Td>
+                            <Td></Td>
+                        </Tr>
+                        <Tr>
+                            <Td>title</Td>
+                            <Td>Object</Td>
+                            <Td>text</Td>
+                            <Td>String</Td>
+                            <Td></Td>
                             <Td>true</Td>
                         </Tr>
                         <Tr>
                             <Td></Td>
-                            <Td>overflow</Td>
-                            <Td>Boolean</Td>
+                            <Td></Td>
+                            <Td>href</Td>
+                            <Td>String</Td>
+                            <Td>null</Td>
+                            <Td>false</Td>
+                        </Tr>
+                        <Tr>
+                            <Td></Td>
+                            <Td></Td>
+                            <Td>routeName</Td>
+                            <Td>String</Td>
+                            <Td>null</Td>
+                            <Td>false</Td>
+                        </Tr>
+                        <Tr>
+                            <Td></Td>
+                            <Td></Td>
+                            <Td>routeData</Td>
+                            <Td>String</Td>
+                            <Td>null</Td>
+                            <Td>false</Td>
+                        </Tr>
+                        <Tr>
+                            <Td>pills</Td>
+                            <Td>Array</Td>
+                            <Td>text</Td>
+                            <Td>String</Td>
+                            <Td></Td>
                             <Td>true</Td>
                         </Tr>
                         <Tr>
-                            <Td>Th</Td>
-                            <Td>orderBy</Td>
+                            <Td></Td>
+                            <Td></Td>
+                            <Td>color</Td>
                             <Td>String</Td>
+                            <Td></Td>
+                            <Td>false</Td>
+                        </Tr>
+                        <Tr>
+                            <Td>options</Td>
+                            <Td>Object</Td>
+                            <Td>text</Td>
+                            <Td>String</Td>
+                            <Td></Td>
+                            <Td>true</Td>
+                        </Tr>
+                        <Tr>
+                            <Td></Td>
+                            <Td></Td>
+                            <Td>color</Td>
+                            <Td>String</Td>
+                            <Td></Td>
+                            <Td>false</Td>
+                        </Tr>
+                        <Tr>
+                            <Td></Td>
+                            <Td></Td>
+                            <Td>routeName</Td>
+                            <Td>String</Td>
+                            <Td>null</Td>
+                            <Td>false</Td>
+                        </Tr>
+                        <Tr>
+                            <Td></Td>
+                            <Td></Td>
+                            <Td>href</Td>
+                            <Td>String</Td>
+                            <Td>null</Td>
+                            <Td>false</Td>
+                        </Tr>
+                        <Tr>
+                            <Td></Td>
+                            <Td></Td>
+                            <Td>routeData</Td>
+                            <Td>String</Td>
+                            <Td>null</Td>
+                            <Td>false</Td>
+                        </Tr>
+                        <Tr>
+                            <Td>timeStamp</Td>
+                            <Td>String</Td>
+                            <Td></Td>
+                            <Td></Td>
+                            <Td></Td>
                             <Td></Td>
                         </Tr>
                         <Tr>
-                            <Td>TrCollapse</Td>
-                            <Td>collapse_id</Td>
+                            <Td>amount</Td>
+                            <Td>Object</Td>
+                            <Td>text</Td>
                             <Td>String</Td>
-                            <Td>collapse</Td>
+                            <Td>Amount:</Td>
+                            <Td>false</Td>
                         </Tr>
                         <Tr>
-                            <Td>TrCollapseHandler</Td>
-                            <Td>collapse_id</Td>
+                            <Td></Td>
+                            <Td></Td>
+                            <Td>amount</Td>
                             <Td>String</Td>
-                            <Td>collapse</Td>
+                            <Td>0.00</Td>
+                            <Td>true</Td>
                         </Tr>
                     </tbody>
                 </Table>
+            </div>
+
+            <!-- * Alert -->
+            <div class="my-40">
+                <H2 title="Alert" />
+
+                <div class="gutters bg-white py-2">
+                    <Alert>My alert message</Alert>
+                    <CodePreview :code="codePreview.Alert" />
+                </div>
+            </div>
+
+            <!-- * Description List -->
+            <div class="my-40">
+                <H2 title="DescriptionList" />
+
+                <div class="gutters bg-white py-2">
+                    <DescriptionList>my description list</DescriptionList>
+                    <CodePreview :code="codePreview.DescriptionList" />
+                </div>
+            </div>
+
+            <!-- * Description List Item -->
+            <div class="my-40">
+                <H2 title="DescriptionListItem" />
+
+                <div class="gutters bg-white py-2">
+                    <!-- ! finish this component docs -->
+                    <DescriptionListItem :editable="true" label="dwadwa">my description list</DescriptionListItem>
+                    <CodePreview :code="codePreview.DescriptionList" />
+                </div>
             </div>
         </main>
     </Navigation>
