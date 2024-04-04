@@ -70,6 +70,7 @@
         "autoprefixer": "^10.4.17",
         "dotenv": "^16.4.5",
         "vue3-highlightjs": "^1.0.5",
+        "js-md5": "^0.8.3",
         "@netblink/nb-prettier": "github:LukaszTlalka/nb-prettier"
     }
 }

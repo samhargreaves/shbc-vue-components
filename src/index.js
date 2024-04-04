@@ -40,6 +40,7 @@ import Select2ajax from './components/Forms/Select2ajax.vue';
 import NavCollapse from './components/NavCollapse.vue';
 import DescriptionList from './components/DescriptionList.vue';
 import DescriptionListItem from './components/DescriptionListItem.vue';
+import GravatarImg from './components/GravatarImg.vue';
 
 const ComponentsSHBC = {
     install(App) {
@@ -79,6 +80,7 @@ export {
     CollapsableSection as CollapsibleSection,
     Dropdown,
     DropdownLink,
+    GravatarImg,
     LinkButton,
     LinkDropdownButton,
     LinkDropdownButtonItem,
