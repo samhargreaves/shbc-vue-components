@@ -1,5 +1,5 @@
 <script setup>
-import { Td } from './Td.vue';
+import Td from './Td.vue';
 defineProps({
     collapse_id: {
         type: String,
