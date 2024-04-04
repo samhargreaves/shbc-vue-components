@@ -41,6 +41,7 @@ import NavCollapse from './components/NavCollapse.vue';
 import DescriptionList from './components/DescriptionList.vue';
 import DescriptionListItem from './components/DescriptionListItem.vue';
 import GravatarImg from './components/GravatarImg.vue';
+import TdCollapseHandler from './components/Tables/TdCollapseHandler.vue';
 
 const ComponentsSHBC = {
     install(App) {
@@ -73,6 +74,7 @@ export {
     Td,
     TrCollapse,
     TrCollapseHandler,
+    TdCollapseHandler,
     TableItemCard,
     // COMPONENTS
     Alert,
