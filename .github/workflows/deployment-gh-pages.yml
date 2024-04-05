@@ -19,7 +19,7 @@ jobs:
                   node-version: 20.x
 
             - name: Build application
-              run: npm run build --config vite.config.docs.js
+              run: vite build --config vite.config.docs.js
 
             - name: Deploy with gh-pages
               run: |
