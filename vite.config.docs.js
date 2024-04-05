@@ -8,6 +8,7 @@ export default ({ mode }) => {
     return defineConfig({
         plugins: [vue()],
         base: '/shbc-vue-components',
+        /*
         build: {
             lib: {
                 entry: path.resolve(__dirname, 'src/index.js'),
@@ -26,7 +27,7 @@ export default ({ mode }) => {
                     main: path.resolve(__dirname, 'src/index.js'),
                 },
             },
-        },
+        }, */
         resolve: {
             alias: {
                 '@': resolve(__dirname, '/src'),
