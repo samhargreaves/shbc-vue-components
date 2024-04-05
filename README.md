@@ -14,6 +14,10 @@ Install with for newest version:
 npm install git@github.com:samhargreaves/shbc-vue-components.git#release
 ```
 
+# Documentation
+
+[docs](https://samhargreaves.github.io/shbc-vue-components/)
+
 Available components:
 
 -   Checkbox
