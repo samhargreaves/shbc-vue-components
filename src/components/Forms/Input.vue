@@ -135,6 +135,9 @@ function ucwords(text) {
                 <SubmitButton v-if="submitBtn" :form="form" class="z-[2] inline-block rounded-l-none" id="button-input">
                     {{ submitBtn }}
                 </SubmitButton>
+                <SubmitButton v-if="$slots?.submit" :form="form" class="z-[2] inline-block rounded-l-none" id="button-input">
+                    <slot name="submit" />
+                </SubmitButton>
                 <a
                     v-if="whatsApp"
                     class="z-[2] inline-block rounded-r bg-primary px-2 py-2 text-xs font-medium uppercase leading-normal text-white shadow transition duration-150 ease-in-out hover:bg-primary-700 hover:shadow-lg focus:z-[3] focus:bg-primary-600 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-primary-700 active:shadow-lg"
