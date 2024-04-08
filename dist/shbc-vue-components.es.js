@@ -3086,7 +3086,7 @@ const hr = (t, e) => {
       }), i.join(" ");
     }
     return (n, i) => {
-      var a;
+      var a, o;
       return _(), C("div", null, [
         t.noLabel ? J("", !0) : (_(), le(q(Pl), {
           key: 0,
@@ -3103,7 +3103,7 @@ const hr = (t, e) => {
               id: t.field,
               type: "checkbox",
               class: "hidden",
-              "onUpdate:modelValue": i[0] || (i[0] = (o) => e.form[t.field] = o),
+              "onUpdate:modelValue": i[0] || (i[0] = (s) => e.form[t.field] = s),
               disabled: e.disabled,
               required: e.required,
               name: t.name ?? t.field
@@ -3120,7 +3120,7 @@ const hr = (t, e) => {
             K(n.$slots, "switchDescription", {}, void 0, !0)
           ])) : t.type === "select" ? He((_(), C("select", {
             key: 1,
-            "onUpdate:modelValue": i[1] || (i[1] = (o) => e.form[t.field] = o),
+            "onUpdate:modelValue": i[1] || (i[1] = (s) => e.form[t.field] = s),
             required: e.required,
             disabled: e.disabled,
             name: t.name ?? t.field,
@@ -3136,10 +3136,10 @@ const hr = (t, e) => {
               type: t.type,
               class: re(["focusable relative m-0 block w-full flex-auto disabled:border-slate-200 disabled:bg-slate-50 disabled:text-slate-500 disabled:shadow-none", {
                 "!rounded-l-none": t.addon,
-                "!rounded-r-none": !!t.submitBtn || t.whatsApp
+                "!rounded-r-none": !!t.submitBtn || t.whatsApp || ((a = n.$slots) == null ? void 0 : a.submit)
               }]),
               modelValue: e.form[t.field],
-              "onUpdate:modelValue": i[2] || (i[2] = (o) => e.form[t.field] = o),
+              "onUpdate:modelValue": i[2] || (i[2] = (s) => e.form[t.field] = s),
               required: e.required,
               disabled: e.disabled,
               autocomplete: t.field,
@@ -3162,7 +3162,7 @@ const hr = (t, e) => {
               ]),
               _: 1
             }, 8, ["form"])) : J("", !0),
-            (a = n.$slots) != null && a.submit ? (_(), le(q(kc), {
+            (o = n.$slots) != null && o.submit ? (_(), le(q(kc), {
               key: 2,
               form: t.form,
               class: "z-[2] inline-block rounded-l-none",
@@ -3193,7 +3193,7 @@ const hr = (t, e) => {
       ]);
     };
   }
-}, n_ = /* @__PURE__ */ hr(qm, [["__scopeId", "data-v-b37cbc10"]]), Gm = { class: "text-sm text-red-600" }, ri = {
+}, n_ = /* @__PURE__ */ hr(qm, [["__scopeId", "data-v-721dc399"]]), Gm = { class: "text-sm text-red-600" }, ri = {
   __name: "InputError",
   props: ["message"],
   setup(t) {
