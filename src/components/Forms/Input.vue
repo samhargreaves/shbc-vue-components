@@ -118,7 +118,7 @@ function ucwords(text) {
                     class="focusable relative m-0 block w-full flex-auto disabled:border-slate-200 disabled:bg-slate-50 disabled:text-slate-500 disabled:shadow-none"
                     :class="{
                         '!rounded-l-none': addon,
-                        '!rounded-r-none': !!submitBtn || whatsApp,
+                        '!rounded-r-none': !!submitBtn || whatsApp || $slots?.submit,
                     }"
                     v-model="props.form[field]"
                     :required="props.required"
