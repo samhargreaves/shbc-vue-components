@@ -59,10 +59,12 @@ const getArrowColor = (direction) => {
 </script>
 <template>
     <th scope="col" class="relative py-4 text-center md:px-6 md:text-left" @click="toggleOrder" :class="orderBy ? 'cursor-pointer' : ''">
-        <slot />
-        <span v-if="orderBy" class="order-arrows absolute right-3 top-0 flex h-full items-center md:right-4">
-            <FontAwesomeIcon icon="fa-sort-up" class="absolute" :class="getArrowColor('desc')" />
-            <FontAwesomeIcon icon="fa-sort-down" class="absolute" :class="getArrowColor('asc')" />
-        </span>
+        <div class="flex items-center justify-between">
+            <slot />
+            <span v-if="orderBy" class="order-arrows flex h-full w-4 items-center md:right-4">
+                <FontAwesomeIcon icon="fa-sort-up" class="absolute" :class="getArrowColor('desc')" />
+                <FontAwesomeIcon icon="fa-sort-down" class="absolute" :class="getArrowColor('asc')" />
+            </span>
+        </div>
     </th>
 </template>
