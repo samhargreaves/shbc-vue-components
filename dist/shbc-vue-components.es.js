@@ -10023,7 +10023,7 @@ const z1 = { class: "flex w-full flex-col" }, U1 = {
               key: 0,
               ref_key: "sticky_wrapper",
               ref: i,
-              class: "fixed hidden w-full overflow-hidden bg-neutral-100"
+              class: "fixed hidden w-full isolate z-50 overflow-hidden bg-neutral-100"
             }, [
               I("div", {
                 ref_key: "sticky_header",
