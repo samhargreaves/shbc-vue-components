@@ -112,7 +112,7 @@ if (props.sticky) {
                     }"
                     ref="table"
                 >
-                    <div v-if="sticky" ref="sticky_wrapper" class="fixed hidden w-full overflow-hidden bg-neutral-100">
+                    <div v-if="sticky" ref="sticky_wrapper" class="fixed hidden w-full isolate z-50 overflow-hidden bg-neutral-100">
                         <div ref="sticky_header" class="w-max [&>th]:align-middle"></div>
                     </div>
                     <slot />
