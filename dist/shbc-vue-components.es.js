@@ -14993,6 +14993,9 @@ const Rp = /* @__PURE__ */ hr(EO, [["render", PO]]), $O = { class: "flex flex-wr
     url: {
       type: String,
       required: !0
+    },
+    queryParams: {
+      type: Object
     }
   },
   emits: ["update:modelValue"],
@@ -15002,7 +15005,9 @@ const Rp = /* @__PURE__ */ hr(EO, [["render", PO]]), $O = { class: "flex flex-wr
     }, f = async (d = !1) => {
       var x;
       const v = new URLSearchParams();
-      if (v.append("term", u.value), v.append("page", a.value), d) {
+      if (v.append("term", u.value), v.append("page", a.value), r.queryParams && Object.keys(r.queryParams).forEach((O) => {
+        v.append(O, r.queryParams[O]);
+      }), d) {
         const O = ((x = r.form) == null ? void 0 : x[r.field]) || r.modelValue;
         O && v.append("ajax_id", O);
       }
