@@ -46,6 +46,9 @@ const props = defineProps({
         type: String,
         required: true,
     },
+    queryParams: {
+        type: Object,
+    }
 });
 
 const emit = defineEmits(['update:modelValue']);
@@ -66,6 +69,12 @@ const fetchList = async (appendAjaxId = false) => {
     const params = new URLSearchParams();
     params.append('term', term.value);
     params.append('page', page.value);
+
+    if (props.queryParams) {
+        Object.keys(props.queryParams).forEach((key) => {
+            params.append(key, props.queryParams[key]);
+        });
+    }
 
     if (appendAjaxId) {
         const currentValue = props.form?.[props.field] || props.modelValue;
