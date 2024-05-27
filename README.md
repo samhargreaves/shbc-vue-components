@@ -58,7 +58,7 @@ Available components:
 For this to work you have to configure those values in tailwind (especially colors). For all values for Tailwind you can use page like [UI Colors](https://uicolors.app/create), but remember to add `DEAFULT` value.
 
 ```json
-{/*...*/
+{
     theme: {
         extend: {
             colors: {
@@ -70,37 +70,31 @@ For this to work you have to configure those values in tailwind (especially colo
                     DEFAULT: "#aad3d9",
                     50: "#f4f9fb",
                     100: "#e9f2f5",
-                    /*...*/
                 },
                 accent: {
                     DEFAULT: "#e1b8c3",
                     50: "#fbf5f6",
                     100: "#f7ecef",
-                    /*...*/
                 },
                 danger: {
                     DEFAULT: "#f36262",
                     50: "#fef2f2",
                     100: "#fde3e3",
-                    /*...*/
                 },
                 warning: {
                     DEFAULT: "#f3cf62",
                     50: "#fefaec",
                     100: "#fbf0ca",
-                    /*...*/
                 },
                 success: {
                     DEFAULT: "#87f362",
                     50: "#eefee7",
                     100: "#d9fccb",
-                    /*...*/
                 },
                 info: {
                     DEFAULT: "#6262f3",
                     50: "#eef2ff",
                     100: "#e0e6ff",
-                    /*...*/
                 },
             },
             fontSize: {
@@ -152,7 +146,6 @@ For this to work you have to configure those values in tailwind (especially colo
                 DEFAULT: "0 1px 2px 0 rgb(0 0 0 / 0.05)",
             },
         },
-        /*...*/
     }
 ```
 
@@ -160,13 +153,11 @@ Also you need to add this package to conent seciont and change mode to `jit`, fo
 
 ```json
 {
-    /*...*/
     "mode": "jit",
     "content": [
         /*...*/
         "./node_modules/@shbc/**/*.js"
     ]
-    /*...*/
 }
 ```
 
