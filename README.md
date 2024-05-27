@@ -57,7 +57,7 @@ Available components:
 
 For this to work you have to configure those values in tailwind (especially colors). For all values for Tailwind you can use page like [UI Colors](https://uicolors.app/create), but remember to add `DEAFULT` value.
 
-```json
+```js
 {
     theme: {
         extend: {
@@ -151,7 +151,7 @@ For this to work you have to configure those values in tailwind (especially colo
 
 Also you need to add this package to conent seciont and change mode to `jit`, for tailwind to dynamically add styling:
 
-```json
+```js
 {
     "mode": "jit",
     "content": [
