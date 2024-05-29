@@ -26,6 +26,14 @@ const props = defineProps({
         type: Number,
         default: 200,
     },
+    alignCenter: {
+        type: Boolean,
+        default: false,
+    },
+    showBorder: {
+        type: Boolean,
+        default: false,
+    },
 });
 
 const emit = defineEmits(['close']);
@@ -87,7 +95,12 @@ const maxWidthClass = computed(() => {
 <template>
     <teleport to="body">
         <transition leave-active-class="duration-200">
-            <div v-show="show" class="modal fixed inset-0 z-50 overflow-y-auto px-4 py-6 sm:px-0" scroll-region>
+            <div
+                v-show="show"
+                class="modal fixed inset-0 z-50 overflow-y-auto px-4 py-6 sm:px-0"
+                :class="{ flex: alignCenter, 'mb-16 items-center justify-center': alignCenter }"
+                scroll-region
+            >
                 <transition
                     :enter-active-class="`backdrop-transition enter ease-out duration-[${backdropDuration}ms]`"
                     enter-from-class="opacity-0"
@@ -112,7 +125,7 @@ const maxWidthClass = computed(() => {
                     <div
                         v-show="show"
                         class="mb-6 transform rounded-lg bg-white shadow-xl transition-all sm:mx-auto sm:w-full"
-                        :class="maxWidthClass"
+                        :class="maxWidthClass + (showBorder ? ' border-pink rounded-md border-2 border-solid' : '')"
                     >
                         <slot v-if="show" />
                     </div>
