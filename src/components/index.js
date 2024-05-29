@@ -10,6 +10,7 @@ import FileDropZoneInput from './Forms/FileDropZoneInput.vue';
 import Images from './Forms/Images.vue';
 import RadioButton from './Forms/RadioButton.vue';
 import SubmitButton from './Forms/SubmitButton.vue';
+import SelectMultiple from './Forms/SelectMultiple.vue';
 import Table from './Tables/Table.vue';
 import Thead from './Tables/Thead.vue';
 import Th from './Tables/Th.vue';
@@ -53,6 +54,7 @@ export {
     Images,
     RadioButton,
     SubmitButton,
+    SelectMultiple,
     Select2ajax,
     // TABLES
     Table,
