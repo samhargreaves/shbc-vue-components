@@ -53,6 +53,21 @@ const props = defineProps({
     switchDescription: String,
     sublabel: String,
 
+    inputCustomClass: {
+        type: String,
+        default: '',
+    },
+
+    buttonCustomClass: {
+        type: String,
+        default: '',
+    },
+
+    labelCustomClass: {
+        type: String,
+        default: '',
+    },
+
     modelValue: {},
     noForm: {
         type: Boolean,
@@ -73,7 +88,14 @@ function ucwords(text) {
 
 <template>
     <div>
-        <InputLabel v-if="!noLabel" :for="field" :value="label ? label : ucwords(field)" :sublabel="sublabel" :required="required" />
+        <InputLabel
+            :customClass="labelCustomClass"
+            v-if="!noLabel"
+            :for="field"
+            :value="label ? label : ucwords(field)"
+            :sublabel="sublabel"
+            :required="required"
+        />
         <div class="relative flex w-full max-w-full items-stretch" :class="noLabel ? '' : 'mb-4'">
             <label v-if="type === 'checkbox'" class="flex items-center">
                 <input
@@ -119,6 +141,7 @@ function ucwords(text) {
                     :class="{
                         '!rounded-l-none': addon,
                         '!rounded-r-none': !!submitBtn || whatsApp || $slots?.submit,
+                        [inputCustomClass]: !!inputCustomClass,
                     }"
                     v-model="props.form[field]"
                     :required="props.required"
@@ -132,15 +155,22 @@ function ucwords(text) {
                     :pattern="props.pattern"
                     :name="name ?? field"
                 />
-                <SubmitButton v-if="submitBtn" :form="form" class="z-[2] inline-block rounded-l-none" id="button-input">
+                <SubmitButton v-if="submitBtn" :form="form" class="z-[2] inline-block rounded-l-none" :class="buttonCustomClass" id="button-input">
                     {{ submitBtn }}
                 </SubmitButton>
-                <SubmitButton v-if="$slots?.submit" :form="form" class="z-[2] inline-block rounded-l-none" id="button-input">
+                <SubmitButton
+                    v-if="$slots?.submit"
+                    :form="form"
+                    class="z-[2] inline-block rounded-l-none"
+                    :class="buttonCustomClass"
+                    id="button-input"
+                >
                     <slot name="submit" />
                 </SubmitButton>
                 <a
                     v-if="whatsApp"
                     class="z-[2] inline-block rounded-r bg-primary px-2 py-2 text-xs font-medium uppercase leading-normal text-white shadow transition duration-150 ease-in-out hover:bg-primary-700 hover:shadow-lg focus:z-[3] focus:bg-primary-600 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-primary-700 active:shadow-lg"
+                    :class="buttonCustomClass"
                     :href="whatsApp"
                     target="_blank"
                 >

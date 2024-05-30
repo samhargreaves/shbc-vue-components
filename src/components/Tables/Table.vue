@@ -22,6 +22,10 @@ const props = defineProps({
         type: Boolean,
         default: true,
     },
+    seperate: {
+        type: Boolean,
+        default: false,
+    },
 });
 
 const table = ref(null);
@@ -74,15 +78,17 @@ const initSticky = () => {
 };
 
 if (props.sticky) {
-    onMounted(() => {
+    router.on('navigate', () => {
         nextTick(() => {
             initSticky();
-            window.addEventListener('scroll', handleScroll, { passive: true });
-            window.addEventListener('resize', initSticky, { passive: true });
-            table_container.value.addEventListener('scroll', updateScrollX, {
-                passive: true,
-            });
         });
+    });
+
+    onMounted(() => {
+        initSticky();
+        window.addEventListener('scroll', handleScroll, { passive: true });
+        window.addEventListener('resize', initSticky, { passive: true });
+        table_container.value.addEventListener('scroll', updateScrollX, { passive: true });
     });
 
     onUnmounted(() => {
@@ -108,11 +114,12 @@ if (props.sticky) {
                 <table
                     class="min-w-full text-left text-sm font-light"
                     :class="{
-                        'mb-14 [&>*>tr]:border-l-4 [&>*>tr]:border-l-pink-500': collapsable,
+                        'mb-14 [&>*>tr]:border-l-4 [&>*>tr]:border-l-primary-500': collapsable,
+                        ' border-separate border-spacing-y-5 px-2': seperate,
                     }"
                     ref="table"
                 >
-                    <div v-if="sticky" ref="sticky_wrapper" class="fixed hidden w-full isolate z-50 overflow-hidden bg-neutral-100">
+                    <div v-if="sticky" ref="sticky_wrapper" class="fixed isolate z-50 hidden w-full overflow-hidden bg-neutral-100">
                         <div ref="sticky_header" class="w-max [&>th]:align-middle"></div>
                     </div>
                     <slot />
