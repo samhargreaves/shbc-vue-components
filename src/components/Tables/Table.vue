@@ -2,6 +2,9 @@
 import { Pagination } from '../../index';
 import { nextTick } from 'vue';
 import { onMounted, onUnmounted, ref } from 'vue';
+import { getInertiaRouter } from '@/Helpers';
+
+const router = getInertiaRouter();
 
 const props = defineProps({
     total: Number,
