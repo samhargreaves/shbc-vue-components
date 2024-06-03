@@ -28,7 +28,8 @@
 import { InputLabel, TextInput, InputError, SubmitButton } from '../../index';
 
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
-import { faSquareCheck, faSquare } from '@fortawesome/free-solid-svg-icons';
+import { faSquareCheck } from '@fortawesome/free-solid-svg-icons';
+import { faSquare } from '@fortawesome/free-regular-svg-icons';
 import { faWhatsapp } from '@fortawesome/free-brands-svg-icons';
 import { library } from '@fortawesome/fontawesome-svg-core';
 library.add(faWhatsapp, faSquareCheck, faSquare);
@@ -131,7 +132,7 @@ function ucwords(text) {
                 >
                     <Transition name="popup" mode="out-in">
                         <FontAwesomeIcon key="checked" v-if="props.form[field]" v-bind:icon="'fas fa-square-check'" />
-                        <FontAwesomeIcon key="unchecked" v-else v-bind:icon="'fas fa-square'" />
+                        <FontAwesomeIcon key="unchecked" v-else v-bind:icon="'far fa-square'" />
                     </Transition>
                 </div>
                 <slot v-if="$slots?.rightDescription" name="rightDescription" />
