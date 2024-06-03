@@ -28,6 +28,7 @@
 import { InputLabel, TextInput, InputError, SubmitButton } from '../../index';
 
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
+import { faSquareCheck, faSquare } from '@fortawesome/free-solid-svg-icons';
 import { faWhatsapp } from '@fortawesome/free-brands-svg-icons';
 import { library } from '@fortawesome/fontawesome-svg-core';
 library.add(faWhatsapp);
@@ -50,6 +51,8 @@ const props = defineProps({
     autofocus: Boolean,
     pattern: String,
     whatsApp: String,
+    leftDescription: { type: [String, Boolean], default: false },
+    rightDescription: { type: [String, Boolean], default: 'Enable' },
     switchDescription: String,
     sublabel: String,
 
@@ -97,7 +100,11 @@ function ucwords(text) {
             :required="required"
         />
         <div class="relative flex w-full max-w-full items-stretch" :class="noLabel ? '' : 'mb-4'">
-            <label v-if="type === 'checkbox'" class="flex items-center">
+            <label v-if="type === 'switch' || type === 'checkbox'" class="flex items-center">
+                <slot v-if="$slots?.leftDescription" name="leftDescription" />
+                <span v-else-if="leftDescription">
+                    {{ leftDescription ? leftDescription : 'Disable' }}
+                </span>
                 <input
                     :id="field"
                     type="checkbox"
@@ -108,14 +115,29 @@ function ucwords(text) {
                     :name="name ?? field"
                 />
                 <div
+                    v-if="type === 'switch'"
                     class="toggle-switch focusable !ml-0"
                     :class="{
                         checked: props.form[field],
                         disabled: props.disabled,
                     }"
-                ></div>
-                {{ switchDescription ? switchDescription : 'Enable' }}
-                <slot name="switchDescription" />
+                />
+                <div
+                    v-else
+                    class="focusable text-primary"
+                    :class="{
+                        '!text-gray-500': props.disabled,
+                    }"
+                >
+                    <Transition name="popup" mode="out-in">
+                        <FontAwesomeIcon key="checked" v-if="props.form[field]" v-bind:icon="'fab fa-square-check'" />
+                        <FontAwesomeIcon key="unchecked" v-else v-bind:icon="'fab fa-square'" />
+                    </Transition>
+                </div>
+                <slot v-if="$slots?.rightDescription" name="rightDescription" />
+                <span v-else-if="rightDescription">
+                    {{ rightDescription }}
+                </span>
             </label>
             <select
                 v-else-if="type === 'select'"
@@ -155,7 +177,13 @@ function ucwords(text) {
                     :pattern="props.pattern"
                     :name="name ?? field"
                 />
-                <SubmitButton v-if="submitBtn" :form="form" class="z-[2] inline-block rounded-l-none" :class="buttonCustomClass" id="button-input">
+                <SubmitButton
+                    v-if="submitBtn"
+                    :form="form"
+                    class="z-[2] inline-block rounded-l-none"
+                    :class="buttonCustomClass"
+                    :id="`submit-button-${field}`"
+                >
                     {{ submitBtn }}
                 </SubmitButton>
                 <SubmitButton
@@ -211,5 +239,25 @@ function ucwords(text) {
 .checked::before {
     background-image: radial-gradient(circle at 0.375em 0.375em, rgba(0, 0, 0, 0) 0, rgba(0, 0, 0, 0.05) 1em);
     left: 1.625em;
+}
+
+.popup-enter-active {
+    animation: jump-in 0.2s;
+}
+
+.popup-leave-active {
+    animation: none;
+}
+
+@keyframes jump-in {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0);
+    }
 }
 </style>
