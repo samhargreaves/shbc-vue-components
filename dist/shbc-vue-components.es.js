@@ -3050,21 +3050,17 @@ var zm = {
   icon: [448, 512, [9745, 9989, 61510, "check-square"], "f14a", "M64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zM337 209L209 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L303 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z"]
 }, Hm = {
   prefix: "fas",
-  iconName: "square",
-  icon: [448, 512, [9632, 9723, 9724, 61590], "f0c8", "M0 96C0 60.7 28.7 32 64 32H384c35.3 0 64 28.7 64 64V416c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V96z"]
-}, Wm = {
-  prefix: "fas",
   iconName: "sort-up",
   icon: [320, 512, ["sort-asc"], "f0de", "M182.6 41.4c-12.5-12.5-32.8-12.5-45.3 0l-128 128c-9.2 9.2-11.9 22.9-6.9 34.9s16.6 19.8 29.6 19.8H288c12.9 0 24.6-7.8 29.6-19.8s2.2-25.7-6.9-34.9l-128-128z"]
-}, qm = {
+}, Wm = {
   prefix: "fas",
   iconName: "plus",
   icon: [448, 512, [10133, 61543, "add"], "2b", "M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z"]
-}, Gm = {
+}, qm = {
   prefix: "fas",
   iconName: "spinner",
   icon: [512, 512, [], "f110", "M304 48a48 48 0 1 0 -96 0 48 48 0 1 0 96 0zm0 416a48 48 0 1 0 -96 0 48 48 0 1 0 96 0zM48 304a48 48 0 1 0 0-96 48 48 0 1 0 0 96zm464-48a48 48 0 1 0 -96 0 48 48 0 1 0 96 0zM142.9 437A48 48 0 1 0 75 369.1 48 48 0 1 0 142.9 437zm0-294.2A48 48 0 1 0 75 75a48 48 0 1 0 67.9 67.9zM369.1 437A48 48 0 1 0 437 369.1 48 48 0 1 0 369.1 437z"]
-}, Ym = {
+}, Gm = {
   prefix: "fas",
   iconName: "calendar",
   icon: [448, 512, [128197, 128198], "f133", "M96 32V64H48C21.5 64 0 85.5 0 112v48H448V112c0-26.5-21.5-48-48-48H352V32c0-17.7-14.3-32-32-32s-32 14.3-32 32V64H160V32c0-17.7-14.3-32-32-32S96 14.3 96 32zM448 192H0V464c0 26.5 21.5 48 48 48H400c26.5 0 48-21.5 48-48V192z"]
@@ -3072,6 +3068,10 @@ var zm = {
   prefix: "fas",
   iconName: "check",
   icon: [448, 512, [10003, 10004], "f00c", "M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"]
+}, Ym = {
+  prefix: "far",
+  iconName: "square",
+  icon: [448, 512, [9632, 9723, 9724, 61590], "f0c8", "M384 80c8.8 0 16 7.2 16 16V416c0 8.8-7.2 16-16 16H64c-8.8 0-16-7.2-16-16V96c0-8.8 7.2-16 16-16H384zM64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64z"]
 }, Rf = {
   prefix: "fab",
   iconName: "whatsapp",
@@ -3131,7 +3131,7 @@ const gr = (t, e) => {
     }
   },
   setup(t) {
-    ti.add(Rf, Vm, Hm);
+    ti.add(Rf, Vm, Ym);
     const e = t;
     function r(n) {
       let i = [];
@@ -3188,7 +3188,7 @@ const gr = (t, e) => {
                     icon: "fas fa-square-check"
                   })) : (O(), oe(W(Ht), {
                     key: "unchecked",
-                    icon: "fas fa-square"
+                    icon: "far fa-square"
                   }))
                 ]),
                 _: 1
@@ -3271,7 +3271,7 @@ const gr = (t, e) => {
       ]);
     };
   }
-}, oA = /* @__PURE__ */ gr(rg, [["__scopeId", "data-v-447f2b6c"]]), ng = { class: "text-sm text-red-600" }, ri = {
+}, oA = /* @__PURE__ */ gr(rg, [["__scopeId", "data-v-96b9c4ed"]]), ng = { class: "text-sm text-red-600" }, ri = {
   __name: "InputError",
   props: ["message"],
   setup(t) {
@@ -10142,7 +10142,7 @@ const gA = /* @__PURE__ */ gr(Ew, [["render", kw]]), Tw = { class: "flex items-c
     orderBy: String
   },
   setup(t) {
-    ti.add(Wm, zm);
+    ti.add(Hm, zm);
     const e = t, r = ce("asc"), n = ce(!1);
     let i = null;
     const a = si();
@@ -14586,7 +14586,7 @@ const hl = new DS(), Pn = {
     logs: Object
   },
   setup(t) {
-    return ti.add(qm, Is, Ym, Um, Gm), (e, r) => t.logs == null ? (O(), C("div", ZS, [
+    return ti.add(Wm, Is, Gm, Um, qm), (e, r) => t.logs == null ? (O(), C("div", ZS, [
       ve(W(Dp))
     ])) : (O(), C("div", eO, [
       t.logs.total ? (O(), C("ol", rO, [
