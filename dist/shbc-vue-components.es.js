@@ -3085,7 +3085,10 @@ const gr = (t, e) => {
 }, Km = {
   key: 0,
   class: "flex items-center"
-}, Jm = { key: 1 }, Xm = ["id", "disabled", "required", "name"], Qm = { key: 5 }, Zm = ["required", "disabled", "name"], eg = {
+}, Jm = {
+  key: 1,
+  class: "mr-2"
+}, Xm = ["id", "disabled", "required", "name"], Qm = { key: 5 }, Zm = ["required", "disabled", "name"], eg = {
   key: 0,
   class: "border-gray flex items-center whitespace-nowrap rounded rounded-r-none border border-r-0 border-gray-300 bg-slate-50 px-2 text-center text-gray-500"
 }, tg = ["href"], rg = {
@@ -3151,7 +3154,7 @@ const gr = (t, e) => {
           required: t.required
         }, null, 8, ["customClass", "for", "value", "sublabel", "required"])),
         D("div", {
-          class: Z(["relative flex w-full max-w-full items-stretch", t.noLabel ? "" : "mb-4"])
+          class: Z(["relative flex w-full max-w-full items-stretch", t.noLabel ? "mb-1" : "mb-4"])
         }, [
           t.type === "switch" || t.type === "checkbox" ? (O(), C("label", Km, [
             (a = n.$slots) != null && a.leftDescription ? Y(n.$slots, "leftDescription", { key: 0 }, void 0, !0) : t.leftDescription ? (O(), C("span", Jm, X(t.leftDescription ? t.leftDescription : "Disable"), 1)) : J("", !0),
@@ -3176,7 +3179,7 @@ const gr = (t, e) => {
             }, null, 2)) : (O(), C("div", {
               key: 3,
               tabindex: "0",
-              class: Z(["focusable mx-2 text-primary", {
+              class: Z(["focusable mr-2 p-1 text-primary", {
                 "!text-gray-500": e.disabled
               }])
             }, [
@@ -3273,7 +3276,7 @@ const gr = (t, e) => {
       ]);
     };
   }
-}, oA = /* @__PURE__ */ gr(rg, [["__scopeId", "data-v-31c0214f"]]), ng = { class: "text-sm text-red-600" }, ri = {
+}, oA = /* @__PURE__ */ gr(rg, [["__scopeId", "data-v-fd204d5e"]]), ng = { class: "text-sm text-red-600" }, ri = {
   __name: "InputError",
   props: ["message"],
   setup(t) {
