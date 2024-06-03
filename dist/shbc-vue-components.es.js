@@ -3148,11 +3148,11 @@ const gr = (t, e) => {
     }
     const n = ue(!1), i = Fp(t, "modelValue"), a = ue();
     return at(() => {
-      n.value = Object.entries(e.form ?? {}).length > 0, n ? a.value = i.value : a.value = e.form[e.field];
+      n.value = Object.entries(e.form ?? {}).length > 0, n.value ? a.value = i.value : a.value = e.form[e.field];
     }), Hr(
       () => a.value,
       (o) => {
-        n ? i.value = o : e.form[e.field] = o;
+        n.value ? i.value = o : e.form[e.field] = o;
       }
     ), Hr(
       () => e.form,
@@ -3297,7 +3297,7 @@ const gr = (t, e) => {
       ]);
     };
   }
-}, lA = /* @__PURE__ */ gr(ig, [["__scopeId", "data-v-b3db17d3"]]), ag = { class: "text-sm text-red-600" }, ni = {
+}, lA = /* @__PURE__ */ gr(ig, [["__scopeId", "data-v-ab1fe42c"]]), ag = { class: "text-sm text-red-600" }, ni = {
   __name: "InputError",
   props: ["message"],
   setup(t) {
