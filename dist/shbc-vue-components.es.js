@@ -3176,7 +3176,7 @@ const yr = (t, e) => {
           required: t.required
         }, null, 8, ["customClass", "for", "value", "sublabel", "required"])),
         D("div", {
-          class: Z(["relative flex w-full max-w-full items-stretch", t.noLabel ? "mb-1" : "mb-4"])
+          class: Z(["relative flex w-full max-w-full items-stretch", t.noLabel ? "mb-2" : "mb-4"])
         }, [
           t.type === "switch" || t.type === "checkbox" ? (O(), C("label", Xm, [
             (f = u.$slots) != null && f.leftDescription ? Y(u.$slots, "leftDescription", { key: 0 }, void 0, !0) : t.leftDescription ? (O(), C("span", Qm, X(t.leftDescription ? t.leftDescription : "Disable"), 1)) : K("", !0),
@@ -3302,7 +3302,7 @@ const yr = (t, e) => {
       ]);
     };
   }
-}, lA = /* @__PURE__ */ yr(ig, [["__scopeId", "data-v-30264ff2"]]), ag = { class: "text-sm text-red-600" }, ni = {
+}, lA = /* @__PURE__ */ yr(ig, [["__scopeId", "data-v-65975c8f"]]), ag = { class: "text-sm text-red-600" }, ni = {
   __name: "InputError",
   props: ["message"],
   setup(t) {
