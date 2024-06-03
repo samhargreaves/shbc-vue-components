@@ -100,10 +100,10 @@ function ucwords(text) {
             :sublabel="sublabel"
             :required="required"
         />
-        <div class="relative flex w-full max-w-full items-stretch" :class="noLabel ? '' : 'mb-4'">
+        <div class="relative flex w-full max-w-full items-stretch" :class="noLabel ? 'mb-1' : 'mb-4'">
             <label v-if="type === 'switch' || type === 'checkbox'" class="flex items-center">
                 <slot v-if="$slots?.leftDescription" name="leftDescription" />
-                <span v-else-if="leftDescription">
+                <span v-else-if="leftDescription" class="mr-2">
                     {{ leftDescription ? leftDescription : 'Disable' }}
                 </span>
                 <input
@@ -127,7 +127,7 @@ function ucwords(text) {
                 <div
                     tabindex="0"
                     v-else
-                    class="focusable mx-2 text-primary"
+                    class="focusable mr-2 p-1 text-primary"
                     :class="{
                         '!text-gray-500': props.disabled,
                     }"
