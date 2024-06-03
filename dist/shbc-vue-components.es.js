@@ -3168,13 +3168,15 @@ const gr = (t, e) => {
             ]),
             t.type === "switch" ? (O(), C("div", {
               key: 2,
+              tabindex: "0",
               class: Z(["toggle-switch focusable !ml-0", {
                 checked: e.form[t.field],
                 disabled: e.disabled
               }])
             }, null, 2)) : (O(), C("div", {
               key: 3,
-              class: Z(["focusable text-primary", {
+              tabindex: "0",
+              class: Z(["focusable mx-2 text-primary", {
                 "!text-gray-500": e.disabled
               }])
             }, [
@@ -3271,7 +3273,7 @@ const gr = (t, e) => {
       ]);
     };
   }
-}, oA = /* @__PURE__ */ gr(rg, [["__scopeId", "data-v-96b9c4ed"]]), ng = { class: "text-sm text-red-600" }, ri = {
+}, oA = /* @__PURE__ */ gr(rg, [["__scopeId", "data-v-31c0214f"]]), ng = { class: "text-sm text-red-600" }, ri = {
   __name: "InputError",
   props: ["message"],
   setup(t) {
