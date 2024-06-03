@@ -112,8 +112,8 @@ watch(
 
 watch(
     () => props.form,
-    () => {
-        value.value = noForm.value ? model.value : props.form[props.field];
+    (val) => {
+        value.value = noForm.value ? model.value : val[props.field];
     }
 );
 
