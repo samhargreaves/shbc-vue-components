@@ -3292,12 +3292,12 @@ const gr = (t, e) => {
         t.form || t.error ? (O(), ae(W(ni), {
           key: 1,
           class: "mt-2",
-          message: t.form ? t.form[t.field] : t.error
+          message: t.form ? t.form.errors[t.field] : t.error
         }, null, 8, ["message"])) : K("", !0)
       ]);
     };
   }
-}, lA = /* @__PURE__ */ gr(ig, [["__scopeId", "data-v-12a06945"]]), ag = { class: "text-sm text-red-600" }, ni = {
+}, lA = /* @__PURE__ */ gr(ig, [["__scopeId", "data-v-fa248c4b"]]), ag = { class: "text-sm text-red-600" }, ni = {
   __name: "InputError",
   props: ["message"],
   setup(t) {
