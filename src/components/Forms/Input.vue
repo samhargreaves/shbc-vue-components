@@ -31,7 +31,7 @@ import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 import { faSquareCheck, faSquare } from '@fortawesome/free-solid-svg-icons';
 import { faWhatsapp } from '@fortawesome/free-brands-svg-icons';
 import { library } from '@fortawesome/fontawesome-svg-core';
-library.add(faWhatsapp);
+library.add(faWhatsapp, faSquareCheck, faSquare);
 
 const props = defineProps({
     type: String,
