@@ -32,7 +32,7 @@ import { faSquareCheck } from '@fortawesome/free-solid-svg-icons';
 import { faSquare } from '@fortawesome/free-regular-svg-icons';
 import { faWhatsapp } from '@fortawesome/free-brands-svg-icons';
 import { library } from '@fortawesome/fontawesome-svg-core';
-import { onMounted } from 'vue';
+import { onMounted, ref } from 'vue';
 library.add(faWhatsapp, faSquareCheck, faSquare);
 
 const props = defineProps({
@@ -75,10 +75,6 @@ const props = defineProps({
         default: '',
     },
 
-    noForm: {
-        type: Boolean,
-        default: () => !!props.form,
-    },
     error: String,
 });
 function ucwords(text) {
@@ -92,11 +88,13 @@ function ucwords(text) {
     return res.join(' ');
 }
 
+const noForm = ref(false);
 const model = defineModel();
 const value = ref();
 
 onMounted(() => {
-    if (props.noForm) {
+    noForm.value = !props.form;
+    if (noForm) {
         value.value = model.value;
     } else {
         value.value = props.form[props.field];
@@ -106,7 +104,7 @@ onMounted(() => {
 watch(
     () => value.value,
     (val) => {
-        if (props.noForm) {
+        if (noForm) {
             model.value = val;
         } else {
             props.form[props.field] = val;
@@ -117,7 +115,7 @@ watch(
 watch(
     () => props.form,
     () => {
-        if (props.noForm) {
+        if (noForm) {
             value.value = model.value;
         } else {
             value.value = props.form[props.field];
