@@ -130,8 +130,8 @@ function ucwords(text) {
                     }"
                 >
                     <Transition name="popup" mode="out-in">
-                        <FontAwesomeIcon key="checked" v-if="props.form[field]" v-bind:icon="'fab fa-square-check'" />
-                        <FontAwesomeIcon key="unchecked" v-else v-bind:icon="'fab fa-square'" />
+                        <FontAwesomeIcon key="checked" v-if="props.form[field]" v-bind:icon="'fas fa-square-check'" />
+                        <FontAwesomeIcon key="unchecked" v-else v-bind:icon="'fas fa-square'" />
                     </Transition>
                 </div>
                 <slot v-if="$slots?.rightDescription" name="rightDescription" />
