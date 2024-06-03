@@ -88,6 +88,7 @@ function ucwords(text) {
     return res.join(' ');
 }
 
+const emit = defineEmits();
 const noForm = ref(false);
 const model = defineModel();
 const value = ref();
