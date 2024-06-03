@@ -3137,41 +3137,41 @@ const yr = (t, e) => {
     modelModifiers: {}
   }),
   emits: ["update:modelValue"],
-  setup(t) {
+  setup(t, { emit: e }) {
     ri.add(Rf, Wm, Jm);
-    const e = t;
-    function r(o) {
-      let s = [];
-      return o.split("_").join(" ").split(" ").map(function(u) {
-        s.push(u[0].toUpperCase() + u.slice(1));
-      }), s.join(" ");
+    const r = t;
+    function n(u) {
+      let c = [];
+      return u.split("_").join(" ").split(" ").map(function(f) {
+        c.push(f[0].toUpperCase() + f.slice(1));
+      }), c.join(" ");
     }
-    const n = ue(!1), i = Fp(t, "modelValue"), a = ue();
+    const i = e, a = ue(!1), o = Fp(t, "modelValue"), s = ue();
     return at(() => {
-      n.value = !e.form, a.value = n.value ? i.value : e.form[e.field];
+      a.value = !r.form, s.value = a.value ? o.value : r.form[r.field];
     }), cr(
-      () => a.value,
-      (o) => {
-        n.value ? i.value = o : e.form[e.field] = o, emit("update:modelValue", o);
+      () => s.value,
+      (u) => {
+        a.value ? o.value = u : r.form[r.field] = u, i("update:modelValue", u);
       }
     ), cr(
-      () => e.form,
+      () => r.form,
       () => {
-        a.value = n.value ? i.value : e.form[e.field];
+        s.value = a.value ? o.value : r.form[r.field];
       }
     ), cr(
-      () => i.value,
-      (o) => {
-        a.value = o;
+      () => o.value,
+      (u) => {
+        s.value = u;
       }
-    ), (o, s) => {
-      var u, c, f, d;
+    ), (u, c) => {
+      var f, d, g, S;
       return O(), C("div", null, [
         t.noLabel ? K("", !0) : (O(), ae(W(Pl), {
           key: 0,
           customClass: t.labelCustomClass,
           for: t.field,
-          value: t.label ? t.label : t.field ? r(t.field) : "",
+          value: t.label ? t.label : t.field ? n(t.field) : "",
           sublabel: t.sublabel,
           required: t.required
         }, null, 8, ["customClass", "for", "value", "sublabel", "required"])),
@@ -3179,30 +3179,30 @@ const yr = (t, e) => {
           class: Z(["relative flex w-full max-w-full items-stretch", t.noLabel ? "mb-1" : "mb-4"])
         }, [
           t.type === "switch" || t.type === "checkbox" ? (O(), C("label", Xm, [
-            (u = o.$slots) != null && u.leftDescription ? Y(o.$slots, "leftDescription", { key: 0 }, void 0, !0) : t.leftDescription ? (O(), C("span", Qm, X(t.leftDescription ? t.leftDescription : "Disable"), 1)) : K("", !0),
+            (f = u.$slots) != null && f.leftDescription ? Y(u.$slots, "leftDescription", { key: 0 }, void 0, !0) : t.leftDescription ? (O(), C("span", Qm, X(t.leftDescription ? t.leftDescription : "Disable"), 1)) : K("", !0),
             He(D("input", {
               id: t.field,
               type: "checkbox",
               class: "hidden",
-              "onUpdate:modelValue": s[0] || (s[0] = (g) => a.value = g),
-              disabled: e.disabled,
-              required: e.required,
+              "onUpdate:modelValue": c[0] || (c[0] = (m) => s.value = m),
+              disabled: r.disabled,
+              required: r.required,
               name: t.name ?? t.field
             }, null, 8, Zm), [
-              [rf, a.value]
+              [rf, s.value]
             ]),
             t.type === "switch" ? (O(), C("div", {
               key: 2,
               tabindex: "0",
               class: Z(["toggle-switch focusable !ml-0", {
-                checked: a.value,
-                disabled: e.disabled
+                checked: s.value,
+                disabled: r.disabled
               }])
             }, null, 2)) : (O(), C("div", {
               key: 3,
               tabindex: "0",
               class: Z(["focusable mr-1 p-1 text-primary", {
-                "!text-gray-500": e.disabled,
+                "!text-gray-500": r.disabled,
                 [t.checkboxCustomClass]: t.checkboxCustomClass
               }])
             }, [
@@ -3211,7 +3211,7 @@ const yr = (t, e) => {
                 mode: "out-in"
               }, {
                 default: we(() => [
-                  e.form[t.field] ? (O(), ae(W(Ht), {
+                  r.form[t.field] ? (O(), ae(W(Ht), {
                     key: "checked",
                     icon: "fas fa-square-check"
                   })) : (O(), ae(W(Ht), {
@@ -3222,18 +3222,18 @@ const yr = (t, e) => {
                 _: 1
               })
             ], 2)),
-            (c = o.$slots) != null && c.rightDescription ? Y(o.$slots, "rightDescription", { key: 4 }, void 0, !0) : t.rightDescription ? (O(), C("span", eg, X(t.rightDescription), 1)) : K("", !0)
+            (d = u.$slots) != null && d.rightDescription ? Y(u.$slots, "rightDescription", { key: 4 }, void 0, !0) : t.rightDescription ? (O(), C("span", eg, X(t.rightDescription), 1)) : K("", !0)
           ])) : t.type === "select" ? He((O(), C("select", {
             key: 1,
-            "onUpdate:modelValue": s[1] || (s[1] = (g) => a.value = g),
-            required: e.required,
-            disabled: e.disabled,
+            "onUpdate:modelValue": c[1] || (c[1] = (m) => s.value = m),
+            required: r.required,
+            disabled: r.disabled,
             name: t.name ?? t.field,
             class: "focusable block w-full rounded border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 disabled:border-slate-200 disabled:bg-slate-50 disabled:text-slate-500 disabled:shadow-none"
           }, [
-            Y(o.$slots, "default", {}, void 0, !0)
+            Y(u.$slots, "default", {}, void 0, !0)
           ], 8, tg)), [
-            [Lp, a.value]
+            [Lp, s.value]
           ]) : (O(), C(fe, { key: 2 }, [
             t.addon ? (O(), C("span", rg, X(t.addon), 1)) : K("", !0),
             be(W(fg), {
@@ -3241,20 +3241,20 @@ const yr = (t, e) => {
               type: t.type,
               class: Z(["focusable relative m-0 block w-full flex-auto disabled:border-slate-200 disabled:bg-slate-50 disabled:text-slate-500 disabled:shadow-none", {
                 "!rounded-l-none": t.addon,
-                "!rounded-r-none": !!t.submitBtn || t.whatsApp || ((f = o.$slots) == null ? void 0 : f.submit),
+                "!rounded-r-none": !!t.submitBtn || t.whatsApp || ((g = u.$slots) == null ? void 0 : g.submit),
                 [t.inputCustomClass]: !!t.inputCustomClass
               }]),
-              modelValue: a.value,
-              "onUpdate:modelValue": s[2] || (s[2] = (g) => a.value = g),
-              required: e.required,
-              disabled: e.disabled,
+              modelValue: s.value,
+              "onUpdate:modelValue": c[2] || (c[2] = (m) => s.value = m),
+              required: r.required,
+              disabled: r.disabled,
               autocomplete: t.field,
-              min: e.min,
-              max: e.max,
-              step: e.step,
-              placeholder: e.placeholder,
-              autofocus: e.autofocus,
-              pattern: e.pattern,
+              min: r.min,
+              max: r.max,
+              step: r.step,
+              placeholder: r.placeholder,
+              autofocus: r.autofocus,
+              pattern: r.pattern,
               name: t.name ?? t.field
             }, null, 8, ["id", "type", "class", "modelValue", "required", "disabled", "autocomplete", "min", "max", "step", "placeholder", "autofocus", "pattern", "name"]),
             t.form ? (O(), C(fe, { key: 1 }, [
@@ -3269,14 +3269,14 @@ const yr = (t, e) => {
                 ]),
                 _: 1
               }, 8, ["form", "class", "id"])) : K("", !0),
-              (d = o.$slots) != null && d.submit ? (O(), ae(W(Tc), {
+              (S = u.$slots) != null && S.submit ? (O(), ae(W(Tc), {
                 key: 1,
                 form: t.form,
                 class: Z(["z-[2] inline-block rounded-l-none", t.buttonCustomClass]),
                 id: "button-input"
               }, {
                 default: we(() => [
-                  Y(o.$slots, "submit", {}, void 0, !0)
+                  Y(u.$slots, "submit", {}, void 0, !0)
                 ]),
                 _: 3
               }, 8, ["form", "class"])) : K("", !0)
@@ -3302,7 +3302,7 @@ const yr = (t, e) => {
       ]);
     };
   }
-}, lA = /* @__PURE__ */ yr(ig, [["__scopeId", "data-v-4b523da2"]]), ag = { class: "text-sm text-red-600" }, ni = {
+}, lA = /* @__PURE__ */ yr(ig, [["__scopeId", "data-v-44f9300e"]]), ag = { class: "text-sm text-red-600" }, ni = {
   __name: "InputError",
   props: ["message"],
   setup(t) {
