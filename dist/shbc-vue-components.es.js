@@ -3156,8 +3156,8 @@ const yr = (t, e) => {
       }
     ), cr(
       () => r.form,
-      () => {
-        s.value = a.value ? o.value : r.form[r.field];
+      (u) => {
+        s.value = a.value ? o.value : u[r.field];
       }
     ), cr(
       () => o.value,
@@ -3302,7 +3302,7 @@ const yr = (t, e) => {
       ]);
     };
   }
-}, lA = /* @__PURE__ */ yr(ig, [["__scopeId", "data-v-44f9300e"]]), ag = { class: "text-sm text-red-600" }, ni = {
+}, lA = /* @__PURE__ */ yr(ig, [["__scopeId", "data-v-2f427dff"]]), ag = { class: "text-sm text-red-600" }, ni = {
   __name: "InputError",
   props: ["message"],
   setup(t) {
