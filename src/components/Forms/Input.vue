@@ -93,7 +93,7 @@ const model = defineModel();
 const value = ref();
 
 onMounted(() => {
-    noForm.value = Object.entries(props.form ?? {}).length > 0;
+    noForm.value = !props.form;
     console.log({ nofoval: noForm.value });
     if (noForm.value) {
         value.value = model.value;
