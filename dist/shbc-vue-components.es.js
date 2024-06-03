@@ -3150,9 +3150,9 @@ const yr = (t, e) => {
     return at(() => {
       n.value = !e.form, a.value = n.value ? i.value : e.form[e.field];
     }), cr(
-      () => a,
+      () => a.value,
       (o) => {
-        n.value ? i.value = o.value : e.form[e.field] = o.value;
+        n.value ? i.value = o : e.form[e.field] = o;
       }
     ), cr(
       () => e.form,
@@ -3160,9 +3160,9 @@ const yr = (t, e) => {
         a.value = n.value ? i.value : e.form[e.field];
       }
     ), cr(
-      () => i,
+      () => i.value,
       (o) => {
-        a.value = o.value;
+        a.value = o;
       }
     ), (o, s) => {
       var u, c, f, d;
@@ -3302,7 +3302,7 @@ const yr = (t, e) => {
       ]);
     };
   }
-}, lA = /* @__PURE__ */ yr(ig, [["__scopeId", "data-v-cfd0fd58"]]), ag = { class: "text-sm text-red-600" }, ni = {
+}, lA = /* @__PURE__ */ yr(ig, [["__scopeId", "data-v-a6c973c7"]]), ag = { class: "text-sm text-red-600" }, ni = {
   __name: "InputError",
   props: ["message"],
   setup(t) {
