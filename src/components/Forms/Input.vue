@@ -100,7 +100,8 @@ onMounted(() => {
 
 watch(
     () => value.value,
-    (val) => {
+    (val, oldval) => {
+        if (val === oldval) return;
         if (noForm.value) {
             model.value = val;
         } else {
@@ -111,9 +112,9 @@ watch(
 );
 
 watch(
-    () => props.form,
+    () => props.form[props.field],
     (val) => {
-        value.value = noForm.value ? model.value : val[props.field];
+        value.value = noForm.value ? model.value : val;
     }
 );
 
