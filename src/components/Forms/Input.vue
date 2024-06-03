@@ -94,10 +94,13 @@ const value = ref();
 
 onMounted(() => {
     noForm.value = Object.entries(props.form ?? {}).length > 0;
+    console.log({ nofoval: noForm.value });
     if (noForm.value) {
         value.value = model.value;
+        console.log('weszło');
     } else {
         value.value = props.form[props.field];
+        console.log('lese wszeło');
     }
 });
 
