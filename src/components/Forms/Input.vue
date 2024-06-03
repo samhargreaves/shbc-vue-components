@@ -136,7 +136,7 @@ watch(
             :sublabel="sublabel"
             :required="required"
         />
-        <div class="relative flex w-full max-w-full items-stretch" :class="noLabel ? 'mb-1' : 'mb-4'">
+        <div class="relative flex w-full max-w-full items-stretch" :class="noLabel ? 'mb-2' : 'mb-4'">
             <label v-if="type === 'switch' || type === 'checkbox'" class="flex items-center">
                 <slot v-if="$slots?.leftDescription" name="leftDescription" />
                 <span v-else-if="leftDescription" class="mr-1">
