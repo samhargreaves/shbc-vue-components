@@ -94,14 +94,7 @@ const value = ref();
 
 onMounted(() => {
     noForm.value = !props.form;
-    console.log({ nofoval: noForm.value });
-    if (noForm.value) {
-        value.value = model.value;
-        console.log('weszło');
-    } else {
-        value.value = props.form[props.field];
-        console.log('lese wszeło');
-    }
+    value.value = noForm.value ? model.value : props.form[props.field];
 });
 
 watch(
@@ -118,11 +111,14 @@ watch(
 watch(
     () => props.form,
     () => {
-        if (noForm) {
-            value.value = model.value;
-        } else {
-            value.value = props.form[props.field];
-        }
+        value.value = noForm.value ? model.value : props.form[props.field];
+    }
+);
+
+watch(
+    () => model.value,
+    () => {
+        value.value = model.value;
     }
 );
 </script>
