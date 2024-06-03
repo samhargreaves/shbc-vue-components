@@ -94,7 +94,7 @@ const value = ref();
 
 onMounted(() => {
     noForm.value = Object.entries(props.form ?? {}).length > 0;
-    if (noForm) {
+    if (noForm.value) {
         value.value = model.value;
     } else {
         value.value = props.form[props.field];
@@ -104,7 +104,7 @@ onMounted(() => {
 watch(
     () => value.value,
     (val) => {
-        if (noForm) {
+        if (noForm.value) {
             model.value = val;
         } else {
             props.form[props.field] = val;
