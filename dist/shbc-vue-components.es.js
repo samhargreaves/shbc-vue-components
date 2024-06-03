@@ -3148,7 +3148,7 @@ const gr = (t, e) => {
     }
     const n = ue(!1), i = Fp(t, "modelValue"), a = ue();
     return at(() => {
-      n.value = Object.entries(e.form ?? {}).length > 0, n.value ? a.value = i.value : a.value = e.form[e.field];
+      n.value = Object.entries(e.form ?? {}).length > 0, console.log({ nofoval: n.value }), n.value ? (a.value = i.value, console.log("weszło")) : (a.value = e.form[e.field], console.log("lese wszeło"));
     }), Hr(
       () => a.value,
       (o) => {
@@ -3297,7 +3297,7 @@ const gr = (t, e) => {
       ]);
     };
   }
-}, lA = /* @__PURE__ */ gr(ig, [["__scopeId", "data-v-ab1fe42c"]]), ag = { class: "text-sm text-red-600" }, ni = {
+}, lA = /* @__PURE__ */ gr(ig, [["__scopeId", "data-v-d7c399a3"]]), ag = { class: "text-sm text-red-600" }, ni = {
   __name: "InputError",
   props: ["message"],
   setup(t) {
