@@ -3155,7 +3155,7 @@ const yr = (t, e) => {
         u !== c && (a.value ? o.value = u : r.form[r.field] = u, i("update:modelValue", u));
       }
     ), cr(
-      () => r.form[r.field],
+      () => r.form,
       (u) => {
         s.value = a.value ? o.value : u;
       }
@@ -3302,7 +3302,7 @@ const yr = (t, e) => {
       ]);
     };
   }
-}, lA = /* @__PURE__ */ yr(ig, [["__scopeId", "data-v-b1df916b"]]), ag = { class: "text-sm text-red-600" }, ni = {
+}, lA = /* @__PURE__ */ yr(ig, [["__scopeId", "data-v-280bc4bc"]]), ag = { class: "text-sm text-red-600" }, ni = {
   __name: "InputError",
   props: ["message"],
   setup(t) {
