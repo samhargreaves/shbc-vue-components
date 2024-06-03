@@ -3148,7 +3148,7 @@ const gr = (t, e) => {
     }
     const n = ue(!1), i = Fp(t, "modelValue"), a = ue();
     return at(() => {
-      n.value = !e.form, n ? a.value = i.value : a.value = e.form[e.field];
+      n.value = !e.form, n ? a.value = i.value : (a.value = e.form[e.field], console.error("XDDDDD"));
     }), Hr(
       () => a.value,
       (o) => {
@@ -3297,7 +3297,7 @@ const gr = (t, e) => {
       ]);
     };
   }
-}, lA = /* @__PURE__ */ gr(ig, [["__scopeId", "data-v-fa248c4b"]]), ag = { class: "text-sm text-red-600" }, ni = {
+}, lA = /* @__PURE__ */ gr(ig, [["__scopeId", "data-v-911173b7"]]), ag = { class: "text-sm text-red-600" }, ni = {
   __name: "InputError",
   props: ["message"],
   setup(t) {
