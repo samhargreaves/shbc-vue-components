@@ -98,6 +98,7 @@ onMounted(() => {
         value.value = model.value;
     } else {
         value.value = props.form[props.field];
+        console.error('XDDDDD');
     }
 });
 
