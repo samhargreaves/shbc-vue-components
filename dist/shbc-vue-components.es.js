@@ -3177,10 +3177,10 @@ const gr = (t, e) => {
                 default: we(() => [
                   e.form[t.field] ? (O(), oe(W(Ht), {
                     key: "checked",
-                    icon: "fab fa-square-check"
+                    icon: "fas fa-square-check"
                   })) : (O(), oe(W(Ht), {
                     key: "unchecked",
-                    icon: "fab fa-square"
+                    icon: "fas fa-square"
                   }))
                 ]),
                 _: 1
@@ -3263,7 +3263,7 @@ const gr = (t, e) => {
       ]);
     };
   }
-}, iA = /* @__PURE__ */ gr(eg, [["__scopeId", "data-v-b5e45541"]]), tg = { class: "text-sm text-red-600" }, ri = {
+}, iA = /* @__PURE__ */ gr(eg, [["__scopeId", "data-v-3d4881d9"]]), tg = { class: "text-sm text-red-600" }, ri = {
   __name: "InputError",
   props: ["message"],
   setup(t) {
