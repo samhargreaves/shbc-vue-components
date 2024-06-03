@@ -105,6 +105,7 @@ watch(
         } else {
             props.form[props.field] = val;
         }
+        emit('update:modelValue', val);
     }
 );
 
