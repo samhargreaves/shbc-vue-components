@@ -116,6 +116,7 @@ function ucwords(text) {
                     :name="name ?? field"
                 />
                 <div
+                    tabindex="0"
                     v-if="type === 'switch'"
                     class="toggle-switch focusable !ml-0"
                     :class="{
@@ -124,8 +125,9 @@ function ucwords(text) {
                     }"
                 />
                 <div
+                    tabindex="0"
                     v-else
-                    class="focusable text-primary"
+                    class="focusable mx-2 text-primary"
                     :class="{
                         '!text-gray-500': props.disabled,
                     }"
