@@ -1,47 +1,3 @@
-<template>
-    <div v-if="filteredLinks.length > 3" class="flex justify-center">
-        <nav aria-label="Page navigation">
-            <ul class="list-style-none flex">
-                <li v-for="(link, k) in filteredLinks" :key="k">
-                    <template v-if="linkReturn">
-                        <button
-                            v-if="link.url === null"
-                            class="focusable pointer-events-none relative block rounded bg-transparent px-3 py-1.5 text-sm text-neutral-500 transition-all duration-300 dark:text-neutral-400"
-                            v-html="link.label"
-                            @click="handleChange('')"
-                        />
-                        <button
-                            v-else
-                            class="focusable relative block rounded bg-transparent px-3 py-1.5 text-sm text-neutral-600 transition-all duration-300 hover:bg-neutral-100 dark:text-white dark:hover:bg-neutral-700 dark:hover:text-white"
-                            :class="{ 'font-bold text-primary': link.active }"
-                            v-html="link.label"
-                            @click="handleChange(link.url)"
-                        />
-                    </template>
-                    <template v-else>
-                        <Link
-                            v-if="link.url === null"
-                            class="focusable pointer-events-none relative block rounded bg-transparent px-3 py-1.5 text-sm text-neutral-500 transition-all duration-300 dark:text-neutral-400"
-                            v-html="link.label"
-                            :href="''"
-                        />
-                        <Link
-                            v-else
-                            class="focusable relative block rounded bg-transparent px-3 py-1.5 text-sm text-neutral-600 transition-all duration-300 hover:bg-neutral-100 dark:text-white dark:hover:bg-neutral-700 dark:hover:text-white"
-                            :class="{ 'font-bold text-primary': link.active }"
-                            :href="link.url"
-                            v-html="link.label"
-                            :preserveScroll="logs"
-                            :preserveState="logs"
-                            :only="logs ? ['logs'] : []"
-                        />
-                    </template>
-                </li>
-            </ul>
-        </nav>
-    </div>
-</template>
-
 <script setup>
 import Link from '../overrides/InertiaLink';
 import { computed } from 'vue';
@@ -61,6 +17,18 @@ const props = defineProps({
     logs: {
         type: Boolean,
         default: false,
+    },
+    customLinkClass: {
+        type: String,
+        default: '',
+    },
+    customActiveLinkClass: {
+        type: String,
+        default: '',
+    },
+    customListClass: {
+        type: String,
+        default: '',
     },
 });
 
@@ -87,3 +55,60 @@ const handleChange = (label) => {
     emit('change', label);
 };
 </script>
+<template>
+    <div v-if="filteredLinks.length > 3" class="flex justify-center">
+        <nav aria-label="Page navigation">
+            <ul class="list-style-none flex" :class="{ [customListClass]: customListClass }">
+                <li v-for="(link, k) in filteredLinks" :key="k">
+                    <template v-if="linkReturn">
+                        <button
+                            v-if="link.url === null"
+                            class="focusable pointer-events-none relative block rounded bg-transparent px-3 py-1.5 text-sm text-neutral-500 transition-all duration-300 dark:text-neutral-400"
+                            :class="{
+                                [customLinkClass]: customLinkClass,
+                            }"
+                            v-html="link.label"
+                            @click="handleChange('')"
+                        />
+                        <button
+                            v-else
+                            class="focusable relative block rounded bg-transparent px-3 py-1.5 text-sm text-neutral-600 transition-all duration-300 hover:bg-neutral-100 dark:text-white dark:hover:bg-neutral-700 dark:hover:text-white"
+                            :class="{
+                                'font-bold text-primary': link.active,
+                                [customLinkClass]: customLinkClass,
+                                [customActiveLinkClass]: link.active && customActiveLinkClass,
+                            }"
+                            v-html="link.label"
+                            @click="handleChange(link.url)"
+                        />
+                    </template>
+                    <template v-else>
+                        <Link
+                            v-if="link.url === null"
+                            class="focusable pointer-events-none relative block rounded bg-transparent px-3 py-1.5 text-sm text-neutral-500 transition-all duration-300 dark:text-neutral-400"
+                            :class="{
+                                [customLinkClass]: customLinkClass,
+                            }"
+                            v-html="link.label"
+                            :href="''"
+                        />
+                        <Link
+                            v-else
+                            class="focusable relative block rounded bg-transparent px-3 py-1.5 text-sm text-neutral-600 transition-all duration-300 hover:bg-neutral-100 dark:text-white dark:hover:bg-neutral-700 dark:hover:text-white"
+                            :class="{
+                                'font-bold text-primary': link.active,
+                                [customLinkClass]: customLinkClass,
+                                [customActiveLinkClass]: link.active && customActiveLinkClass,
+                            }"
+                            :href="link.url"
+                            v-html="link.label"
+                            :preserveScroll="logs"
+                            :preserveState="logs"
+                            :only="logs ? ['logs'] : []"
+                        />
+                    </template>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</template>

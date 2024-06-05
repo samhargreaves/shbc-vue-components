@@ -11,6 +11,10 @@ const props = defineProps({
     value: {
         default: null,
     },
+    customClass: {
+        type: String,
+        default: '',
+    },
 });
 
 const proxyChecked = computed({
@@ -25,5 +29,11 @@ const proxyChecked = computed({
 </script>
 
 <template>
-    <input type="checkbox" :value="value" v-model="proxyChecked" class="rounded border-gray-300 text-accent-600 shadow focus:ring-accent-500" />
+    <input
+        type="checkbox"
+        :value="value"
+        v-model="proxyChecked"
+        class="rounded border-gray-300 text-accent-600 shadow focus:ring-accent-500"
+        :class="{ [customClass]: customClass }"
+    />
 </template>
