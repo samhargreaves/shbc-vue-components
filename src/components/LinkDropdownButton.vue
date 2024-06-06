@@ -12,7 +12,7 @@ onMounted(() => {
 </script>
 
 <template>
-    <div class="relative" data-te-dropdown-ref>
+    <div class="relative inline-flex" data-te-dropdown-ref>
         <button
             class="focusable flex items-center whitespace-nowrap rounded bg-primary px-2 text-sm text-white hover:bg-primary-700 motion-reduce:transition-none"
             type="button"
