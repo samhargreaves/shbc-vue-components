@@ -3298,15 +3298,15 @@ const Gr = (t, e) => {
             ], 10, qy)) : J("", !0)
           ], 64))
         ], 2),
-        t.form || t.error ? (E(), se(q(ji), {
+        !a.value || t.error ? (E(), se(q(ji), {
           key: 1,
           class: "mt-2",
-          message: t.form ? t.form.errors[t.field] : t.error
+          message: a.value ? t.error : t.form.errors[t.field]
         }, null, 8, ["message"])) : J("", !0)
       ]);
     };
   }
-}, uC = /* @__PURE__ */ Gr(Gy, [["__scopeId", "data-v-65975c8f"]]), Yy = { class: "text-sm text-red-600" }, ji = {
+}, uC = /* @__PURE__ */ Gr(Gy, [["__scopeId", "data-v-dd01be7b"]]), Yy = { class: "text-sm text-red-600" }, ji = {
   __name: "InputError",
   props: ["message"],
   setup(t) {
