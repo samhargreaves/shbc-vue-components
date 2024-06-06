@@ -248,7 +248,7 @@ watch(
                 </a>
             </template>
         </div>
-        <InputError v-if="!noForm || error" class="mt-2" :message="!noForm ? form.errors[field] : error" />
+        <InputError v-if="error || form?.errors?.[field]" :message="error ? error : form?.errors?.[field]" class="mt-2" />
     </div>
 </template>
 
