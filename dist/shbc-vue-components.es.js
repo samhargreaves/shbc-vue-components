@@ -15817,7 +15817,7 @@ const ou = new zE(), fi = {
     ], 10, e_));
   }
 }, t_ = {
-  class: "relative",
+  class: "relative inline-flex",
   "data-te-dropdown-ref": ""
 }, r_ = ["id"], n_ = /* @__PURE__ */ L("span", { class: "mx-1 w-2" }, [
   /* @__PURE__ */ L("svg", {
