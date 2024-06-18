@@ -10162,8 +10162,8 @@ const Ux = { class: "flex w-full flex-col" }, Vx = {
           ], 2)
         ], 2)
       ]),
-      t.links ? (E(), se(q(wm), {
-        key: 1,
+      f.$slots.pagination ? K(f.$slots, "pagination", { key: 1 }) : t.links ? (E(), se(q(wm), {
+        key: 2,
         class: "mt-6",
         links: t.links
       }, null, 8, ["links"])) : J("", !0)
