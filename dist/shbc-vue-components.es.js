@@ -1,4 +1,4 @@
-import { computed as oe, withDirectives as He, openBlock as O, createElementBlock as C, vModelCheckbox as rf, defineComponent as gr, watch as cr, h as Ut, mergeModels as Np, ref as ue, useModel as Fp, onMounted as at, normalizeClass as Z, createBlock as ae, unref as W, createCommentVNode as K, createElementVNode as D, renderSlot as Y, toDisplayString as X, createVNode as be, Transition as fr, withCtx as we, vModelSelect as Lp, Fragment as fe, createTextVNode as ye, vShow as Vt, vModelText as Mp, resolveDirective as Bp, normalizeProps as Ge, guardReactiveProps as Ze, renderList as it, resolveDynamicComponent as zo, mergeProps as Bn, toHandlers as jp, withModifiers as jt, withKeys as Dr, normalizeStyle as na, shallowRef as zp, markRaw as ru, reactive as ml, onUnmounted as Qn, toRefs as Up, nextTick as Vp, Teleport as Hp, pushScopeId as Wp, popScopeId as qp } from "vue";
+import { computed as oe, withDirectives as He, openBlock as O, createElementBlock as C, normalizeClass as Z, vModelCheckbox as rf, defineComponent as gr, watch as cr, h as Ut, mergeModels as Np, ref as ue, useModel as Fp, onMounted as at, createBlock as ae, unref as W, createCommentVNode as K, createElementVNode as D, renderSlot as Y, toDisplayString as X, createVNode as be, Transition as fr, withCtx as we, vModelSelect as Lp, Fragment as fe, createTextVNode as ye, vShow as Vt, vModelText as Mp, resolveDirective as Bp, normalizeProps as Ge, guardReactiveProps as Ze, renderList as it, resolveDynamicComponent as zo, mergeProps as Bn, toHandlers as jp, withModifiers as jt, withKeys as Dr, normalizeStyle as na, shallowRef as zp, markRaw as ru, reactive as ml, onUnmounted as Qn, toRefs as Up, nextTick as Vp, Teleport as Hp, pushScopeId as Wp, popScopeId as qp } from "vue";
 const Gp = ["value"], lA = {
   __name: "Checkbox",
   props: {
@@ -8,6 +8,10 @@ const Gp = ["value"], lA = {
     },
     value: {
       default: null
+    },
+    customClass: {
+      type: String,
+      default: ""
     }
   },
   emits: ["update:checked"],
@@ -24,8 +28,8 @@ const Gp = ["value"], lA = {
       type: "checkbox",
       value: t.value,
       "onUpdate:modelValue": o[0] || (o[0] = (s) => i.value = s),
-      class: "rounded border-gray-300 text-accent-600 shadow focus:ring-accent-500"
-    }, null, 8, Gp)), [
+      class: Z(["rounded border-gray-300 text-accent-600 shadow focus:ring-accent-500", { [t.customClass]: t.customClass }])
+    }, null, 10, Gp)), [
       [rf, i.value]
     ]);
   }
