@@ -1,17 +1,22 @@
 <script setup>
-import { Dropdown } from 'tw-elements';
+import { Dropdown, initTE } from 'tw-elements';
+import { onMounted } from 'vue';
 
 const props = defineProps({
     title: String,
 });
+
+onMounted(() => {
+    initTE({ Dropdown }, { allowReinits: true });
+});
 </script>
 
 <template>
-    <div class="relative" data-te-dropdown-ref>
+    <div class="relative inline-flex" data-te-dropdown-ref>
         <button
             class="focusable flex items-center whitespace-nowrap rounded bg-primary px-2 text-sm text-white hover:bg-primary-700 motion-reduce:transition-none"
             type="button"
-            id="dropdownMenuButton3"
+            :id="title"
             data-te-dropdown-toggle-ref
             aria-expanded="false"
             data-te-ripple-init
@@ -30,7 +35,7 @@ const props = defineProps({
         </button>
         <ul
             class="absolute z-[1000] float-left m-0 hidden min-w-max list-none overflow-hidden rounded-lg border-none bg-white bg-clip-padding text-left text-base shadow-lg dark:bg-neutral-700 [&[data-te-dropdown-show]]:block"
-            aria-labelledby="dropdownMenuButton3"
+            :aria-labelledby="title"
             data-te-dropdown-menu-ref
         >
             <slot />
