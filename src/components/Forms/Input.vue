@@ -268,7 +268,6 @@ const togglePassword = () => {
                         size="2xl"
                     />
                 </div>
-            </div>
             </template>
         </div>
         <InputError v-if="error || form?.errors?.[field]" :message="error ? error : form?.errors?.[field]" class="mt-2" />
