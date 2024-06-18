@@ -10027,26 +10027,33 @@ const Z1 = { class: "flex w-full flex-col" }, ew = {
       default: "submit"
     },
     disabled: Boolean,
-    form: Object
+    form: Object,
+    loading: { type: Boolean, default: !1 }
   },
   setup(t) {
-    return (e, r) => (O(), ae(W(Ip), {
-      disabled: t.form.processing || t.disabled,
-      type: t.type,
-      class: "focusable"
-    }, {
-      default: we(() => [
-        D("div", {
-          class: Z({ "opacity-25": t.form.processing })
-        }, [
-          Y(e.$slots, "default")
-        ], 2),
-        t.form.processing ? (O(), C("div", Ew, [
-          be(W(Dp), { class: "aspect-square !h-full !w-auto text-white" })
-        ])) : K("", !0)
-      ]),
-      _: 3
-    }, 8, ["disabled", "type"]));
+    return (e, r) => {
+      var n;
+      return O(), ae(W(Ip), {
+        disabled: t.loading || ((n = t.form) == null ? void 0 : n.processing) || t.disabled,
+        type: t.type,
+        class: "focusable"
+      }, {
+        default: we(() => {
+          var i, a;
+          return [
+            D("div", {
+              class: Z({ "opacity-25": ((i = t.form) == null ? void 0 : i.processing) || t.loading })
+            }, [
+              Y(e.$slots, "default")
+            ], 2),
+            (a = t.form) != null && a.processing || t.loading ? (O(), C("div", Ew, [
+              be(W(Dp), { class: "aspect-square !h-full !w-auto text-white" })
+            ])) : K("", !0)
+          ];
+        }),
+        _: 3
+      }, 8, ["disabled", "type"]);
+    };
   }
 }, _w = ["id"], Cw = {
   key: 0,
