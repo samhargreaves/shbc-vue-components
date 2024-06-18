@@ -28,9 +28,12 @@
 import { InputLabel, TextInput, InputError, SubmitButton } from '../../index';
 
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
+import { faSquareCheck } from '@fortawesome/free-solid-svg-icons';
+import { faSquare } from '@fortawesome/free-regular-svg-icons';
 import { faWhatsapp } from '@fortawesome/free-brands-svg-icons';
 import { library } from '@fortawesome/fontawesome-svg-core';
-library.add(faWhatsapp);
+import { onMounted, ref, watch } from 'vue';
+library.add(faWhatsapp, faSquareCheck, faSquare);
 
 const props = defineProps({
     type: String,
@@ -39,9 +42,9 @@ const props = defineProps({
     name: String,
     required: Boolean,
     disabled: Boolean,
-    min: Number | String,
-    max: Number | String,
-    step: Number | String,
+    min: { type: [Number, String] },
+    max: { type: [Number, String] },
+    step: { type: [Number, String] },
     form: Object,
     addon: String,
     placeholder: String,
@@ -50,6 +53,8 @@ const props = defineProps({
     autofocus: Boolean,
     pattern: String,
     whatsApp: String,
+    leftDescription: { type: [String, Boolean], default: false },
+    rightDescription: { type: [String, Boolean], default: 'Enable' },
     switchDescription: String,
     sublabel: String,
 
@@ -57,22 +62,20 @@ const props = defineProps({
         type: String,
         default: '',
     },
-
+    checkboxCustomClass: {
+        type: String,
+        default: '',
+    },
     buttonCustomClass: {
         type: String,
         default: '',
     },
-
     labelCustomClass: {
         type: String,
         default: '',
     },
 
-    modelValue: {},
-    noForm: {
-        type: Boolean,
-        default: false,
-    },
+    error: String,
 });
 function ucwords(text) {
     let res = [];
@@ -84,42 +87,101 @@ function ucwords(text) {
         });
     return res.join(' ');
 }
+
+const emit = defineEmits();
+const noForm = ref(false);
+const model = defineModel();
+const value = ref();
+
+onMounted(() => {
+    noForm.value = !props.form;
+    value.value = noForm.value ? model.value : props.form[props.field];
+});
+
+watch(
+    () => value.value,
+    (val, oldval) => {
+        if (val === oldval) return;
+        if (noForm.value) {
+            model.value = val;
+        } else {
+            props.form[props.field] = val;
+        }
+        emit('update:modelValue', val);
+    }
+);
+
+watch(
+    () => props.form,
+    (val) => {
+        value.value = noForm.value ? model.value : val[props.field];
+    }
+);
+
+watch(
+    () => model.value,
+    (val) => {
+        value.value = val;
+    }
+);
 </script>
 
 <template>
-    <div>
+    <div :class="noLabel ? 'mb-2' : 'mb-4'">
         <InputLabel
             :customClass="labelCustomClass"
             v-if="!noLabel"
             :for="field"
-            :value="label ? label : ucwords(field)"
+            :value="label ? label : field ? ucwords(field) : ''"
             :sublabel="sublabel"
             :required="required"
         />
-        <div class="relative flex w-full max-w-full items-stretch" :class="noLabel ? '' : 'mb-4'">
-            <label v-if="type === 'checkbox'" class="flex items-center">
+        <div class="relative flex w-full max-w-full items-stretch">
+            <label v-if="type === 'switch' || type === 'checkbox'" class="flex items-center">
+                <slot v-if="$slots?.leftDescription" name="leftDescription" />
+                <span v-else-if="leftDescription" class="mr-1">
+                    {{ leftDescription ? leftDescription : 'Disable' }}
+                </span>
                 <input
                     :id="field"
                     type="checkbox"
                     class="hidden"
-                    v-model="props.form[field]"
+                    v-model="value"
                     :disabled="props.disabled"
                     :required="props.required"
                     :name="name ?? field"
                 />
                 <div
+                    tabindex="0"
+                    v-if="type === 'switch'"
                     class="toggle-switch focusable !ml-0"
                     :class="{
-                        checked: props.form[field],
+                        checked: value,
                         disabled: props.disabled,
                     }"
-                ></div>
-                {{ switchDescription ? switchDescription : 'Enable' }}
-                <slot name="switchDescription" />
+                />
+                <div
+                    tabindex="0"
+                    v-else
+                    class="focusable mr-1 p-1 text-primary"
+                    :class="{
+                        '!text-gray-500': props.disabled,
+                        [checkboxCustomClass]: checkboxCustomClass,
+                    }"
+                >
+                    <Transition name="popup" mode="out-in">
+                        <FontAwesomeIcon key="checked" v-if="props.form[field]" v-bind:icon="'fas fa-square-check'" />
+                        <FontAwesomeIcon key="unchecked" v-else v-bind:icon="'far fa-square'" />
+                    </Transition>
+                </div>
+                <slot v-if="$slots?.rightDescription" name="rightDescription" />
+                <span v-else-if="rightDescription">
+                    {{ rightDescription }}
+                </span>
             </label>
             <select
                 v-else-if="type === 'select'"
-                v-model="props.form[field]"
+                v-model="value"
                 :required="props.required"
                 :disabled="props.disabled"
                 :name="name ?? field"
@@ -143,7 +205,7 @@ function ucwords(text) {
                         '!rounded-r-none': !!submitBtn || whatsApp || $slots?.submit,
                         [inputCustomClass]: !!inputCustomClass,
                     }"
-                    v-model="props.form[field]"
+                    v-model="value"
                     :required="props.required"
                     :disabled="props.disabled"
                     :autocomplete="field"
@@ -155,18 +217,26 @@ function ucwords(text) {
                     :pattern="props.pattern"
                     :name="name ?? field"
                 />
-                <SubmitButton v-if="submitBtn" :form="form" class="z-[2] inline-block rounded-l-none" :class="buttonCustomClass" id="button-input">
-                    {{ submitBtn }}
-                </SubmitButton>
-                <SubmitButton
-                    v-if="$slots?.submit"
-                    :form="form"
-                    class="z-[2] inline-block rounded-l-none"
-                    :class="buttonCustomClass"
-                    id="button-input"
-                >
-                    <slot name="submit" />
-                </SubmitButton>
+                <template v-if="form">
+                    <SubmitButton
+                        v-if="submitBtn"
+                        :form="form"
+                        class="z-[2] inline-block rounded-l-none"
+                        :class="buttonCustomClass"
+                        :id="`submit-button-${field}`"
+                    >
+                        {{ submitBtn }}
+                    </SubmitButton>
+                    <SubmitButton
+                        v-if="$slots?.submit"
+                        :form="form"
+                        class="z-[2] inline-block rounded-l-none"
+                        :class="buttonCustomClass"
+                        id="button-input"
+                    >
+                        <slot name="submit" />
+                    </SubmitButton>
+                </template>
                 <a
                     v-if="whatsApp"
                     class="z-[2] inline-block rounded-r bg-primary px-2 py-2 text-xs font-medium uppercase leading-normal text-white shadow transition duration-150 ease-in-out hover:bg-primary-700 hover:shadow-lg focus:z-[3] focus:bg-primary-600 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-primary-700 active:shadow-lg"
@@ -178,7 +248,7 @@ function ucwords(text) {
                 </a>
             </template>
         </div>
-        <InputError class="mt-2" :message="props.form.errors[field]" />
+        <InputError v-if="error || form?.errors?.[field]" :message="error ? error : form?.errors?.[field]" class="mt-2" />
     </div>
 </template>
 
