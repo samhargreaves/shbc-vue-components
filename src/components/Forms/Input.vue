@@ -28,8 +28,8 @@
 import { InputLabel, TextInput, InputError, SubmitButton } from '../../index';
 
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
-import { faSquareCheck } from '@fortawesome/free-solid-svg-icons';
-import { faSquare, faEye, faEyeSlash } from '@fortawesome/free-regular-svg-icons';
+import { faSquareCheck, faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
+import { faSquare } from '@fortawesome/free-regular-svg-icons';
 import { faWhatsapp } from '@fortawesome/free-brands-svg-icons';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { onMounted, ref, watch } from 'vue';
@@ -207,7 +207,7 @@ const togglePassword = () => {
                     class="focusable relative m-0 block w-full flex-auto disabled:border-slate-200 disabled:bg-slate-50 disabled:text-slate-500 disabled:shadow-none"
                     :class="{
                         '!rounded-l-none': addon,
-                        '!rounded-r-none': !!submitBtn || whatsApp || $slots?.submit,
+                        '!rounded-r-none': !!submitBtn || whatsApp || $slots?.submit || type === 'password',
                         [inputCustomClass]: !!inputCustomClass,
                     }"
                     v-model="value"
@@ -252,23 +252,21 @@ const togglePassword = () => {
                     <FontAwesomeIcon v-bind:icon="'fab fa-whatsapp'" size="2xl" />
                 </a>
                 <div 
-                    v-if="type == 'password'"            
+                    v-if="type == 'password'"
+                    @click="togglePassword"            
                     class="z-[2] inline-block rounded-r bg-gray-300 px-2 py-2 text-xs font-medium leading-normal text-white"
                 >
                     <FontAwesomeIcon
                         v-if="displayType === 'password'"
-                        v-on:click="togglePassword"
-                        v-bind:icon="'fas fa-eye'"
+                        v-bind:icon="faEye"
                         size="2xl"
                     />
                     <FontAwesomeIcon
                         v-else
-                        v-on:click="togglePassword"
-                        v-bind:icon="'fas fa-eye-slash'"
+                        v-bind:icon="faEyeSlash"
                         size="2xl"
                     />
                 </div>
-                {{type}}
             </template>
         </div>
         <InputError v-if="error || form?.errors?.[field]" :message="error ? error : form?.errors?.[field]" class="mt-2" />
