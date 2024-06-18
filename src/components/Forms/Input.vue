@@ -33,7 +33,7 @@ import { faSquare } from '@fortawesome/free-regular-svg-icons';
 import { faWhatsapp } from '@fortawesome/free-brands-svg-icons';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { onMounted, ref, watch } from 'vue';
-library.add(faWhatsapp, faSquareCheck, faSquare);
+library.add(faWhatsapp, faSquareCheck, faSquare, faEye, faEyeSlash);
 
 const props = defineProps({
     type: String,
@@ -92,6 +92,7 @@ const emit = defineEmits();
 const noForm = ref(false);
 const model = defineModel();
 const value = ref();
+const displayType = ref(props.type);
 
 onMounted(() => {
     noForm.value = !props.form;
@@ -124,6 +125,10 @@ watch(
         value.value = val;
     }
 );
+
+const togglePassword = () => {
+    displayType.value = displayType.value === 'password' ? 'text' : 'password';
+};
 </script>
 
 <template>
@@ -198,7 +203,7 @@ watch(
                 </span>
                 <TextInput
                     :id="field"
-                    :type="type"
+                    :type="displayType"
                     class="focusable relative m-0 block w-full flex-auto disabled:border-slate-200 disabled:bg-slate-50 disabled:text-slate-500 disabled:shadow-none"
                     :class="{
                         '!rounded-l-none': addon,
@@ -246,6 +251,24 @@ watch(
                 >
                     <FontAwesomeIcon v-bind:icon="'fab fa-whatsapp'" size="2xl" />
                 </a>
+                <div 
+                    v-if="type == 'password'"            
+                    class="z-[2] inline-block rounded-r bg-gray-300 px-2 py-2 text-xs font-medium leading-normal text-white"
+                >
+                    <FontAwesomeIcon
+                        v-if="displayType === 'password'"
+                        v-on:click="togglePassword"
+                        v-bind:icon="'fas fa-eye'"
+                        size="2xl"
+                    />
+                    <FontAwesomeIcon
+                        v-else
+                        v-on:click="togglePassword"
+                        v-bind:icon="'fas fa-eye-slash'"
+                        size="2xl"
+                    />
+                </div>
+            </div>
             </template>
         </div>
         <InputError v-if="error || form?.errors?.[field]" :message="error ? error : form?.errors?.[field]" class="mt-2" />
