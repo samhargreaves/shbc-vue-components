@@ -7,7 +7,7 @@ const props = defineProps({
 });
 
 onMounted(() => {
-    initTE({ Dropdown });
+    initTE({ Dropdown }, { allowReinits: true });
 });
 </script>
 

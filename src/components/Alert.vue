@@ -6,8 +6,8 @@ const props = defineProps({
     message: String,
 });
 
-onMounted(async () => {
-    initTE({ Alert, initTE }, { allowReinits: true });
+onMounted(() => {
+    initTE({ Alert });
 });
 </script>
 
@@ -20,7 +20,7 @@ onMounted(async () => {
                 data-te-alert-init
                 data-te-alert-show
             >
-                <slot />
+                <slot></slot>
                 <button
                     type="button"
                     class="ml-auto box-content rounded-none border-none p-1 text-neutral-900 opacity-50 hover:text-neutral-900 hover:no-underline hover:opacity-75 focus:opacity-100 focus:shadow-none focus:outline-none"
