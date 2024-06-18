@@ -29,7 +29,7 @@ import { InputLabel, TextInput, InputError, SubmitButton } from '../../index';
 
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 import { faSquareCheck } from '@fortawesome/free-solid-svg-icons';
-import { faSquare } from '@fortawesome/free-regular-svg-icons';
+import { faSquare, faEye, faEyeSlash } from '@fortawesome/free-regular-svg-icons';
 import { faWhatsapp } from '@fortawesome/free-brands-svg-icons';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { onMounted, ref, watch } from 'vue';
@@ -268,6 +268,7 @@ const togglePassword = () => {
                         size="2xl"
                     />
                 </div>
+                {{type}}
             </template>
         </div>
         <InputError v-if="error || form?.errors?.[field]" :message="error ? error : form?.errors?.[field]" class="mt-2" />
