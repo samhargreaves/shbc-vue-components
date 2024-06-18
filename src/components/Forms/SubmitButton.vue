@@ -8,7 +8,7 @@ const props = defineProps({
     },
     disabled: Boolean,
     form: Object,
-    loading: { type: 'Boolean', default: false },
+    loading: { type: Boolean, default: false },
 });
 </script>
 
