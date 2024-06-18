@@ -3257,7 +3257,7 @@ const Gr = (t, e) => {
               type: l.value,
               class: X(["focusable relative m-0 block w-full flex-auto disabled:border-slate-200 disabled:bg-slate-50 disabled:text-slate-500 disabled:shadow-none", {
                 "!rounded-l-none": t.addon,
-                "!rounded-r-none": !!t.submitBtn || t.whatsApp || ((m = f.$slots) == null ? void 0 : m.submit) || t.type === "password",
+                "!rounded-r-none": !!t.submitBtn || t.whatsApp || ((m = f.$slots) == null ? void 0 : m.submit),
                 [t.inputCustomClass]: !!t.inputCustomClass
               }]),
               modelValue: s.value,
@@ -3311,7 +3311,7 @@ const Gr = (t, e) => {
             t.type == "password" ? (E(), I("div", {
               key: 3,
               onClick: c,
-              class: "z-[2] inline-block rounded-r bg-gray-300 px-2 py-2 text-xs font-medium leading-normal text-white"
+              class: "z-[2] cursor-pointer absolute top-0 right-0 flex items-center justify-center rounded-r bg-gray-300 w-11 h-full text-xs font-medium leading-normal text-white"
             }, [
               l.value === "password" ? (E(), oe(W(Tt), {
                 key: 0,
@@ -3333,7 +3333,7 @@ const Gr = (t, e) => {
       ], 2);
     };
   }
-}, d_ = /* @__PURE__ */ Gr(Jy, [["__scopeId", "data-v-e8fdf283"]]), Xy = { class: "text-sm text-red-600" }, ji = {
+}, d_ = /* @__PURE__ */ Gr(Jy, [["__scopeId", "data-v-53691812"]]), Xy = { class: "text-sm text-red-600" }, ji = {
   __name: "InputError",
   props: ["message"],
   setup(t) {
