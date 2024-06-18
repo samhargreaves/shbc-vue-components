@@ -207,7 +207,7 @@ const togglePassword = () => {
                     class="focusable relative m-0 block w-full flex-auto disabled:border-slate-200 disabled:bg-slate-50 disabled:text-slate-500 disabled:shadow-none"
                     :class="{
                         '!rounded-l-none': addon,
-                        '!rounded-r-none': !!submitBtn || whatsApp || $slots?.submit || type === 'password',
+                        '!rounded-r-none': !!submitBtn || whatsApp || $slots?.submit,
                         [inputCustomClass]: !!inputCustomClass,
                     }"
                     v-model="value"
@@ -254,7 +254,7 @@ const togglePassword = () => {
                 <div 
                     v-if="type == 'password'"
                     @click="togglePassword"            
-                    class="z-[2] inline-block rounded-r bg-gray-300 px-2 py-2 text-xs font-medium leading-normal text-white"
+                    class="z-[2] cursor-pointer absolute top-0 right-0 flex items-center justify-center rounded-r bg-gray-300 w-11 h-full text-xs font-medium leading-normal text-white"
                 >
                     <FontAwesomeIcon
                         v-if="displayType === 'password'"
