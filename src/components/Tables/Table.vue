@@ -129,7 +129,7 @@ if (props.sticky) {
                 </table>
             </div>
         </div>
-
-        <Pagination v-if="links" class="mt-6" :links="links" />
+        <slot v-if="$slots.pagination" name="pagination" />
+        <Pagination v-else-if="links" class="mt-6" :links="links" />
     </div>
 </template>
