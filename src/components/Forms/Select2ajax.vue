@@ -94,6 +94,8 @@ const fetchList = async (appendAjaxId = false) => {
     if (appendAjaxId) {
         if (currentValue.value) {
             params.append('ajax_id', currentValue.value);
+
+            console.log(props.modelValue, props.form?.[props.field], currentValue.value);
         }
     }
 
@@ -143,7 +145,7 @@ onMounted(() => {
         :placeholder="placeholder"
         :field="field"
         :form="form"
-        :modelValue="modelValue"
+        :modelValue="currentValue"
         :noLabel="noLabel"
         :disabled="disabled"
         :noForm="noForm"
