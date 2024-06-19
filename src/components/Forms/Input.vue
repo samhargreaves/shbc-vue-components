@@ -121,10 +121,14 @@ watch(
 );
 
 watch(
-    () => (field ? props.form[field] : null),
+    () => (props.field ? props.form[props.field] : null),
     (val) => {
         console.log({ field: field, val: val });
         value.value = noForm.value ? model.value : val;
+    },
+    {
+        immediate: true,
+        deep: true,
     }
 );
 
