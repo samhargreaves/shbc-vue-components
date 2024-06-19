@@ -121,8 +121,9 @@ watch(
 );
 
 watch(
-    () => (field ? props.form[field] : props.form),
+    () => (field ? props.form[field] : null),
     (val) => {
+        console.log({ field: field, val: val });
         value.value = noForm.value ? model.value : val;
     }
 );
@@ -259,21 +260,13 @@ const togglePassword = () => {
                 >
                     <FontAwesomeIcon v-bind:icon="'fab fa-whatsapp'" size="2xl" />
                 </a>
-                <div 
+                <div
                     v-if="type == 'password' && !hidePasswordToggler"
-                    @click="togglePassword"            
-                    class="z-[2] cursor-pointer absolute top-0 right-0 flex items-center justify-center rounded-r bg-gray-300 w-11 h-full text-xs font-medium leading-normal text-white"
+                    @click="togglePassword"
+                    class="absolute right-0 top-0 z-[2] flex h-full w-11 cursor-pointer items-center justify-center rounded-r bg-gray-300 text-xs font-medium leading-normal text-white"
                 >
-                    <FontAwesomeIcon
-                        v-if="displayType === 'password'"
-                        v-bind:icon="faEye"
-                        size="2xl"
-                    />
-                    <FontAwesomeIcon
-                        v-else
-                        v-bind:icon="faEyeSlash"
-                        size="2xl"
-                    />
+                    <FontAwesomeIcon v-if="displayType === 'password'" v-bind:icon="faEye" size="2xl" />
+                    <FontAwesomeIcon v-else v-bind:icon="faEyeSlash" size="2xl" />
                 </div>
             </template>
         </div>
