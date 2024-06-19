@@ -123,7 +123,6 @@ watch(
 watch(
     () => (props.field ? props.form[props.field] : null),
     (val) => {
-        console.log({ field: props.field, val: val });
         value.value = noForm.value ? model.value : val;
     },
     {
