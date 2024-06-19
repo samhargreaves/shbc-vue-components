@@ -16487,7 +16487,7 @@ const Am = /* @__PURE__ */ Gr(FC, [["render", zC]]), UC = ["onClick"], VC = { cl
     const r = t, n = e, i = le([]), a = le(1), o = le(!0), s = le(0), l = le(""), c = le(((m = r.form) == null ? void 0 : m[r.field]) || r.modelValue), f = le(c.value), d = (y) => {
       f.value = c.value, c.value = y, n("update:modelValue", y);
     }, g = (y) => {
-      y == "" && c.value && c.value !== f.value || (a.value = 1, s.value = 0, l.value = y, console.log(l.value, c.value), S());
+      y == "" && c.value && c.value !== f.value || (a.value = 1, s.value = 0, l.value = y, S());
     }, S = async (y = !1) => {
       const O = new URLSearchParams();
       O.append("term", l.value), O.append("page", a.value), r.queryParams && Object.keys(r.queryParams).forEach((_) => {
