@@ -3175,9 +3175,9 @@ const Gr = (t, e) => {
         f !== d && (a.value ? o.value = f : r.form[r.field] = f, i("update:modelValue", f));
       }
     ), Lr(
-      () => field ? r.form[field] : r.form,
+      () => field ? r.form[field] : null,
       (f) => {
-        s.value = a.value ? o.value : f;
+        console.log({ field, val: f }), s.value = a.value ? o.value : f;
       }
     ), Lr(
       () => o.value,
@@ -3319,7 +3319,7 @@ const Gr = (t, e) => {
             t.type == "password" && !t.hidePasswordToggler ? (E(), I("div", {
               key: 3,
               onClick: c,
-              class: "z-[2] cursor-pointer absolute top-0 right-0 flex items-center justify-center rounded-r bg-gray-300 w-11 h-full text-xs font-medium leading-normal text-white"
+              class: "absolute right-0 top-0 z-[2] flex h-full w-11 cursor-pointer items-center justify-center rounded-r bg-gray-300 text-xs font-medium leading-normal text-white"
             }, [
               l.value === "password" ? (E(), se(W(Tt), {
                 key: 0,
@@ -3341,7 +3341,7 @@ const Gr = (t, e) => {
       ], 2);
     };
   }
-}, d_ = /* @__PURE__ */ Gr(Jy, [["__scopeId", "data-v-26d856d8"]]), Xy = { class: "text-sm text-red-600" }, ji = {
+}, d_ = /* @__PURE__ */ Gr(Jy, [["__scopeId", "data-v-e1751b68"]]), Xy = { class: "text-sm text-red-600" }, ji = {
   __name: "InputError",
   props: ["message"],
   setup(t) {
