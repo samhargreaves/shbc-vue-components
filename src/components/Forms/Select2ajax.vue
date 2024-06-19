@@ -62,12 +62,12 @@ const lastValue = ref(currentValue.value);
 const displayText = ref(null);
 
 const onUpdate = (value) => {
-    console.log('onUpdate', value);
     lastValue.value = currentValue.value;
     currentValue.value = value;
     emit('update:modelValue', value);
 
     if (!value) {
+        // user just reseted the value, clear the search and placeholder
         searchChange('');
         displayText.value = null;
     }
