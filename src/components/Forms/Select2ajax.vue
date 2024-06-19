@@ -59,12 +59,18 @@ const lastScrollTop = ref(0);
 const term = ref('');
 const currentValue = ref(props.form?.[props.field] || props.modelValue);
 const lastValue = ref(currentValue.value);
+const displayText = ref(null);
 
 const onUpdate = (value) => {
     console.log('onUpdate', value);
     lastValue.value = currentValue.value;
     currentValue.value = value;
     emit('update:modelValue', value);
+
+    if (!value) {
+        searchChange('');
+        displayText.value = null;
+    }
 };
 
 const searchChange = (_term) => {
@@ -82,8 +88,6 @@ const searchChange = (_term) => {
 };
 
 const fetchList = async (appendAjaxId = false) => {
-    const current = currentValue.value;
-
     const params = new URLSearchParams();
     params.append('term', term.value);
     params.append('page', page.value);
@@ -95,26 +99,23 @@ const fetchList = async (appendAjaxId = false) => {
     }
 
     if (appendAjaxId) {
-        if (current) {
-            params.append('ajax_id', current);
-
-            console.log(props.modelValue, props.form?.[props.field], currentValue.value);
-            currentValue.value = null;
+        if (currentValue.value) {
+            params.append('ajax_id', currentValue.value);
         }
     }
 
     const response = await fetch(`${props.url}?${params.toString()}`);
     const results = await response.json();
     canIncreasePage.value = results.current_page < results.last_page;
- 
-    setTimeout(() => {
-        if (current) {
-            currentValue.value = current;
-        }
-    }, 100);
 
     if (page.value === 1) {
         list.value = results.data;
+
+        if (currentValue.value) {
+            const found = list.value.find((item) => item[props.optionValue] == currentValue.value);
+            displayText = found ? found[props.optionText] : null;
+        }
+
         return;
     }
 
@@ -152,7 +153,7 @@ onMounted(() => {
         :optionValue="optionValue"
         :optionText="optionText"
         :optionDisabled="optionDisabled"
-        :placeholder="placeholder"
+        :placeholder="displayText ??  placeholder"
         :field="field"
         :form="form"
         :modelValue="currentValue"
