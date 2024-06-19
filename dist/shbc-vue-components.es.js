@@ -3177,7 +3177,7 @@ const Gr = (t, e) => {
     ), Lr(
       () => r.field ? r.form[r.field] : null,
       (f) => {
-        console.log({ field: r.field, val: f }), s.value = a.value ? o.value : f;
+        s.value = a.value ? o.value : f;
       },
       {
         immediate: !0,
@@ -3345,7 +3345,7 @@ const Gr = (t, e) => {
       ], 2);
     };
   }
-}, d_ = /* @__PURE__ */ Gr(Jy, [["__scopeId", "data-v-2eab8977"]]), Xy = { class: "text-sm text-red-600" }, ji = {
+}, d_ = /* @__PURE__ */ Gr(Jy, [["__scopeId", "data-v-13d99c1a"]]), Xy = { class: "text-sm text-red-600" }, ji = {
   __name: "InputError",
   props: ["message"],
   setup(t) {
