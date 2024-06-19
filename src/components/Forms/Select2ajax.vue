@@ -58,13 +58,22 @@ const canIncreasePage = ref(true);
 const lastScrollTop = ref(0);
 const term = ref('');
 const currentValue = ref(props.form?.[props.field] || props.modelValue);
+const lastValue = ref(currentValue.value);
 
 const onUpdate = (value) => {
+    lastValue.value = currentValue.value;
     currentValue.value = value;
     emit('update:modelValue', value);
 };
 
 const searchChange = (_term) => {
+    if (_term == '') {
+        if (currentValue.value && currentValue.value !== lastValue.value) {
+            // user selected a value from the list
+            return;
+        }
+    }
+
     page.value = 1;
     lastScrollTop.value = 0;
     term.value = _term;
