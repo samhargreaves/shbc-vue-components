@@ -3175,9 +3175,13 @@ const Gr = (t, e) => {
         f !== d && (a.value ? o.value = f : r.form[r.field] = f, i("update:modelValue", f));
       }
     ), Lr(
-      () => field ? r.form[field] : null,
+      () => r.field ? r.form[r.field] : null,
       (f) => {
         console.log({ field, val: f }), s.value = a.value ? o.value : f;
+      },
+      {
+        immediate: !0,
+        deep: !0
       }
     ), Lr(
       () => o.value,
@@ -3341,7 +3345,7 @@ const Gr = (t, e) => {
       ], 2);
     };
   }
-}, d_ = /* @__PURE__ */ Gr(Jy, [["__scopeId", "data-v-e1751b68"]]), Xy = { class: "text-sm text-red-600" }, ji = {
+}, d_ = /* @__PURE__ */ Gr(Jy, [["__scopeId", "data-v-51f3c8ff"]]), Xy = { class: "text-sm text-red-600" }, ji = {
   __name: "InputError",
   props: ["message"],
   setup(t) {
