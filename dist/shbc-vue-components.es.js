@@ -16485,21 +16485,23 @@ const Am = /* @__PURE__ */ Gr(FC, [["render", zC]]), UC = ["onClick"], VC = { cl
   setup(t, { emit: e }) {
     var m;
     const r = t, n = e, i = le([]), a = le(1), o = le(!0), s = le(0), l = le(""), c = le(((m = r.form) == null ? void 0 : m[r.field]) || r.modelValue), f = le(c.value), d = (y) => {
-      f.value = c.value, c.value = y, n("update:modelValue", y);
+      console.log("onUpdate", y), f.value = c.value, c.value = y, n("update:modelValue", y);
     }, g = (y) => {
       y == "" && c.value && c.value !== f.value || (a.value = 1, s.value = 0, l.value = y, S());
     }, S = async (y = !1) => {
-      var _;
-      const O = new URLSearchParams();
-      O.append("term", l.value), O.append("page", a.value), r.queryParams && Object.keys(r.queryParams).forEach((C) => {
-        O.append(C, r.queryParams[C]);
-      }), y && c.value && (O.append("ajax_id", c.value), console.log(r.modelValue, (_ = r.form) == null ? void 0 : _[r.field], c.value));
-      const k = await (await fetch(`${r.url}?${O.toString()}`)).json();
-      if (o.value = k.current_page < k.last_page, a.value === 1) {
-        i.value = k.data;
+      var C;
+      const O = c.value, A = new URLSearchParams();
+      A.append("term", l.value), A.append("page", a.value), r.queryParams && Object.keys(r.queryParams).forEach((D) => {
+        A.append(D, r.queryParams[D]);
+      }), y && O && (A.append("ajax_id", O), console.log(r.modelValue, (C = r.form) == null ? void 0 : C[r.field], c.value), c.value = null);
+      const _ = await (await fetch(`${r.url}?${A.toString()}`)).json();
+      if (o.value = _.current_page < _.last_page, setTimeout(() => {
+        O && (c.value = O);
+      }, 100), a.value === 1) {
+        i.value = _.data;
         return;
       }
-      i.value = i.value.concat(k.data);
+      i.value = i.value.concat(_.data);
     };
     return st(() => {
       S(!0);
