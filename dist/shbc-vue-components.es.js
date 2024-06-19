@@ -3127,6 +3127,10 @@ const Gr = (t, e) => {
     rightDescription: { type: [String, Boolean], default: "Enable" },
     switchDescription: String,
     sublabel: String,
+    hidePasswordToggler: {
+      type: Boolean,
+      default: !1
+    },
     inputCustomClass: {
       type: String,
       default: ""
@@ -3308,7 +3312,7 @@ const Gr = (t, e) => {
                 size: "2xl"
               })
             ], 10, Ky)) : J("", !0),
-            t.type == "password" ? (E(), I("div", {
+            t.type == "password" && !t.hidePasswordToggler ? (E(), I("div", {
               key: 3,
               onClick: c,
               class: "z-[2] cursor-pointer absolute top-0 right-0 flex items-center justify-center rounded-r bg-gray-300 w-11 h-full text-xs font-medium leading-normal text-white"
@@ -3333,7 +3337,7 @@ const Gr = (t, e) => {
       ], 2);
     };
   }
-}, d_ = /* @__PURE__ */ Gr(Jy, [["__scopeId", "data-v-53691812"]]), Xy = { class: "text-sm text-red-600" }, ji = {
+}, d_ = /* @__PURE__ */ Gr(Jy, [["__scopeId", "data-v-7366724f"]]), Xy = { class: "text-sm text-red-600" }, ji = {
   __name: "InputError",
   props: ["message"],
   setup(t) {
