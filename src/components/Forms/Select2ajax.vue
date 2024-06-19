@@ -57,8 +57,30 @@ const page = ref(1);
 const canIncreasePage = ref(true);
 const lastScrollTop = ref(0);
 const term = ref('');
+const currentValue = ref(props.form?.[props.field] || props.modelValue);
+const lastValue = ref(currentValue.value);
+const displayText = ref(null);
+
+const onUpdate = (value) => {
+    lastValue.value = currentValue.value;
+    currentValue.value = value;
+    emit('update:modelValue', value);
+
+    if (!value) {
+        // user just reseted the value, clear the search and placeholder
+        searchChange('');
+        displayText.value = null;
+    }
+};
 
 const searchChange = (_term) => {
+    if (_term == '') {
+        if (currentValue.value && currentValue.value !== lastValue.value) {
+            // user selected a value from the list
+            return;
+        }
+    }
+
     page.value = 1;
     lastScrollTop.value = 0;
     term.value = _term;
@@ -77,9 +99,8 @@ const fetchList = async (appendAjaxId = false) => {
     }
 
     if (appendAjaxId) {
-        const currentValue = props.form?.[props.field] || props.modelValue;
-        if (currentValue) {
-            params.append('ajax_id', currentValue);
+        if (currentValue.value) {
+            params.append('ajax_id', currentValue.value);
         }
     }
 
@@ -89,6 +110,12 @@ const fetchList = async (appendAjaxId = false) => {
 
     if (page.value === 1) {
         list.value = results.data;
+
+        if (currentValue.value) {
+            const found = list.value.find((item) => item[props.optionValue] == currentValue.value);
+            displayText.value = found ? found[props.optionText] : null;
+        }
+
         return;
     }
 
@@ -126,14 +153,14 @@ onMounted(() => {
         :optionValue="optionValue"
         :optionText="optionText"
         :optionDisabled="optionDisabled"
-        :placeholder="placeholder"
+        :placeholder="displayText ??  placeholder"
         :field="field"
         :form="form"
-        :modelValue="modelValue"
+        :modelValue="currentValue"
         :noLabel="noLabel"
         :disabled="disabled"
         :noForm="noForm"
-        @update:modelValue="($event) => emit('update:modelValue', $event)"
+        @update:modelValue="($event) => onUpdate($event)"
         @searchchange="searchChange"
     ></SearchSelect>
 </template>

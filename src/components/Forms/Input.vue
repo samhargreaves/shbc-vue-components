@@ -28,12 +28,12 @@
 import { InputLabel, TextInput, InputError, SubmitButton } from '../../index';
 
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
-import { faSquareCheck } from '@fortawesome/free-solid-svg-icons';
+import { faSquareCheck, faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
 import { faSquare } from '@fortawesome/free-regular-svg-icons';
 import { faWhatsapp } from '@fortawesome/free-brands-svg-icons';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { onMounted, ref, watch } from 'vue';
-library.add(faWhatsapp, faSquareCheck, faSquare);
+library.add(faWhatsapp, faSquareCheck, faSquare, faEye, faEyeSlash);
 
 const props = defineProps({
     type: String,
@@ -57,6 +57,14 @@ const props = defineProps({
     rightDescription: { type: [String, Boolean], default: 'Enable' },
     switchDescription: String,
     sublabel: String,
+    hidePasswordToggler: {
+        type: Boolean,
+        default: false,
+    },
+    autocomplete: {
+        type: String,
+        default: null,
+    },
 
     inputCustomClass: {
         type: String,
@@ -92,6 +100,7 @@ const emit = defineEmits();
 const noForm = ref(false);
 const model = defineModel();
 const value = ref();
+const displayType = ref(props.type);
 
 onMounted(() => {
     noForm.value = !props.form;
@@ -124,6 +133,10 @@ watch(
         value.value = val;
     }
 );
+
+const togglePassword = () => {
+    displayType.value = displayType.value === 'password' ? 'text' : 'password';
+};
 </script>
 
 <template>
@@ -198,7 +211,7 @@ watch(
                 </span>
                 <TextInput
                     :id="field"
-                    :type="type"
+                    :type="displayType"
                     class="focusable relative m-0 block w-full flex-auto disabled:border-slate-200 disabled:bg-slate-50 disabled:text-slate-500 disabled:shadow-none"
                     :class="{
                         '!rounded-l-none': addon,
@@ -208,7 +221,7 @@ watch(
                     v-model="value"
                     :required="props.required"
                     :disabled="props.disabled"
-                    :autocomplete="field"
+                    :autocomplete="autocomplete ?? field"
                     :min="props.min"
                     :max="props.max"
                     :step="props.step"
@@ -246,6 +259,22 @@ watch(
                 >
                     <FontAwesomeIcon v-bind:icon="'fab fa-whatsapp'" size="2xl" />
                 </a>
+                <div 
+                    v-if="type == 'password' && !hidePasswordToggler"
+                    @click="togglePassword"            
+                    class="z-[2] cursor-pointer absolute top-0 right-0 flex items-center justify-center rounded-r bg-gray-300 w-11 h-full text-xs font-medium leading-normal text-white"
+                >
+                    <FontAwesomeIcon
+                        v-if="displayType === 'password'"
+                        v-bind:icon="faEye"
+                        size="2xl"
+                    />
+                    <FontAwesomeIcon
+                        v-else
+                        v-bind:icon="faEyeSlash"
+                        size="2xl"
+                    />
+                </div>
             </template>
         </div>
         <InputError v-if="error || form?.errors?.[field]" :message="error ? error : form?.errors?.[field]" class="mt-2" />
