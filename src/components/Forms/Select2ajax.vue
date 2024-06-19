@@ -113,7 +113,7 @@ const fetchList = async (appendAjaxId = false) => {
 
         if (currentValue.value) {
             const found = list.value.find((item) => item[props.optionValue] == currentValue.value);
-            displayText = found ? found[props.optionText] : null;
+            displayText.value = found ? found[props.optionText] : null;
         }
 
         return;
