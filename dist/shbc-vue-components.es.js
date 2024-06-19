@@ -16497,7 +16497,7 @@ const Am = /* @__PURE__ */ Gr(FC, [["render", zC]]), UC = ["onClick"], VC = { cl
       if (o.value = _.current_page < _.last_page, a.value === 1) {
         if (i.value = _.data, c.value) {
           const C = i.value.find((D) => D[r.optionValue] == c.value);
-          d = C ? C[r.optionText] : null;
+          d.value = C ? C[r.optionText] : null;
         }
         return;
       }
