@@ -61,6 +61,10 @@ const props = defineProps({
         type: Boolean,
         default: false,
     },
+    autocomplete: {
+        type: String,
+        default: null,
+    },
 
     inputCustomClass: {
         type: String,
@@ -217,7 +221,7 @@ const togglePassword = () => {
                     v-model="value"
                     :required="props.required"
                     :disabled="props.disabled"
-                    :autocomplete="field"
+                    :autocomplete="autocomplete ?? field"
                     :min="props.min"
                     :max="props.max"
                     :step="props.step"
