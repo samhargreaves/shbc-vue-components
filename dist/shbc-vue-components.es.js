@@ -16489,10 +16489,11 @@ const Am = /* @__PURE__ */ Gr(FC, [["render", zC]]), UC = ["onClick"], VC = { cl
     }, g = (y) => {
       y == "" && c.value && c.value !== f.value || (a.value = 1, s.value = 0, l.value = y, S());
     }, S = async (y = !1) => {
+      var _;
       const O = new URLSearchParams();
-      O.append("term", l.value), O.append("page", a.value), r.queryParams && Object.keys(r.queryParams).forEach((_) => {
-        O.append(_, r.queryParams[_]);
-      }), y && c.value && O.append("ajax_id", c.value);
+      O.append("term", l.value), O.append("page", a.value), r.queryParams && Object.keys(r.queryParams).forEach((C) => {
+        O.append(C, r.queryParams[C]);
+      }), y && c.value && (O.append("ajax_id", c.value), console.log(r.modelValue, (_ = r.form) == null ? void 0 : _[r.field], c.value));
       const k = await (await fetch(`${r.url}?${O.toString()}`)).json();
       if (o.value = k.current_page < k.last_page, a.value === 1) {
         i.value = k.data;
@@ -16522,7 +16523,7 @@ const Am = /* @__PURE__ */ Gr(FC, [["render", zC]]), UC = ["onClick"], VC = { cl
       placeholder: t.placeholder,
       field: t.field,
       form: t.form,
-      modelValue: t.modelValue,
+      modelValue: c.value,
       noLabel: t.noLabel,
       disabled: t.disabled,
       noForm: t.noForm,
