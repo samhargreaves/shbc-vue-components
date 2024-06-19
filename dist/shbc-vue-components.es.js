@@ -3131,6 +3131,10 @@ const Gr = (t, e) => {
       type: Boolean,
       default: !1
     },
+    autocomplete: {
+      type: String,
+      default: null
+    },
     inputCustomClass: {
       type: String,
       default: ""
@@ -3268,7 +3272,7 @@ const Gr = (t, e) => {
               "onUpdate:modelValue": d[2] || (d[2] = (C) => s.value = C),
               required: r.required,
               disabled: r.disabled,
-              autocomplete: t.field,
+              autocomplete: t.autocomplete ?? t.field,
               min: r.min,
               max: r.max,
               step: r.step,
@@ -3337,7 +3341,7 @@ const Gr = (t, e) => {
       ], 2);
     };
   }
-}, d_ = /* @__PURE__ */ Gr(Jy, [["__scopeId", "data-v-7366724f"]]), Xy = { class: "text-sm text-red-600" }, ji = {
+}, d_ = /* @__PURE__ */ Gr(Jy, [["__scopeId", "data-v-b763f914"]]), Xy = { class: "text-sm text-red-600" }, ji = {
   __name: "InputError",
   props: ["message"],
   setup(t) {
