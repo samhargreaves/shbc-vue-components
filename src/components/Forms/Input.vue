@@ -57,6 +57,10 @@ const props = defineProps({
     rightDescription: { type: [String, Boolean], default: 'Enable' },
     switchDescription: String,
     sublabel: String,
+    hidePasswordToggler: {
+        type: Boolean,
+        default: false,
+    },
 
     inputCustomClass: {
         type: String,
@@ -252,7 +256,7 @@ const togglePassword = () => {
                     <FontAwesomeIcon v-bind:icon="'fab fa-whatsapp'" size="2xl" />
                 </a>
                 <div 
-                    v-if="type == 'password'"
+                    v-if="type == 'password' && !hidePasswordToggler"
                     @click="togglePassword"            
                     class="z-[2] cursor-pointer absolute top-0 right-0 flex items-center justify-center rounded-r bg-gray-300 w-11 h-full text-xs font-medium leading-normal text-white"
                 >
