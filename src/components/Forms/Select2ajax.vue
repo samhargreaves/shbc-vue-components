@@ -77,8 +77,6 @@ const searchChange = (_term) => {
     page.value = 1;
     lastScrollTop.value = 0;
     term.value = _term;
-
-    console.log(term.value, currentValue.value);
     fetchList();
 };
 
