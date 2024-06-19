@@ -57,11 +57,19 @@ const page = ref(1);
 const canIncreasePage = ref(true);
 const lastScrollTop = ref(0);
 const term = ref('');
+const currentValue = ref(props.form?.[props.field] || props.modelValue);
+
+const onUpdate = (value) => {
+    currentValue.value = value;
+    emit('update:modelValue', value);
+};
 
 const searchChange = (_term) => {
     page.value = 1;
     lastScrollTop.value = 0;
     term.value = _term;
+
+    console.log(term.value, currentValue.value);
     fetchList();
 };
 
@@ -77,9 +85,8 @@ const fetchList = async (appendAjaxId = false) => {
     }
 
     if (appendAjaxId) {
-        const currentValue = props.form?.[props.field] || props.modelValue;
-        if (currentValue) {
-            params.append('ajax_id', currentValue);
+        if (currentValue.value) {
+            params.append('ajax_id', currentValue.value);
         }
     }
 
@@ -133,7 +140,7 @@ onMounted(() => {
         :noLabel="noLabel"
         :disabled="disabled"
         :noForm="noForm"
-        @update:modelValue="($event) => emit('update:modelValue', $event)"
+        @update:modelValue="($event) => onUpdate($event)"
         @searchchange="searchChange"
     ></SearchSelect>
 </template>
