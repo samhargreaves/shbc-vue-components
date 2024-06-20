@@ -16613,11 +16613,15 @@ const a3 = /* @__PURE__ */ Gr(JC, [["render", ZC]]), e_ = { class: "description-
     },
     value: {
       type: String
+    },
+    forceEditing: {
+      type: Boolean,
+      default: !1
     }
   },
   setup(t) {
     Mi.add(xl, Mc);
-    const e = t, r = oe(!1), n = () => {
+    const e = t, r = oe(e.forceEditing), n = () => {
       e.editable && (r.value = !r.value);
     };
     return (i, a) => (E(), I("div", e_, [
