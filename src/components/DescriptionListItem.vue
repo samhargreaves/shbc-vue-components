@@ -1,5 +1,5 @@
 <script setup>
-import { ref } from 'vue';
+import { ref, watch } from 'vue';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 import { faPencil, faCheck } from '@fortawesome/free-solid-svg-icons';
 import { library } from '@fortawesome/fontawesome-svg-core';
@@ -23,12 +23,18 @@ const props = defineProps({
     },
 });
 
-const editing = ref(props.forceEditing);
+const editing = ref(props.editable ? props.forceEditing : false);
 
 const toggleEditing = () => {
     if (!props.editable) return;
     editing.value = !editing.value;
 };
+
+watch(() => props.forceEditing, (newValue) => {
+    if (props.editable) {
+        editing.value = newValue;
+    }
+});
 </script>
 
 <template>
