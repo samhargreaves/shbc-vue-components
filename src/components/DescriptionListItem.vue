@@ -17,9 +17,13 @@ const props = defineProps({
     value: {
         type: String,
     },
+    forceEditing: {
+        type: Boolean,
+        default: false,
+    },
 });
 
-const editing = ref(false);
+const editing = ref(props.forceEditing);
 
 const toggleEditing = () => {
     if (!props.editable) return;
