@@ -4606,7 +4606,8 @@ const Zv = {
     noForm: {
       type: Boolean,
       default: !1
-    }
+    },
+    filterPredicate
   },
   emits: ["update:modelValue", "searchchange"],
   setup(t, { emit: e }) {
@@ -4634,8 +4635,9 @@ const Zv = {
         class: "model-list !relative !mt-0 h-[42px] !max-w-full !rounded !border-gray-300 !shadow",
         "onUpdate:modelValue": a[0] || (a[0] = (o) => r("update:modelValue", o)),
         onSearchchange: a[1] || (a[1] = (o) => r("searchchange", o)),
-        "is-disabled": t.disabled
-      }, null, 8, ["id", "list", "modelValue", "option-value", "option-text", "option-disabled", "placeholder", "is-disabled"])) : (E(), I(de, { key: 2 }, [
+        "is-disabled": t.disabled,
+        filterPredicate: t.filterPredicate
+      }, null, 8, ["id", "list", "modelValue", "option-value", "option-text", "option-disabled", "placeholder", "is-disabled", "filterPredicate"])) : (E(), I(de, { key: 2 }, [
         we(W(Hc), {
           id: t.id ?? t.field,
           list: t.list,
@@ -4650,15 +4652,16 @@ const Zv = {
           placeholder: t.placeholder,
           class: "model-list !relative !mt-0 h-[42px] !max-w-full !rounded !border-gray-300 !px-3 !shadow",
           onSearchchange: a[4] || (a[4] = (o) => r("searchchange", o)),
-          "is-disabled": t.disabled
-        }, null, 8, ["id", "list", "modelValue", "option-value", "option-text", "option-disabled", "placeholder", "is-disabled"]),
+          "is-disabled": t.disabled,
+          filterPredicate: t.filterPredicate
+        }, null, 8, ["id", "list", "modelValue", "option-value", "option-text", "option-disabled", "placeholder", "is-disabled", "filterPredicate"]),
         we(W(ji), {
           message: t.form.errors[t.field]
         }, null, 8, ["message"])
       ], 64))
     ]));
   }
-}, e0 = /* @__PURE__ */ Gr(Zv, [["__scopeId", "data-v-cebb574a"]]);
+}, e0 = /* @__PURE__ */ Gr(Zv, [["__scopeId", "data-v-458574d0"]]);
 function ip(t, e) {
   return function() {
     return t.apply(e, arguments);
@@ -16534,8 +16537,9 @@ const Am = /* @__PURE__ */ Gr(FC, [["render", zC]]), UC = ["onClick"], VC = { cl
       disabled: t.disabled,
       noForm: t.noForm,
       "onUpdate:modelValue": O[0] || (O[0] = (k) => g(k)),
-      onSearchchange: S
-    }, null, 8, ["id", "label", "list", "optionValue", "optionText", "optionDisabled", "placeholder", "field", "form", "modelValue", "noLabel", "disabled", "noForm"]));
+      onSearchchange: S,
+      filterPredicate: (k, _) => console.log("debug", k, _)
+    }, null, 8, ["id", "label", "list", "optionValue", "optionText", "optionDisabled", "placeholder", "field", "form", "modelValue", "noLabel", "disabled", "noForm", "filterPredicate"]));
   }
 };
 const HC = (t) => (Lm("data-v-03a62b00"), t = t(), Fm(), t), WC = ["id", "aria-controls"], qC = { class: "ml-3 flex-1 whitespace-nowrap text-left" }, GC = /* @__PURE__ */ HC(() => /* @__PURE__ */ L("svg", {
