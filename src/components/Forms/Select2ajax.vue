@@ -48,7 +48,7 @@ const props = defineProps({
     },
     queryParams: {
         type: Object,
-    }
+    },
 });
 
 const emit = defineEmits(['update:modelValue']);
@@ -153,7 +153,7 @@ onMounted(() => {
         :optionValue="optionValue"
         :optionText="optionText"
         :optionDisabled="optionDisabled"
-        :placeholder="displayText ??  placeholder"
+        :placeholder="displayText ?? placeholder"
         :field="field"
         :form="form"
         :modelValue="currentValue"
@@ -162,5 +162,6 @@ onMounted(() => {
         :noForm="noForm"
         @update:modelValue="($event) => onUpdate($event)"
         @searchchange="searchChange"
+        :filterPredicate="(a, b) => console.log('debug', a, b)"
     ></SearchSelect>
 </template>

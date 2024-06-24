@@ -43,6 +43,7 @@ const props = defineProps({
         type: Boolean,
         default: false,
     },
+    filterPredicate,
 });
 
 const emit = defineEmits(['update:modelValue', 'searchchange']);
@@ -75,6 +76,7 @@ const ucwords = (text) => {
                 @update:modelValue="(val) => emit('update:modelValue', val)"
                 @searchchange="($event) => emit('searchchange', $event)"
                 :is-disabled="disabled"
+                :filterPredicate="filterPredicate"
             ></model-list-select>
         </template>
         <template v-else>
@@ -90,6 +92,7 @@ const ucwords = (text) => {
                 @update:modelValue="(val) => emit('update:modelValue', val)"
                 @searchchange="($event) => emit('searchchange', $event)"
                 :is-disabled="disabled"
+                :filterPredicate="filterPredicate"
             ></model-list-select>
             <InputError :message="form.errors[field]" />
         </template>
