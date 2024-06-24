@@ -162,6 +162,6 @@ onMounted(() => {
         :noForm="noForm"
         @update:modelValue="($event) => onUpdate($event)"
         @searchchange="searchChange"
-        :filterPredicate="(a, b) => console.log('debug', a, b)"
+        :filterPredicate="(a, b) => true"
     ></SearchSelect>
 </template>
