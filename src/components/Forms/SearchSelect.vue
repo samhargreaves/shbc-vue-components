@@ -43,7 +43,12 @@ const props = defineProps({
         type: Boolean,
         default: false,
     },
-    filterPredicate,
+    filterPredicate: {
+        type: Function,
+        default: (option, term) => {
+            return option.toLowerCase().includes(term.toLowerCase());
+        },
+    },
 });
 
 const emit = defineEmits(['update:modelValue', 'searchchange']);
