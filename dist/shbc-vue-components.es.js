@@ -4607,7 +4607,10 @@ const Zv = {
       type: Boolean,
       default: !1
     },
-    filterPredicate
+    filterPredicate: {
+      type: Function,
+      default: (t, e) => t.toLowerCase().includes(e.toLowerCase())
+    }
   },
   emits: ["update:modelValue", "searchchange"],
   setup(t, { emit: e }) {
@@ -4661,7 +4664,7 @@ const Zv = {
       ], 64))
     ]));
   }
-}, e0 = /* @__PURE__ */ Gr(Zv, [["__scopeId", "data-v-458574d0"]]);
+}, e0 = /* @__PURE__ */ Gr(Zv, [["__scopeId", "data-v-5dacc1ac"]]);
 function ip(t, e) {
   return function() {
     return t.apply(e, arguments);
