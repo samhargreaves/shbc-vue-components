@@ -16541,8 +16541,8 @@ const Am = /* @__PURE__ */ Gr(FC, [["render", zC]]), UC = ["onClick"], VC = { cl
       noForm: t.noForm,
       "onUpdate:modelValue": O[0] || (O[0] = (k) => g(k)),
       onSearchchange: S,
-      filterPredicate: (k, _) => console.log("debug", k, _)
-    }, null, 8, ["id", "label", "list", "optionValue", "optionText", "optionDisabled", "placeholder", "field", "form", "modelValue", "noLabel", "disabled", "noForm", "filterPredicate"]));
+      filterPredicate: (k, _) => !0
+    }, null, 8, ["id", "label", "list", "optionValue", "optionText", "optionDisabled", "placeholder", "field", "form", "modelValue", "noLabel", "disabled", "noForm"]));
   }
 };
 const HC = (t) => (Lm("data-v-03a62b00"), t = t(), Fm(), t), WC = ["id", "aria-controls"], qC = { class: "ml-3 flex-1 whitespace-nowrap text-left" }, GC = /* @__PURE__ */ HC(() => /* @__PURE__ */ L("svg", {
