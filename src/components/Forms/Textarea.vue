@@ -30,7 +30,7 @@ defineEmits(['update:modelValue']);
 
 <template>
     <div>
-        <InputLabel v-if="!noLabel" :for="field" :value="label ? label : ucwords(field)" />
+        <InputLabel v-if="!noLabel" :for="field" :value="label ? label : ucwords(field)" :required="required" />
         <div class="relative mb-4 flex w-full flex-wrap items-stretch">
             <textarea
                 :id="field"

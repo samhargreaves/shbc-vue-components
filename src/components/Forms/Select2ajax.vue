@@ -40,6 +40,7 @@ const props = defineProps({
         type: Boolean,
         default: false,
     },
+    required: Boolean,
 
     // ajax specific props
     url: {
@@ -160,6 +161,7 @@ onMounted(() => {
         :noLabel="noLabel"
         :disabled="disabled"
         :noForm="noForm"
+        :required="required"
         @update:modelValue="($event) => onUpdate($event)"
         @searchchange="searchChange"
         :filterPredicate="(a, b) => true"

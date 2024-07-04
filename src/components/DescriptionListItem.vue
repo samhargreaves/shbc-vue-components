@@ -21,6 +21,10 @@ const props = defineProps({
         type: Boolean,
         default: false,
     },
+    required: {
+        type: Boolean,
+        default: false,
+    },
 });
 
 const editing = ref(props.editable ? props.forceEditing : false);
@@ -42,6 +46,7 @@ watch(() => props.forceEditing, (newValue) => {
         <dt class="flex items-center text-sm font-medium">
             {{ label }}
             <slot name="label" />
+            <span class="ml-1 text-red-500" v-if="required">*</span>
         </dt>
         <dd class="mt-1 min-h-[42px] text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">
             <div class="flex min-h-full items-center">

@@ -49,6 +49,7 @@ const props = defineProps({
             return option.toLowerCase().includes(term.toLowerCase());
         },
     },
+    required: Boolean,
 });
 
 const emit = defineEmits(['update:modelValue', 'searchchange']);
@@ -67,7 +68,7 @@ const ucwords = (text) => {
 
 <template>
     <div>
-        <InputLabel v-if="!noLabel && (label || field)" :for="id ?? field" :value="ucwords(label ?? field)" />
+        <InputLabel v-if="!noLabel && (label || field)" :for="id ?? field" :value="ucwords(label ?? field)" :required="required" />
         <template v-if="noForm">
             <model-list-select
                 :id="id ?? field"
