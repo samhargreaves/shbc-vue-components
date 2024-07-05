@@ -3172,7 +3172,7 @@ const Gr = (t, e) => {
     }), hr(
       () => s.value,
       (f, d) => {
-        f !== d && (console.log("watch", f, d, a.value), a.value ? (console.log("noForm", f), o.value = f) : (console.log("form", f), r.form[r.field] = f), i("update:modelValue", f));
+        f !== d && (console.log("watch", f, d, a.value), a.value ? (console.log("noForm", f, o), o.value = f) : (console.log("form", f), r.form[r.field] = f), console.log("emit", f), i("update:modelValue", f));
       }
     ), hr(
       () => r.field ? r.form[r.field] : null,
@@ -3345,7 +3345,7 @@ const Gr = (t, e) => {
       ], 2);
     };
   }
-}, p_ = /* @__PURE__ */ Gr(Jy, [["__scopeId", "data-v-2cdf7f20"]]), Xy = { class: "text-sm text-red-600" }, ji = {
+}, p_ = /* @__PURE__ */ Gr(Jy, [["__scopeId", "data-v-d4ae452c"]]), Xy = { class: "text-sm text-red-600" }, ji = {
   __name: "InputError",
   props: ["message"],
   setup(t) {
