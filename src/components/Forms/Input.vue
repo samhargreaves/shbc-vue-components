@@ -119,6 +119,7 @@ watch(
             model.value = val;
         } else {
             console.log('form', val);
+            if (!props.form) return;
             props.form[props.field] = val;
         }
 
