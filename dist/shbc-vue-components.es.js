@@ -3168,20 +3168,11 @@ const Gr = (t, e) => {
     }
     const i = e, a = oe(!1), o = _m(t, "modelValue"), s = oe(), l = oe(r.type);
     st(() => {
-      a.value = !r.form, s.value = a.value ? o.value : r.form[r.field], console.log("mounted", a.value, s.value);
+      a.value = !r.form, s.value = a.value ? o.value : r.form[r.field];
     }), hr(
       () => s.value,
       (f, d) => {
-        if (f !== d) {
-          if (console.log("watch", f, d, a.value), a.value)
-            console.log("noForm", f, o), o.value = f;
-          else {
-            if (console.log("form", f), !r.form)
-              return;
-            r.form[r.field] = f;
-          }
-          console.log("emit", f), i("update:modelValue", f);
-        }
+        f !== d && (a.value ? o.value = f : r.form[r.field] = f, i("update:modelValue", f));
       }
     ), hr(
       () => r.field ? r.form[r.field] : null,
@@ -3189,7 +3180,6 @@ const Gr = (t, e) => {
         s.value = a.value ? o.value : f;
       },
       {
-        immediate: !0,
         deep: !0
       }
     ), hr(
@@ -3354,7 +3344,7 @@ const Gr = (t, e) => {
       ], 2);
     };
   }
-}, p_ = /* @__PURE__ */ Gr(Jy, [["__scopeId", "data-v-6b8985fd"]]), Xy = { class: "text-sm text-red-600" }, ji = {
+}, p_ = /* @__PURE__ */ Gr(Jy, [["__scopeId", "data-v-dcd06326"]]), Xy = { class: "text-sm text-red-600" }, ji = {
   __name: "InputError",
   props: ["message"],
   setup(t) {
