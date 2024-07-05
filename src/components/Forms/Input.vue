@@ -105,12 +105,15 @@ const displayType = ref(props.type);
 onMounted(() => {
     noForm.value = !props.form;
     value.value = noForm.value ? model.value : props.form[props.field];
+
+    console.log('mounted', noForm.value, value.value);
 });
 
 watch(
     () => value.value,
     (val, oldval) => {
         if (val === oldval) return;
+        console.log('watch', val, oldval, noForm.value);
         if (noForm.value) {
             model.value = val;
         } else {
