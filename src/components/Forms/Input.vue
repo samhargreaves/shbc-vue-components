@@ -115,8 +115,10 @@ watch(
         if (val === oldval) return;
         console.log('watch', val, oldval, noForm.value);
         if (noForm.value) {
+            console.log('noForm', val);
             model.value = val;
         } else {
+            console.log('form', val);
             props.form[props.field] = val;
         }
         emit('update:modelValue', val);
