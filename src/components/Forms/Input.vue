@@ -32,7 +32,7 @@ import { faSquareCheck, faEye, faEyeSlash } from '@fortawesome/free-solid-svg-ic
 import { faSquare } from '@fortawesome/free-regular-svg-icons';
 import { faWhatsapp } from '@fortawesome/free-brands-svg-icons';
 import { library } from '@fortawesome/fontawesome-svg-core';
-import { onMounted, ref, watch } from 'vue';
+import { onMounted, ref, watch, defineModel } from 'vue';
 library.add(faWhatsapp, faSquareCheck, faSquare, faEye, faEyeSlash);
 
 const props = defineProps({
