@@ -1,13 +1,7 @@
 <script setup>
-import { Dropdown, initTE } from 'tw-elements';
-import { onMounted } from 'vue';
 
 const props = defineProps({
     title: String,
-});
-
-onMounted(() => {
-    initTE({ Dropdown }, { allowReinits: true });
 });
 </script>
 
