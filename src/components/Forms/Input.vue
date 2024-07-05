@@ -105,25 +105,18 @@ const displayType = ref(props.type);
 onMounted(() => {
     noForm.value = !props.form;
     value.value = noForm.value ? model.value : props.form[props.field];
-
-    console.log('mounted', noForm.value, value.value);
 });
 
 watch(
     () => value.value,
     (val, oldval) => {
         if (val === oldval) return;
-        console.log('watch', val, oldval, noForm.value);
         if (noForm.value) {
-            console.log('noForm', val, model);
             model.value = val;
         } else {
-            console.log('form', val);
-            if (!props.form) return;
             props.form[props.field] = val;
         }
 
-        console.log('emit', val);
         emit('update:modelValue', val);
     }
 );
@@ -134,7 +127,6 @@ watch(
         value.value = noForm.value ? model.value : val;
     },
     {
-        immediate: true,
         deep: true,
     }
 );
