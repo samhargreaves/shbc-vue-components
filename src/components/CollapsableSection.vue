@@ -8,9 +8,6 @@ const props = defineProps({
         type: Boolean,
         default: false,
     },
-    headerColor: {
-        type: String,
-    },
 });
 
 const collapseRef = ref(null);
@@ -34,7 +31,6 @@ const onClick = () => {
             <div
                 @click="onClick"
                 class="focusable !block rounded-lg border-b-2 border-gray-200 bg-neutral-50 px-6 py-1 text-center"
-                :style="{ backgroundColor: headerColor + ' !important' }"
                 tabindex="0"
                 :aria-controls="header ? header.replaceAll(' ', '_') : `collapsable`"
             >
@@ -43,7 +39,7 @@ const onClick = () => {
                     {{ isVisible ? 'Hide' : 'Show' }}
                 </button>
             </div>
-            <div class="!visible hidden overflow-hidden bg-neutral-50" :id="header ? header.replaceAll(' ', '_') : `collapsable`" ref="collapseRef">
+            <div class="!visible hidden overflow-hidden" :id="header ? header.replaceAll(' ', '_') : `collapsable`" ref="collapseRef">
                 <div :class="{ 'px-4 pb-2': header }" class="mt-2">
                     <slot />
                 </div>
