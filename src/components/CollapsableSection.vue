@@ -8,6 +8,9 @@ const props = defineProps({
         type: Boolean,
         default: false,
     },
+    headerColor: {
+        type: String,
+    },
 });
 
 const collapseRef = ref(null);
@@ -33,6 +36,7 @@ const onClick = () => {
                 class="focusable !block rounded-lg border-b-2 border-gray-200 bg-neutral-50 px-6 py-1 text-center"
                 tabindex="0"
                 :aria-controls="header ? header.replaceAll(' ', '_') : `collapsable`"
+                :style="{ backgroundColor: headerColor }"
             >
                 {{ header }}
                 <button class="text-xs font-semibold uppercase leading-normal text-primary hover:text-primary-700" type="button">
