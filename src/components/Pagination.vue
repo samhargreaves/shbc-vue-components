@@ -30,6 +30,18 @@ const props = defineProps({
         type: String,
         default: '',
     },
+    preserveScroll: {
+        type: Boolean,
+        default: false,
+    },
+    preserveState: {
+        type: Boolean,
+        default: false,
+    },
+    only: {
+        type: Array,
+        default: [],
+    },
 });
 
 const filteredLinks = computed(() => {
@@ -102,9 +114,9 @@ const handleChange = (label) => {
                             }"
                             :href="link.url"
                             v-html="link.label"
-                            :preserveScroll="logs"
-                            :preserveState="logs"
-                            :only="logs ? ['logs'] : []"
+                            :preserveScroll="preserveScroll || logs"
+                            :preserveState="preserveState || logs"
+                            :only="logs ? ['logs'] : only"
                         />
                     </template>
                 </li>
