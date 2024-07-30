@@ -14914,6 +14914,18 @@ const hl = new MS(), $n = {
     customListClass: {
       type: String,
       default: ""
+    },
+    preserveScroll: {
+      type: Boolean,
+      default: !1
+    },
+    preserveState: {
+      type: Boolean,
+      default: !1
+    },
+    only: {
+      type: Array,
+      default: []
     }
   },
   emits: ["change"],
@@ -14968,9 +14980,9 @@ const hl = new MS(), $n = {
                 }]),
                 href: u.url,
                 innerHTML: u.label,
-                preserveScroll: t.logs,
-                preserveState: t.logs,
-                only: t.logs ? ["logs"] : []
+                preserveScroll: t.preserveScroll || t.logs,
+                preserveState: t.preserveState || t.logs,
+                only: t.logs ? ["logs"] : t.only
               }, null, 8, ["class", "href", "innerHTML", "preserveScroll", "preserveState", "only"]))
             ], 64))
           ]))), 128))
