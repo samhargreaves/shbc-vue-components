@@ -15329,10 +15329,10 @@ function YO(t, e) {
 const tC = /* @__PURE__ */ yr(qO, [["render", YO]]), KO = { class: "description-list-item px-4 py-2 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6" }, JO = { class: "flex items-center text-sm font-medium" }, XO = {
   key: 0,
   class: "ml-1 text-red-500"
-}, QO = { class: "mt-1 min-h-[42px] text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0" }, ZO = { class: "flex min-h-full items-center" }, eA = { class: "flex-grow" }, tA = {
+}, QO = { class: "mt-1 min-h-[42px] text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0" }, ZO = { class: "flex min-h-full items-center" }, eA = { class: "flex-grow slot-content" }, tA = {
   key: 0,
   class: "ml-4 flex-shrink-0"
-}, rA = { class: "flex-grow" }, nA = { class: "ml-4 flex-shrink-0" }, rC = {
+}, rA = { class: "flex-grow slot-edit" }, nA = { class: "ml-4 flex-shrink-0" }, rC = {
   __name: "DescriptionListItem",
   props: {
     editable: {
