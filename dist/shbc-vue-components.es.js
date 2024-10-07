@@ -10197,7 +10197,7 @@ const tw = { class: "flex w-full flex-col" }, rw = {
               key: 0,
               ref_key: "sticky_wrapper",
               ref: a,
-              class: "fixed isolate z-50 hidden w-full overflow-hidden bg-neutral-100"
+              class: "fixed isolate z-40 hidden w-full overflow-hidden bg-neutral-100"
             }, [
               D("div", {
                 ref_key: "sticky_header",
