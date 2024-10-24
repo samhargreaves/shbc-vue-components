@@ -55,10 +55,11 @@ watch(() => props.forceEditing, (newValue) => {
                         <slot />
                         {{ value }}
                     </div>
-                    <span class="ml-4 flex-shrink-0" v-if="editable">
-                        <button type="button" @click="toggleEditing" class="text-lg font-bold text-primary hover:text-primary-400">
+                    <span class="ml-4 flex-shrink-0">
+                        <button type="button" @click="toggleEditing" class="text-lg font-bold text-primary hover:text-primary-400"  v-if="editable">
                             <FontAwesomeIcon :icon="faPencil" />
                         </button>
+                        <slot name="buttons" />
                     </span>
                 </template>
                 <template v-else>
