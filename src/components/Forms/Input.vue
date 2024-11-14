@@ -96,7 +96,7 @@ function ucwords(text) {
     return res.join(' ');
 }
 
-const emit = defineEmits();
+const emit = defineEmits(['changed']);
 const noForm = ref(false);
 const model = defineModel();
 const value = ref();
@@ -118,13 +118,13 @@ watch(
             props.form[props.field] = val;
         }
         prevValue.value = oldval;
+        emit('update:modelValue', val);
 
         if (isSettingSilently.value) {
             isSettingSilently.value = false;
             return;
         }
         emit('changed', { value: val, old_value: oldval });
-        // emit('update:modelValue', val);
     }
 );
 
