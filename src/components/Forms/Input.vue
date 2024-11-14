@@ -100,6 +100,7 @@ const emit = defineEmits();
 const noForm = ref(false);
 const model = defineModel();
 const value = ref();
+const prevValue = ref();
 const displayType = ref(props.type);
 
 onMounted(() => {
@@ -116,12 +117,13 @@ watch(
         } else {
             props.form[props.field] = val;
         }
+        prevValue.value = oldval;
 
         if (isSettingSilently.value) {
             isSettingSilently.value = false;
             return;
         }
-        emit('update:modelValue', val, oldval);
+        emit('update:modelValue', val);
     }
 );
 
@@ -133,6 +135,10 @@ const setValueSilently = (val) => {
         props.form[props.field] = val;
     }
     isSettingSilently.value = true;
+};
+
+const getPreviousValue = () => {
+    return prevValue.value;
 };
 
 watch(
@@ -158,7 +164,8 @@ const togglePassword = () => {
 
 defineExpose({
     togglePassword,
-    setValueSilently
+    setValueSilently,
+    getPreviousValue
 });
 </script>
 
