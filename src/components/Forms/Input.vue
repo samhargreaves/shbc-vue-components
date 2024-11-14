@@ -117,9 +117,23 @@ watch(
             props.form[props.field] = val;
         }
 
-        emit('update:modelValue', val);
+        if (isSettingSilently.value) {
+            isSettingSilently.value = false;
+            return;
+        }
+        emit('update:modelValue', val, oldval);
     }
 );
+
+const isSettingSilently = ref(false);
+const setValueSilently = (val) => {
+    if (noForm.value) {
+        model.value = val;
+    } else {
+        props.form[props.field] = val;
+    }
+    isSettingSilently.value = true;
+};
 
 watch(
     () => (props.field ? props.form[props.field] : null),
@@ -141,6 +155,11 @@ watch(
 const togglePassword = () => {
     displayType.value = displayType.value === 'password' ? 'text' : 'password';
 };
+
+defineExpose({
+    togglePassword,
+    setValueSilently
+});
 </script>
 
 <template>
