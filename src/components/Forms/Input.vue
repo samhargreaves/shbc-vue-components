@@ -119,21 +119,20 @@ watch(
         }
         prevValue.value = oldval;
 
+        console.log(isSettingSilently.value);
         if (isSettingSilently.value) {
             isSettingSilently.value = false;
             return;
         }
+        console.log('emitting');
         emit('update:modelValue', val);
     }
 );
 
 const isSettingSilently = ref(false);
 const setValueSilently = (val) => {
-    if (noForm.value) {
-        model.value = val;
-    } else {
-        props.form[props.field] = val;
-    }
+    value.value = val;
+    console.log('setting silently', val);
     isSettingSilently.value = true;
 };
 
