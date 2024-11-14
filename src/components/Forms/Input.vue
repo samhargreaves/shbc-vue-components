@@ -119,20 +119,18 @@ watch(
         }
         prevValue.value = oldval;
 
-        console.log(isSettingSilently.value);
         if (isSettingSilently.value) {
             isSettingSilently.value = false;
             return;
         }
-        console.log('emitting');
-        emit('update:modelValue', val);
+        emit('changed', { value: val, old_value: oldval });
+        // emit('update:modelValue', val);
     }
 );
 
 const isSettingSilently = ref(false);
 const setValueSilently = (val) => {
     value.value = val;
-    console.log('setting silently', val);
     isSettingSilently.value = true;
 };
 
