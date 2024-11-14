@@ -3173,16 +3173,16 @@ const yr = (t, e) => {
       () => u.value,
       (x, S) => {
         if (x !== S) {
-          if (o.value ? s.value = x : n.form[n.field] = x, c.value = S, d.value) {
+          if (o.value ? s.value = x : n.form[n.field] = x, c.value = S, console.log(d.value), d.value) {
             d.value = !1;
             return;
           }
-          a("update:modelValue", x);
+          console.log("emitting"), a("update:modelValue", x);
         }
       }
     );
     const d = te(!1), b = (x) => {
-      o.value ? s.value = x : n.form[n.field] = x, d.value = !0;
+      u.value = x, console.log("setting silently", x), d.value = !0;
     }, C = () => c.value;
     Vt(
       () => n.field ? n.form[n.field] : null,
@@ -3358,7 +3358,7 @@ const yr = (t, e) => {
       ], 2);
     };
   }
-}, lA = /* @__PURE__ */ yr(sg, [["__scopeId", "data-v-df74c209"]]), lg = { class: "text-sm text-red-600" }, ii = {
+}, lA = /* @__PURE__ */ yr(sg, [["__scopeId", "data-v-53b0aa4b"]]), lg = { class: "text-sm text-red-600" }, ii = {
   __name: "InputError",
   props: ["message"],
   setup(t) {
