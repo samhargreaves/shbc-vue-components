@@ -15958,7 +15958,7 @@ const nl = new Ex(), Ln = {
     ]));
   }
 }, Fx = ["aria-controls"], Ix = {
-  class: "text-xs font-semibold uppercase leading-normal text-primary hover:text-primary-700",
+  class: "text-primary hover:text-primary-700 text-xs leading-normal font-semibold uppercase",
   type: "button"
 }, Dx = ["id"], $x = {
   __name: "CollapsableSection",
@@ -15990,7 +15990,7 @@ const nl = new Ex(), Ln = {
       }, [
         U("div", {
           onClick: a,
-          class: "focusable block! rounded-lg border-b-2 border-gray-200 bg-neutral-50 px-6 py-1 text-center",
+          class: "focusable block! cursor-pointer rounded-lg border-b-2 border-gray-200 bg-neutral-50 px-6 py-1 text-center",
           tabindex: "0",
           "aria-controls": e.header ? e.header.replaceAll(" ", "_") : "collapsable",
           style: Nn({ backgroundColor: e.headerColor })
@@ -16074,7 +16074,7 @@ const nl = new Ex(), Ln = {
 }, O2 = {
   __name: "DropdownLink",
   setup(e) {
-    return (t, r) => (F(), pe(J($t), { class: "focusable block w-full px-4 py-2 text-left text-sm leading-5 text-gray-700 transition duration-150 ease-in-out hover:bg-gray-100 focus:bg-gray-100 focus:outline-hidden" }, {
+    return (t, r) => (F(), pe(J($t), { class: "focusable block w-full cursor-pointer px-4 py-2 text-left text-sm leading-5 text-gray-700 transition duration-150 ease-in-out hover:bg-gray-100 focus:bg-gray-100 focus:outline-hidden" }, {
       default: $e(() => [
         Q(t.$slots, "default")
       ]),
@@ -16134,7 +16134,7 @@ const nl = new Ex(), Ln = {
   setup(e) {
     return (t, r) => (F(), B("div", Mx, [
       U("button", {
-        class: "focusable flex items-center whitespace-nowrap rounded bg-primary px-2 text-sm text-white hover:bg-primary-700 motion-reduce:transition-none",
+        class: "focusable bg-primary hover:bg-primary-700 flex cursor-pointer items-center rounded px-2 text-sm whitespace-nowrap text-white motion-reduce:transition-none",
         type: "button",
         id: e.title,
         "data-te-dropdown-toggle-ref": "",
@@ -16159,7 +16159,7 @@ const nl = new Ex(), Ln = {
         ], -1))
       ], 8, Bx),
       U("ul", {
-        class: "absolute z-1000 float-left m-0 hidden min-w-max list-none overflow-hidden rounded-lg border-none bg-white bg-clip-padding text-left text-base shadow-lg dark:bg-neutral-700 data-te-dropdown-show:block",
+        class: "absolute z-1000 float-left m-0 hidden min-w-max list-none overflow-hidden rounded-lg border-none bg-white bg-clip-padding text-left text-base shadow-lg data-te-dropdown-show:block dark:bg-neutral-700",
         "aria-labelledby": e.title,
         "data-te-dropdown-menu-ref": ""
       }, [
@@ -16176,7 +16176,7 @@ const nl = new Ex(), Ln = {
   setup(e) {
     return (t, r) => (F(), B("li", null, [
       U("a", {
-        class: "focusable inline-flex w-full items-center justify-center whitespace-nowrap bg-transparent px-4 py-2 text-sm font-normal text-neutral-700 hover:bg-neutral-100 active:text-neutral-800 active:no-underline disabled:pointer-events-none disabled:bg-transparent disabled:text-neutral-400 dark:text-neutral-200 dark:hover:bg-neutral-600",
+        class: "focusable inline-flex w-full cursor-pointer items-center justify-center bg-transparent px-4 py-2 text-sm font-normal whitespace-nowrap text-neutral-700 hover:bg-neutral-100 active:text-neutral-800 active:no-underline disabled:pointer-events-none disabled:bg-transparent disabled:text-neutral-400 dark:text-neutral-200 dark:hover:bg-neutral-600",
         href: e.href,
         "data-te-dropdown-item-ref": ""
       }, re(e.title), 9, jx)
@@ -16414,7 +16414,7 @@ const nl = new Ex(), Ln = {
   },
   setup(e) {
     const t = e, r = fe(
-      () => t.active ? "focusable flex items-center p-2 text-base font-normal bg-accent text-gray-900 rounded-lg dark:text-white bg-gray-100 dark:hover:bg-gray-700" : "focusable flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700"
+      () => t.active ? "focusable flex cursor-pointer items-center p-2 text-base font-normal bg-accent text-gray-900 rounded-lg dark:text-white bg-gray-100 dark:hover:bg-gray-700" : "focusable flex cursor-pointer items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700"
     );
     return (n, i) => (F(), pe(J($t), {
       href: e.href,
@@ -16548,7 +16548,7 @@ const nl = new Ex(), Ln = {
     return (t, r) => (F(), B("button", {
       type: e.type,
       disabled: e.disabled,
-      class: "focusable inline-flex items-center rounded-md border border-transparent bg-primary px-4 py-2 text-xs font-semibold uppercase tracking-widest text-white transition duration-150 ease-in-out hover:bg-primary-700 focus:bg-primary-700 focus:outline-hidden focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 active:bg-primary-700 disabled:cursor-not-allowed disabled:brightness-125 disabled:grayscale-[30%]"
+      class: "focusable bg-primary hover:bg-primary-700 focus:bg-primary-700 focus:ring-primary-500 active:bg-primary-700 inline-flex cursor-pointer items-center rounded-md border border-transparent px-4 py-2 text-xs font-semibold tracking-widest text-white uppercase transition duration-150 ease-in-out focus:ring-2 focus:ring-offset-2 focus:outline-hidden disabled:cursor-not-allowed disabled:brightness-125 disabled:grayscale-[30%]"
     }, [
       Q(t.$slots, "default")
     ], 8, uS));
@@ -16569,7 +16569,7 @@ const nl = new Ex(), Ln = {
     return (t, r) => (F(), B("button", {
       type: e.type,
       disabled: e.disabled,
-      class: "focusable inline-flex items-center rounded border border-transparent bg-red-600 px-4 py-2 text-xs font-semibold uppercase tracking-widest text-white transition duration-150 ease-in-out hover:bg-red-500 focus:outline-hidden focus:ring-2 focus:ring-red-500 focus:ring-offset-2 active:bg-red-700 disabled:cursor-not-allowed disabled:brightness-125 disabled:grayscale-[30%]"
+      class: "focusable inline-flex cursor-pointer items-center rounded border border-transparent bg-red-600 px-4 py-2 text-xs font-semibold tracking-widest text-white uppercase transition duration-150 ease-in-out hover:bg-red-500 focus:ring-2 focus:ring-red-500 focus:ring-offset-2 focus:outline-hidden active:bg-red-700 disabled:cursor-not-allowed disabled:brightness-125 disabled:grayscale-[30%]"
     }, [
       Q(t.$slots, "default")
     ], 8, cS));
@@ -16579,7 +16579,7 @@ const nl = new Ex(), Ln = {
   props: ["href", "active"],
   setup(e) {
     const t = e, r = fe(
-      () => t.active ? "focusable block w-full pl-3 pr-4 py-2 border-l-4 border-accent-400 text-left text-base font-medium text-accent-700 bg-accent-50 focus:outline-hidden focus:text-accent-800 focus:bg-accent-100 focus:border-accent-700 transition duration-150 ease-in-out" : "focusable block w-full pl-3 pr-4 py-2 border-l-4 border-transparent text-left text-base font-medium text-gray-600 hover:text-gray-800 hover:bg-gray-50 hover:border-gray-300 focus:outline-hidden focus:text-gray-800 focus:bg-gray-50 focus:border-gray-300 transition duration-150 ease-in-out"
+      () => t.active ? "focusable block cursor-pointer w-full pl-3 pr-4 py-2 border-l-4 border-accent-400 text-left text-base font-medium text-accent-700 bg-accent-50 focus:outline-hidden focus:text-accent-800 focus:bg-accent-100 focus:border-accent-700 transition duration-150 ease-in-out" : "focusable block cursor-pointer w-full pl-3 pr-4 py-2 border-l-4 border-transparent text-left text-base font-medium text-gray-600 hover:text-gray-800 hover:bg-gray-50 hover:border-gray-300 focus:outline-hidden focus:text-gray-800 focus:bg-gray-50 focus:border-gray-300 transition duration-150 ease-in-out"
     );
     return (n, i) => (F(), pe(J($t), {
       href: e.href,
@@ -16602,7 +16602,7 @@ const nl = new Ex(), Ln = {
   setup(e) {
     return (t, r) => (F(), B("button", {
       type: e.type,
-      class: "focusable inline-flex items-center rounded border border-gray-300 bg-white px-4 py-2 text-xs font-semibold uppercase tracking-widest text-gray-700 shadow transition duration-150 ease-in-out hover:bg-gray-50 focus:outline-hidden focus:ring-2 focus:ring-accent-500 focus:ring-offset-2 disabled:opacity-25"
+      class: "focusable focus:ring-accent-500 inline-flex cursor-pointer items-center rounded border border-gray-300 bg-white px-4 py-2 text-xs font-semibold tracking-widest text-gray-700 uppercase shadow transition duration-150 ease-in-out hover:bg-gray-50 focus:ring-2 focus:ring-offset-2 focus:outline-hidden disabled:opacity-25"
     }, [
       Q(t.$slots, "default")
     ], 8, fS));
@@ -16831,7 +16831,7 @@ const Uh = /* @__PURE__ */ pn(pS, [["render", gS]]), yS = ["onClick"], bS = { cl
       U("button", {
         id: e.name,
         onClick: a,
-        class: "focusable group flex w-full items-center rounded-lg p-2 text-base text-gray-900 transition duration-75 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700",
+        class: "focusable group flex w-full cursor-pointer items-center rounded-lg p-2 text-base text-gray-900 transition duration-75 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700",
         "aria-controls": e.name ? e.name.replaceAll(" ", "_") : "collapsable"
       }, [
         Q(s.$slots, "icon", {}, void 0, !0),
@@ -16862,7 +16862,7 @@ const Uh = /* @__PURE__ */ pn(pS, [["render", gS]]), yS = ["onClick"], bS = { cl
       ], 8, xS)
     ]));
   }
-}, B2 = /* @__PURE__ */ pn(SS, [["__scopeId", "data-v-10854c7c"]]), AS = {}, ES = { class: "border-t border-gray-100" }, CS = { class: "divide-y divide-gray-100" };
+}, B2 = /* @__PURE__ */ pn(SS, [["__scopeId", "data-v-2270be7c"]]), AS = {}, ES = { class: "border-t border-gray-100" }, CS = { class: "divide-y divide-gray-100" };
 function OS(e, t) {
   return F(), B("div", ES, [
     U("dl", CS, [
