@@ -16189,10 +16189,10 @@ const hl = new ix(), jn = {
             "scroll-region": ""
           }, [
             Le(zr, {
-              "enter-active-class": `backdrop-transition enter ease-out duration-[${e.backdropDuration}ms]`,
+              "enter-active-class": "backdrop-transition enter ease-out duration-[200ms]",
               "enter-from-class": "opacity-0",
               "enter-to-class": "opacity-100",
-              "leave-active-class": `backdrop-transition leave ease-in duration-[${e.backdropDuration}ms]`,
+              "leave-active-class": "backdrop-transition leave ease-in duration-[200ms]",
               "leave-from-class": "opacity-100",
               "leave-to-class": "opacity-0"
             }, {
@@ -16207,7 +16207,7 @@ const hl = new ix(), jn = {
                 ])
               ]),
               _: 1
-            }, 8, ["enter-active-class", "leave-active-class"]),
+            }),
             Le(zr, {
               "enter-active-class": `modal-transition enter ease-out duration-[${e.modalDuration}ms]`,
               "enter-from-class": "opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95",
