@@ -1,47 +1,63 @@
-@import 'tailwindcss/base';
-@import 'tailwindcss/components';
-@import 'tailwindcss/utilities';
+@import 'tailwindcss';
 
-[type='checkbox'],
-[type='radio'] {
-    color: theme('colors.primary.DEFAULT');
+@config '../tailwind.config.js';
+
+/*
+  The default border color has changed to `currentColor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentColor);
+  }
 }
 
-html {
+@utility gutters {
+  @apply px-16;
+}
+@utility bg-dotted {
+  background-image:
+    radial-gradient(var(--color-white) 8%, transparent 10%),
+    radial-gradient(var(--color-white) 8%, transparent 10%);
+  background-size: 40px 40px;
+  background-position:
+    W 0 0,
+    60px 60px;
+  background-color: var(--color-accent);
+
+  animation-name: backgroundmovement;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+@layer utilities {
+  [type='checkbox'],
+  [type='radio'] {
+    color: var(--color-primary);
+  }
+
+  html {
     @apply min-h-fit scroll-smooth bg-white text-base text-dark;
-}
+  }
 
-body {
+  body {
     margin: 0 !important;
     padding: 0;
     height: fit-content;
-}
+  }
 
-body * {
+  body * {
     box-sizing: border-box;
-}
-@layer components {
-    .gutters {
-        @apply px-16;
-    }
-
-    .bg-dotted {
-        background-image: radial-gradient(
-                theme('colors.white') 8%,
-                transparent 10%
-            ),
-            radial-gradient(theme('colors.white') 8%, transparent 10%);
-        background-size: 40px 40px;
-        background-position:
-            W 0 0,
-            60px 60px;
-        background-color: theme('colors.accent.DEFAULT');
-
-        animation-name: backgroundmovement;
-        animation-duration: 5s;
-        animation-iteration-count: infinite;
-        animation-timing-function: linear;
-    }
+  }
 }
 
 @keyframes backgroundmovement {
@@ -59,7 +75,7 @@ body * {
 
 * {
     scrollbar-width: auto;
-    scrollbar-color: theme('colors.primary.DEFAULT');
+    scrollbar-color: var(--color-primary);
 }
 
 /* Chrome, Edge, and Safari */

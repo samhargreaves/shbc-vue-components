@@ -51,11 +51,11 @@ watch(() => props.forceEditing, (newValue) => {
         <dd class="mt-1 min-h-[42px] text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">
             <div class="flex min-h-full items-center">
                 <template v-if="!editing">
-                    <div class="flex-grow slot-content">
+                    <div class="grow slot-content">
                         <slot />
                         {{ value }}
                     </div>
-                    <span class="ml-4 flex-shrink-0">
+                    <span class="ml-4 shrink-0">
                         <button type="button" @click="toggleEditing" class="text-lg font-bold text-primary hover:text-primary-400"  v-if="editable">
                             <FontAwesomeIcon :icon="faPencil" />
                         </button>
@@ -63,10 +63,10 @@ watch(() => props.forceEditing, (newValue) => {
                     </span>
                 </template>
                 <template v-else>
-                    <div class="flex-grow slot-edit">
+                    <div class="grow slot-edit">
                         <slot name="edit" />
                     </div>
-                    <span class="ml-4 flex-shrink-0">
+                    <span class="ml-4 shrink-0">
                         <button type="button" @click="toggleEditing" class="text-xl font-bold text-primary hover:text-primary-400">
                             <FontAwesomeIcon :icon="faCheck" />
                         </button>

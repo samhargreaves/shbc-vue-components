@@ -2,11 +2,12 @@ import path from 'path';
 import { resolve } from 'path';
 import { defineConfig, loadEnv } from 'vite';
 import vue from '@vitejs/plugin-vue';
+import tailwindcss from '@tailwindcss/vite';
 
 export default ({ mode }) => {
     process.env = { ...process.env, ...loadEnv(mode, process.cwd()) };
     return defineConfig({
-        plugins: [vue()],
+        plugins: [vue(), tailwindcss()],
         base: '/shbc-vue-components',
         build: {
             lib: {
@@ -48,10 +49,10 @@ export default ({ mode }) => {
             },
         },
 
-        css: {
-            postcss: {
-                plugins: [require('tailwindcss'), require('autoprefixer')],
-            },
-        },
+        // css: {
+        //     postcss: {
+        //         plugins: [require('tailwindcss'), require('autoprefixer')],
+        //     },
+        // },
     });
 };

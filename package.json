@@ -4,6 +4,7 @@
     "description": "",
     "main": "dist/shbc-vue-components.umd.js",
     "module": "dist/shbc-vue-components.es.js",
+    "type": "module",
     "exports": {
         ".": {
             "import": "./dist/shbc-vue-components.es.js",
@@ -49,13 +50,15 @@
         "@fortawesome/vue-fontawesome": "^3.0.3",
         "@inertiajs/vue3": "^2.0.5",
         "@tailwindcss/forms": "^0.5.3",
+        "@tailwindcss/postcss": "^4.0.13",
         "@vitejs/plugin-vue": "^5.0.0",
         "@vuepic/vue-datepicker": "^5.2.1",
         "gh-pages": "^6.1.1",
         "laravel-vite-plugin": "^1.0.2",
         "postcss": "^8.4.35",
-        "prettier-plugin-tailwindcss": "^0.5.7",
-        "tailwindcss": "^3.4.1",
+        "prettier": "3.0.3",
+        "prettier-plugin-tailwindcss": "^0.6.11",
+        "tailwindcss": "^4.0.13",
         "tw-elements": "1.0.0",
         "vite": "^6.2.1",
         "vue": "^3.5.13",
@@ -63,14 +66,13 @@
         "vue-search-select": "^3.1.0",
         "vue-select": "^4.0.0-beta.6",
         "vue3-carousel": "^0.3.1",
-        "vue3-dropzone": "^2.1.2",
-        "prettier": "3.0.3"
+        "vue3-dropzone": "^2.1.2"
     },
     "dependencies": {
-        "autoprefixer": "^10.4.17",
+        "@netblink/nb-prettier": "github:LukaszTlalka/nb-prettier",
+        "@tailwindcss/vite": "^4.0.13",
         "dotenv": "^16.4.5",
-        "vue3-highlightjs": "^1.0.5",
         "js-md5": "^0.8.3",
-        "@netblink/nb-prettier": "github:LukaszTlalka/nb-prettier"
+        "vue3-highlightjs": "^1.0.5"
     }
 }

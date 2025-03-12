@@ -32,19 +32,19 @@ const onClick = () => {
             :aria-controls="name ? name.replaceAll(' ', '_') : `collapsable`"
         >
             <slot name="icon" />
-            <span class="ml-3 flex-1 whitespace-nowrap text-left">{{ name }}</span>
+            <span class="ml-3 flex-1 text-left whitespace-nowrap">{{ name }}</span>
             <svg class="h-3 w-3 transform" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
                 <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4" />
             </svg>
         </button>
 
-        <ul class="!visible hidden space-y-1 px-4" :id="name ? name.replaceAll(' ', '_') : `collapsable`" ref="collapseRef">
+        <ul class="visible! hidden space-y-1 px-4" :id="name ? name.replaceAll(' ', '_') : `collapsable`" ref="collapseRef">
             <slot />
         </ul>
     </li>
 </template>
 
-<style scoped>
+<style scoped lang="postcss">
 [data-te-collapse-collapsed] > svg {
     transform: rotate(180deg);
 }
