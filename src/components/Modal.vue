@@ -102,10 +102,10 @@ const maxWidthClass = computed(() => {
                 scroll-region
             >
                 <transition
-                    :enter-active-class="`backdrop-transition enter ease-out duration-[${backdropDuration}ms]`"
+                    :enter-active-class="`backdrop-transition enter ease-out duration-[200ms]`"
                     enter-from-class="opacity-0"
                     enter-to-class="opacity-100"
-                    :leave-active-class="`backdrop-transition leave ease-in duration-[${backdropDuration}ms]`"
+                    :leave-active-class="`backdrop-transition leave ease-in duration-[200ms]`"
                     leave-from-class="opacity-100"
                     leave-to-class="opacity-0"
                 >
