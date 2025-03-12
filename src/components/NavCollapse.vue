@@ -28,7 +28,7 @@ const onClick = () => {
         <button
             :id="name"
             @click="onClick"
-            class="focusable group flex w-full items-center rounded-lg p-2 text-base text-gray-900 transition duration-75 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
+            class="focusable group flex w-full cursor-pointer items-center rounded-lg p-2 text-base text-gray-900 transition duration-75 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
             :aria-controls="name ? name.replaceAll(' ', '_') : `collapsable`"
         >
             <slot name="icon" />

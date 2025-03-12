@@ -1,5 +1,4 @@
 <script setup>
-
 const props = defineProps({
     title: String,
 });
@@ -8,7 +7,7 @@ const props = defineProps({
 <template>
     <div class="relative inline-flex" data-te-dropdown-ref>
         <button
-            class="focusable flex items-center whitespace-nowrap rounded bg-primary px-2 text-sm text-white hover:bg-primary-700 motion-reduce:transition-none"
+            class="focusable bg-primary hover:bg-primary-700 flex cursor-pointer items-center rounded px-2 text-sm whitespace-nowrap text-white motion-reduce:transition-none"
             type="button"
             :id="title"
             data-te-dropdown-toggle-ref
@@ -28,7 +27,7 @@ const props = defineProps({
             </span>
         </button>
         <ul
-            class="absolute z-1000 float-left m-0 hidden min-w-max list-none overflow-hidden rounded-lg border-none bg-white bg-clip-padding text-left text-base shadow-lg dark:bg-neutral-700 data-te-dropdown-show:block"
+            class="absolute z-1000 float-left m-0 hidden min-w-max list-none overflow-hidden rounded-lg border-none bg-white bg-clip-padding text-left text-base shadow-lg data-te-dropdown-show:block dark:bg-neutral-700"
             :aria-labelledby="title"
             data-te-dropdown-menu-ref
         >
