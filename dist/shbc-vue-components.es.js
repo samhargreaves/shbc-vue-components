@@ -16209,10 +16209,10 @@ const hl = new ix(), jn = {
               _: 1
             }),
             Le(zr, {
-              "enter-active-class": `modal-transition enter ease-out duration-[${e.modalDuration}ms]`,
+              "enter-active-class": "modal-transition enter ease-out duration-[200ms]",
               "enter-from-class": "opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95",
               "enter-to-class": "opacity-100 translate-y-0 sm:scale-100",
-              "leave-active-class": `modal-transition leave ease-in duration-[${e.modalDuration}ms]`,
+              "leave-active-class": "modal-transition leave ease-in duration-[200ms]",
               "leave-from-class": "opacity-100 translate-y-0 sm:scale-100",
               "leave-to-class": "opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
             }, {
@@ -16226,7 +16226,7 @@ const hl = new ix(), jn = {
                 ])
               ]),
               _: 3
-            }, 8, ["enter-active-class", "leave-active-class"])
+            })
           ], 2), [
             [Er, e.show]
           ])
