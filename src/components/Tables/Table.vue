@@ -1,10 +1,8 @@
 <script setup>
-// import { Pagination } from '../../index';
-import { Pagination } from '@netblink/vue-components';
+import { Pagination } from '../../index';
 import { nextTick } from 'vue';
 import { onMounted, onUnmounted, ref } from 'vue';
-// import { getInertiaRouter } from '@/Helpers';
-import { getInertiaRouter } from '@netblink/vue-components';
+import { getInertiaRouter } from '@/Helpers';
 
 const router = getInertiaRouter();
 
@@ -128,15 +126,15 @@ if (props.sticky) {
                     class="min-w-full text-left text-sm font-light"
                     :class="{
                         'mb-14 [&>*>tr]:border-l-4 [&>*>tr]:border-l-primary-500': collapsable,
-                        ' border-separate border-spacing-y-5 px-2': seperate,
+                        'border-separate border-spacing-y-5 px-2': seperate,
                         // reponsive classes
                         // thead & tbody
-                        ' [&_thead]:max-sm:hidden': responsive,
+                        '[&_thead]:max-sm:hidden': responsive,
                         // td&th
-                        ' [&_.td-label]:max-sm:!block [&_td:last-child]:max-sm:!border-b-0 [&_td]:max-sm:flex [&_td]:max-sm:justify-between [&_td]:max-sm:border-b [&_td]:max-sm:!px-2':
+                        '[&_.td-label]:max-sm:!block [&_td:last-child]:max-sm:!border-b-0 [&_td]:max-sm:flex [&_td]:max-sm:justify-between [&_td]:max-sm:border-b [&_td]:max-sm:!px-2':
                             responsive,
                         // tr
-                        ' [&_tr]:max-sm:mb-2 [&_tr]:max-sm:flex [&_tr]:max-sm:flex-col [&_tr]:max-sm:rounded-md [&_tr]:max-sm:border [&_tr]:max-sm:border-gray-200 [&_tr]:max-sm:shadow-md':
+                        '[&_tr]:max-sm:mb-2 [&_tr]:max-sm:flex [&_tr]:max-sm:flex-col [&_tr]:max-sm:rounded-md [&_tr]:max-sm:border [&_tr]:max-sm:border-gray-200 [&_tr]:max-sm:shadow-md':
                             responsive,
                     }"
                     ref="table"
