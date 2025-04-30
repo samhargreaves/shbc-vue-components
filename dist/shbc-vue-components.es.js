@@ -16389,7 +16389,7 @@ const nl = new Ex(), Ln = {
             }, {
               default: $e(() => [
                 vt(U("div", {
-                  class: te(["mb-6 transform rounded-lg bg-white shadow-xl transition-all sm:mx-auto sm:w-full", s.value + (e.showBorder ? " border-pink rounded-md border-2 border-solid" : "")])
+                  class: te(["relative mb-6 transform rounded-lg bg-white shadow-xl transition-all sm:mx-auto sm:w-full", s.value + (e.showBorder ? " border-pink rounded-md border-2 border-solid" : "")])
                 }, [
                   e.show ? Q(l.$slots, "default", { key: 0 }) : Z("", !0)
                 ], 2), [
